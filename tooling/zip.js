@@ -11,13 +11,14 @@ const theme_folders = ["layouts", "sections", "locales", "snippets", "assets", "
 const theme_root = resolve(__dirname, "..");
 const dist_path = resolve(theme_root, "dist");
 const packageJsonPath = resolve(theme_root, "package.json");
-
 const theme_name = basename(theme_root);
+
+let version = "1.0.0";
 
 if (fs.existsSync(packageJsonPath)) {
   try {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-    version = packageJson.version || "0.0.0";
+    version = packageJson.version || version;
   } catch (err) {
     console.error("Error reading package.json:", err);
   }
