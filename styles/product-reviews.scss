@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 #youcan-section--product-reviews {
   --section-border: 1px solid color-mix(in srgb, currentColor 8%, transparent);
@@ -318,7 +318,7 @@ yc-reviews {
   }
 }
 
-@include breakpoint("lg") {
+@include breakpoints.breakpoint("lg") {
   yc-reviews {
     .rating-area {
       width: 100%;
@@ -326,7 +326,7 @@ yc-reviews {
   }
 }
 
-@include breakpoint("md") {
+@include breakpoints.breakpoint("md") {
   yc-reviews {
     .rating-area {
       .total {

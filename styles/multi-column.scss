@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 .columns {
   display: grid;
@@ -7,18 +7,18 @@
   grid-template-columns: repeat(var(--items-columns), 1fr);
 
   &:has(> :nth-child(6)) {
-    @include breakpoint("xl") {
+    @include breakpoints.breakpoint("xl") {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   &:has(> :nth-child(4)):not(:has(> :nth-child(5))) {
-    @include breakpoint("xl") {
+    @include breakpoints.breakpoint("xl") {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @include breakpoint("md") {
+  @include breakpoints.breakpoint("md") {
     grid-template-columns: 1fr !important;
   }
 }

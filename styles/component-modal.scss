@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 yc-modal {
   --modal-mobile-offset: 0.5em;
@@ -31,7 +31,7 @@ yc-modal {
   }
 
   // Mobile
-  @include breakpoint("md") {
+  @include breakpoints.breakpoint("md") {
     yc-modal-content {
       z-index: 100;
       left: 0;

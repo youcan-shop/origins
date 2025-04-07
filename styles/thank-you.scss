@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 yc-section {
   --order-border-radius: var(--button-border-radius);
@@ -188,7 +188,7 @@ yc-section {
   }
 }
 
-@include breakpoint("sm") {
+@include breakpoints.breakpoint("sm") {
   yc-section {
     .order {
       width: 100%;

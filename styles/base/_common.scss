@@ -1,4 +1,4 @@
-@import "../mixins/breakpoints";
+@use "../mixins/breakpoints";
 
 // BUTTON
 button,
@@ -160,7 +160,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="s
   color: rgb(var(--section-text-color, var(--color-primary)));
   border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
 
-  @include breakpoint("md") {
+  @include breakpoints.breakpoint("md") {
     font-size: 16px;
   }
 
@@ -621,7 +621,7 @@ yc-skeleton {
 }
 
 // Breakpoints
-@include breakpoint("xl") {
+@include breakpoints.breakpoint("xl") {
   .items-grid {
     &:has(> :nth-child(4)) {
       grid-template-columns: repeat(2, 1fr);
@@ -629,13 +629,13 @@ yc-skeleton {
   }
 }
 
-@include breakpoint("lg") {
+@include breakpoints.breakpoint("lg") {
   .items-grid {
     grid-template-columns: 1fr !important;
   }
 }
 
-@include breakpoint("md") {
+@include breakpoints.breakpoint("md") {
   .items-grid {
     grid-template-columns: 1fr !important;
   }

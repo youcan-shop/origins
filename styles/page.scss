@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 yc-section {
   --reading-mode-width: min(60ch, 100%);
@@ -95,7 +95,7 @@ yc-section {
   }
 }
 
-@include breakpoint("sm") {
+@include breakpoints.breakpoint("sm") {
   yc-section {
     .page {
       form {

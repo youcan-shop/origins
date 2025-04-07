@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 .cart-drawer {
   --drawer-border: 1px solid rgba(var(--header-text-color), 8%);
@@ -153,7 +153,7 @@
   }
 }
 
-@include breakpoint("md") {
+@include breakpoints.breakpoint("md") {
   .cart-drawer {
     .item {
       .image {

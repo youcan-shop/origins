@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 /*
   Usage:
@@ -23,7 +23,7 @@
     height: calc(var(--collection-height) * 1px);
     transition: var(--transition-duration-slow);
 
-    @include breakpoint("xl") {
+    @include breakpoints.breakpoint("xl") {
       height: calc((var(--collection-height) - 50) * 1px);
     }
 

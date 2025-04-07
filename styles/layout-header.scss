@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 yc-header {
   padding: 1em 10%;
@@ -189,7 +189,7 @@ yc-header {
   position: sticky;
 }
 
-@include breakpoint("lg") {
+@include breakpoints.breakpoint("lg") {
   yc-header {
     grid-template-columns: 1fr auto 1fr !important;
     grid-template-areas: "navigation heading actions" !important;
@@ -213,7 +213,7 @@ yc-header {
   }
 }
 
-@include breakpoint("md") {
+@include breakpoints.breakpoint("md") {
   yc-header {
     padding: 1em;
   }

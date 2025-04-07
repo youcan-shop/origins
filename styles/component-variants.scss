@@ -1,4 +1,4 @@
-@import "./mixins/breakpoints";
+@use "mixins/breakpoints";
 
 yc-variant {
   --variant-border-radius: var(--button-border-radius);
@@ -309,7 +309,7 @@ yc-variant {
   &[name="dropdown"] {
     width: 50%;
 
-    @include breakpoint("md") {
+    @include breakpoints.breakpoint("md") {
       width: 100%;
     }
   }

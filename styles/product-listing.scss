@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 .product-listing {
   --product-listing-border-radius: var(--button-border-radius);
@@ -55,7 +55,7 @@
       gap: var(--gap-lg);
       align-items: center;
 
-      @include breakpoint("md") {
+      @include breakpoints.breakpoint("md") {
         .label {
           display: none;
         }
@@ -109,7 +109,7 @@
   }
 }
 
-@include breakpoint("md") {
+@include breakpoints.breakpoint("md") {
   .product-listing {
     .products-area {
       yc-pagination {

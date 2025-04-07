@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
 yc-section {
   --cart-border-radius: var(--button-border-radius);
@@ -7,7 +7,6 @@ yc-section {
   gap: var(--gap-xl);
 
   .cart {
-    background-color: red;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: var(--gap-xl);
@@ -250,7 +249,7 @@ yc-section {
   }
 }
 
-@include breakpoint("xl") {
+@include breakpoints.breakpoint("xl") {
   yc-section {
     .cart {
       .list {
@@ -275,7 +274,7 @@ yc-section {
   }
 }
 
-@include breakpoint("lg") {
+@include breakpoints.breakpoint("lg") {
   yc-section {
     .cart {
       grid-template-columns: 1fr;
@@ -333,7 +332,7 @@ yc-section {
   }
 }
 
-@include breakpoint("md") {
+@include breakpoints.breakpoint("md") {
   yc-section {
     .cart {
       .list {
