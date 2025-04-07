@@ -1,7 +1,7 @@
 {
   "name": "origin",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "sass": "sass ./styles:./.temp --no-source-map --watch",
     "postcss": "postcss ./.temp/*.css --dir ./assets",
@@ -9,7 +9,7 @@
     "yc": "youcan theme:dev -p",
     "dev": "npm-run-all --parallel sass watch:postcss yc",
     "zip": "node ./tooling/zip.js",
-    "release": "bumpp && pnpm run zip"
+    "release": "bumpp --execute 'pnpm run zip'"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
