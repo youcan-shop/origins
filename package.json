@@ -1,7 +1,7 @@
 {
   "name": "origin",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "scripts": {
     "sass": "sass ./styles:./.temp --no-source-map --watch",
     "postcss": "postcss ./.temp/*.css --dir ./assets",
