@@ -1,8 +1,6 @@
 # Origins Theme for YouCan Shop
 
-Origins is a customizable starter theme designed for YouCan Shop. It acts as a starting point to help developers quickly create and customize themes using the YouCan CLI.
-
-Origins Theme is built using **liquid** templating language, **html**, **css** and **javascript** which makes it easy to customize.
+Origins is a theme built using **liquid** templating language, **html**, **css** and **javascript (only as needed)** which makes it easy to customize.
 
 ## Getting Started
 
@@ -23,7 +21,7 @@ youcan auth login
 3. Initialize the starter theme:
 
 ```bash
-youcan theme init
+youcan theme init -i
 ```
 
 > YouCan CLI uploads this theme as a development version to the store you're connected to, ready for further modifications in your local code editor.
