@@ -8,11 +8,11 @@ const __dirname = dirname(__filename);
 
 const theme_folders = ["layouts", "sections", "locales", "snippets", "assets", "config", "templates"];
 
-const theme_name = basename(theme_root);
-
 const theme_root = resolve(__dirname, "..");
 const dist_path = resolve(theme_root, "dist");
 const packageJsonPath = resolve(theme_root, "package.json");
+
+const theme_name = basename(theme_root);
 
 if (fs.existsSync(packageJsonPath)) {
   try {
