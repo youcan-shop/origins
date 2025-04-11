@@ -92,37 +92,37 @@
 
 {% schema %}
 {
-  "label": "Footer",
+  "label": "t:sections.footer.label",
   "limit": 1,
   "settings": [
     {
       "type": "paragraph",
-      "content": "Footer links can be managed from your [menu settings](https:\/\/seller-area.youcan.shop\/admin\/menus)"
+      "content": "t:sections.footer.footer_links_paragraph"
     },
     {
       "type": "paragraph",
-      "content": "Social links can be managed from your [social media settings](https:\/\/seller-area.youcan.shop\/admin\/settings\/general#social-media)"
+      "content": "t:sections.footer.social_links_paragraph"
     },
     {
       "type": "checkbox",
       "id": "toggle_footer",
-      "label": "Show footer",
+      "label": "t:sections.footer.show_footer",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_social_links",
-      "label": "Social Links",
+      "label": "t:sections.footer.social_links",
       "default": true
     },
     {
       "type": "header",
-      "content": "Logo"
+      "content": "t:sections.footer.logo"
     },
     {
       "type": "image_picker",
       "id": "footer_logo",
-      "label": "Logo"
+      "label": "t:sections.footer.logo"
     },
     {
       "type": "range",
@@ -131,29 +131,29 @@
       "max": 200,
       "step": 10,
       "unit": "px",
-      "label": "Width",
+      "label": "t:sections.footer.width",
       "default": 60
     },
     {
       "type": "header",
-      "content": "Style"
+      "content": "t:sections.footer.style"
     },
     {
       "type": "color",
       "id": "footer_background_color",
-      "label": "Background color",
+      "label": "t:sections.footer.background_color",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "footer_text_color",
-      "label": "Text color",
+      "label": "t:sections.footer.text_color",
       "default": "#121212"
     },
     {
       "type": "richtext",
       "id": "copyright",
-      "label": "Copyright text"
+      "label": "t:sections.footer.copyright_text"
     }
   ]
 }

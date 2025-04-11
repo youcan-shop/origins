@@ -216,6 +216,19 @@
           "content_placeholder": "Contenu"
         }
       }
+    },
+    "footer": {
+      "label": "Pied de page",
+      "footer_links_paragraph": "Les liens de pied de page peuvent être gérés depuis vos [paramètres de menu](https://seller-area.youcan.shop/admin/menus)",
+      "social_links_paragraph": "Les liens sociaux peuvent être gérés depuis vos [paramètres de médias sociaux](https://seller-area.youcan.shop/admin/settings/general#social-media)",
+      "show_footer": "Afficher le pied de page",
+      "social_links": "Liens sociaux",
+      "logo": "Logo",
+      "width": "Largeur",
+      "style": "Style",
+      "background_color": "Couleur d'arrière-plan",
+      "text_color": "Couleur du texte",
+      "copyright_text": "Texte de copyright"
     }
   }
 }

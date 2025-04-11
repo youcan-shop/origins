@@ -216,6 +216,19 @@
           "content_placeholder": "المحتوى"
         }
       }
+    },
+    "footer": {
+      "label": "تذييل الصفحة",
+      "footer_links_paragraph": "يمكن إدارة روابط التذييل من [إعدادات القائمة](https://seller-area.youcan.shop/admin/menus) الخاصة بك",
+      "social_links_paragraph": "يمكن إدارة روابط التواصل الاجتماعي من [إعدادات وسائل التواصل الاجتماعي](https://seller-area.youcan.shop/admin/settings/general#social-media) الخاصة بك",
+      "show_footer": "عرض التذييل",
+      "social_links": "روابط التواصل الاجتماعي",
+      "logo": "الشعار",
+      "width": "العرض",
+      "style": "النمط",
+      "background_color": "لون الخلفية",
+      "text_color": "لون النص",
+      "copyright_text": "نص حقوق النشر"
     }
   }
 }
