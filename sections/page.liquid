@@ -30,32 +30,32 @@
 
 {%- schema -%}
 {
-  "label": "Page",
+  "label": "t:sections.page.label",
   "templates": ["page"],
   "limit": 1,
   "settings": [
     {
       "id": "show_title",
       "type": "checkbox",
-      "label": "Show title",
+      "label": "t:sections.page.show_title",
       "default": true
     },
     {
       "id": "position",
       "type": "select",
-      "label": "Title position",
+      "label": "t:sections.page.title_position",
       "options": [
         {
           "value": "left",
-          "label": "Left"
+          "label": "t:sections.page.left"
         },
         {
           "value": "center",
-          "label": "Center"
+          "label": "t:sections.page.center"
         },
         {
           "value": "right",
-          "label": "Right"
+          "label": "t:sections.page.right"
         }
       ],
       "default": "center"
@@ -63,15 +63,15 @@
     {
       "id": "page_width",
       "type": "select",
-      "label": "Page width",
+      "label": "t:sections.page.page_width",
       "options": [
         {
           "value": "full-width",
-          "label": "Full width"
+          "label": "t:sections.page.full_width"
         },
         {
           "value": "reading-mode",
-          "label": "Reading mode"
+          "label": "t:sections.page.reading_mode"
         }
       ],
       "default": "full-width"
@@ -79,23 +79,23 @@
     {
       "id": "text_color",
       "type": "color",
-      "label": "Text color",
+      "label": "t:sections.page.text_color",
       "default": "#121212"
     },
     {
       "id": "background_color",
       "type": "color",
-      "label": "Background color",
+      "label": "t:sections.page.background_color",
       "default": "#FFFFFFFF"
     },
     {
       "type": "header",
-      "content": "Section Spacing"
+      "content": "t:sections.page.section_spacing"
     },
     {
       "id": "space_top",
       "type": "range",
-      "label": "Space top",
+      "label": "t:sections.page.space_top",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -105,7 +105,7 @@
     {
       "id": "space_bottom",
       "type": "range",
-      "label": "Space bottom",
+      "label": "t:sections.page.space_bottom",
       "min": 0,
       "max": 200,
       "step": 10,

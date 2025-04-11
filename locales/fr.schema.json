@@ -1,0 +1,527 @@
+{
+  "foo": "bar",
+  "settings_schema": {
+    "seo": {
+      "label": "SEO",
+      "images": "Images",
+      "favicon_image": "Image favicon",
+      "open_graph_image": "Image Open Graph",
+      "og_image_learn_more": "[Cliquez ici](https://ogp.me/#metadata) pour en savoir plus sur l'image OG",
+      "meta_tags": "Balises méta",
+      "keywords": "Mots-clés"
+    },
+    "typography": {
+      "label": "Typographie",
+      "font_family": "Famille de polices",
+      "font_family_label": "Famille de polices",
+      "headings": "Titres",
+      "font_size_scale": "Échelle de taille de police",
+      "body": "Corps"
+    },
+    "buttons": {
+      "label": "Boutons",
+      "colors": "Couleurs",
+      "primary_button_background": "Arrière-plan du bouton principal",
+      "primary_button_text": "Texte du bouton principal",
+      "secondary_button": "Bouton secondaire",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "inputs": {
+      "label": "Champs de saisie",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "product_cards": {
+      "label": "Cartes produit",
+      "style": "Style",
+      "card_style": "Style de carte",
+      "standard": "Standard",
+      "compact": "Compact",
+      "text_alignment": "Alignement du texte",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "collection_cards": {
+      "label": "Cartes de collection",
+      "style": "Style",
+      "text_alignment": "Alignement du texte",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "multi_column_cards": {
+      "label": "Cartes multi-colonnes",
+      "style": "Style",
+      "text_alignment": "Alignement du texte",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "review_cards": {
+      "label": "Cartes d'avis",
+      "style": "Style",
+      "text_alignment": "Alignement du texte",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "modals": {
+      "label": "Fenêtres modales",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "drawers": {
+      "label": "Tiroirs",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "toasts": {
+      "label": "Notifications",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "badges": {
+      "label": "Badges",
+      "colors": "Couleurs",
+      "badge_text_color": "Couleur du texte du badge",
+      "badge_background_color": "Couleur d'arrière-plan du badge",
+      "style": "Style",
+      "position_on_card": "Position sur la carte",
+      "right": "Droite",
+      "left": "Gauche"
+    },
+    "checkout": {
+      "label": "Paiement",
+      "types": "Types",
+      "type": "Type",
+      "normal": "Normal (Panier)",
+      "express": "Paiement express"
+    }
+  },
+  "sections": {
+    "all_collections": {
+      "label": "Toutes les collections",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "collection_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "announcement_bar": {
+      "label": "Barre d'annonces",
+      "show_bar": "Afficher la barre",
+      "position": "Position",
+      "above_header": "Au-dessus de l'en-tête",
+      "below_header": "En dessous de l'en-tête",
+      "text": "Texte",
+      "text_placeholder": "Bienvenue dans notre boutique !",
+      "link": "Lien",
+      "link_placeholder": "Collez un lien",
+      "background_color": "Couleur d'arrière-plan",
+      "text_color": "Couleur du texte"
+    },
+    "cart": {
+      "label": "Panier",
+      "show_coupon": "Afficher le coupon",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "collections": {
+      "label": "Collections",
+      "title": "Titre",
+      "default_title": "Collections en vedette",
+      "description": "Description",
+      "default_description": "Collections qui valent la peine d'être explorées",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "collection_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "collection": "Collection"
+      }
+    },
+    "custom_content": {
+      "label": "Contenu personnalisé",
+      "content": "Contenu",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "featured_product": {
+      "label": "Produit en vedette",
+      "product": "Produit",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "inventory_status": {
+          "label": "État de l'inventaire",
+          "threshold": "Seuil d'inventaire bas",
+          "show_count": "Afficher le nombre d'inventaire"
+        },
+        "title": {
+          "label": "Titre"
+        },
+        "price": {
+          "label": "Prix"
+        },
+        "rating": {
+          "label": "Évaluation"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "countdown_timer": {
+          "label": "Compte à rebours",
+          "title": "Titre",
+          "title_placeholder": "Le temps presse",
+          "background_color": "Couleur d'arrière-plan",
+          "text_color": "Couleur du texte",
+          "countdown_end_date": "Date de fin du compte à rebours",
+          "date_paragraph": "Définissez la date jusqu'à laquelle le minuteur doit compter.",
+          "year": "Année",
+          "month": "Mois",
+          "day": "Jour",
+          "hour": "Heure",
+          "minute": "Minute",
+          "second": "Seconde"
+        },
+        "accordion": {
+          "label": "Accordéon",
+          "title": "Titre",
+          "title_placeholder": "Titre",
+          "content": "Contenu",
+          "content_placeholder": "Contenu"
+        }
+      }
+    },
+    "footer": {
+      "label": "Pied de page",
+      "footer_links_paragraph": "Les liens de pied de page peuvent être gérés depuis vos [paramètres de menu](https://seller-area.youcan.shop/admin/menus)",
+      "social_links_paragraph": "Les liens sociaux peuvent être gérés depuis vos [paramètres de médias sociaux](https://seller-area.youcan.shop/admin/settings/general#social-media)",
+      "show_footer": "Afficher le pied de page",
+      "social_links": "Liens sociaux",
+      "logo": "Logo",
+      "width": "Largeur",
+      "style": "Style",
+      "background_color": "Couleur d'arrière-plan",
+      "text_color": "Couleur du texte",
+      "copyright_text": "Texte de copyright"
+    },
+    "header": {
+      "label": "En-tête",
+      "menu_links_paragraph": "Les liens du menu principal peuvent être gérés depuis vos [paramètres de menu](https://seller-area.youcan.shop/admin/menus)",
+      "logo": "Logo",
+      "width": "Largeur",
+      "desktop_logo_position": "Position du logo sur ordinateur",
+      "top_left": "En haut à gauche",
+      "top_center": "En haut au centre",
+      "middle_left": "Au milieu à gauche",
+      "middle_center": "Au milieu au centre",
+      "mobile_logo_position": "Position du logo sur mobile",
+      "center": "Centre",
+      "left": "Gauche",
+      "style": "Style",
+      "sticky_mode": "Mode fixe",
+      "bottom_border": "Bordure inférieure",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan"
+    },
+    "multi_column": {
+      "label": "Multi-colonnes",
+      "blocks": {
+        "column": {
+          "label": "Colonne",
+          "image": "Image",
+          "title": "Titre",
+          "title_default": "Titre de la colonne",
+          "subtitle": "Sous-titre",
+          "subtitle_default": "Sous-titre de la colonne"
+        }
+      },
+      "title": "Titre",
+      "title_default": "Bénéficiez avec nous",
+      "description": "Description",
+      "description_default": "Ce qui nous distingue",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "columns": "Nombre de colonnes sur bureau",
+      "image_width": "Largeur de l'image",
+      "full": "Complète",
+      "medium": "Moyenne",
+      "small": "Petite",
+      "image_shape": "Forme de l'image",
+      "adapt_to_image": "Adapter à l'image",
+      "square": "Carré",
+      "circle": "Cercle",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "page": {
+      "label": "Page",
+      "show_title": "Afficher le titre",
+      "title_position": "Position du titre",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "page_width": "Largeur de page",
+      "full_width": "Pleine largeur",
+      "reading_mode": "Mode lecture",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "product_reviews": {
+      "label": "Avis sur les produits",
+      "show_write_review": "Afficher le bouton 'Écrire un avis'",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "product_testimonials": {
+      "label": "Témoignages de produits",
+      "product": "Produit",
+      "title": "Titre",
+      "title_default": "Mon titre",
+      "description": "Description",
+      "description_default": "Mon sous-titre",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "products_by_collection": {
+      "label": "Produits par collection",
+      "collection": "Collection",
+      "title": "Titre",
+      "title_default": "Produits par collection",
+      "description": "Description",
+      "description_default": "Listez les produits d'une collection de votre choix",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "view_style": "Style d'affichage",
+      "grid": "Grille",
+      "slides": "Diapositives",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "max_products": "Nombre maximum de produits à afficher",
+      "product_columns": "Nombre de colonnes sur bureau",
+      "show_link_to_collection": "Afficher le lien vers la collection",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "products": {
+      "label": "Produits",
+      "title": "Titre",
+      "title_default": "Produits en vedette",
+      "description": "Description",
+      "description_default": "Produits qui sont mis en avant",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "view_style": "Style d'affichage",
+      "grid": "Grille",
+      "slides": "Diapositives",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "product_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "product": {
+          "label": "Produit",
+          "product": "Produit",
+          "badge_text": "Texte du badge",
+          "badge_colors_paragraph": "Vous pouvez personnaliser les couleurs des badges à partir des paramètres globaux"
+        }
+      }
+    },
+    "related_products": {
+      "label": "Produits associés",
+      "info_paragraph": "ℹ️ La section Produits associés nécessite au moins un produit associé pour apparaître sur la page",
+      "title": "Titre",
+      "title_default": "Produits associés",
+      "description": "Description",
+      "description_default": "Produits qui sont mis en avant",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "view_style": "Style d'affichage",
+      "grid": "Grille",
+      "slides": "Diapositives",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "product_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "search": {
+      "label": "Recherche",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "product_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "single_collection": {
+      "label": "Collection unique",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "collection_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "product_information": {
+      "label": "Informations sur le produit",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "inventory_status": {
+          "label": "État de l'inventaire",
+          "threshold": "Seuil d'inventaire bas",
+          "show_count": "Afficher le nombre d'inventaire"
+        },
+        "title": {
+          "label": "Titre"
+        },
+        "price": {
+          "label": "Prix"
+        },
+        "rating": {
+          "label": "Évaluation"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "countdown_timer": {
+          "label": "Compte à rebours",
+          "title": "Titre",
+          "title_placeholder": "Le temps presse",
+          "background_color": "Couleur d'arrière-plan",
+          "text_color": "Couleur du texte",
+          "countdown_end_date": "Date de fin du compte à rebours",
+          "date_paragraph": "Définissez la date jusqu'à laquelle le minuteur doit compter.",
+          "year": "Année",
+          "month": "Mois",
+          "day": "Jour",
+          "hour": "Heure",
+          "minute": "Minute",
+          "second": "Seconde"
+        },
+        "accordion": {
+          "label": "Accordéon",
+          "title": "Titre",
+          "title_placeholder": "Titre",
+          "content": "Contenu",
+          "content_placeholder": "Contenu"
+        }
+      }
+    },
+    "slideshow": {
+      "label": "Diaporama",
+      "height": "Hauteur",
+      "small": "Petite",
+      "medium": "Moyenne",
+      "large": "Grande",
+      "autoplay": "Lecture automatique",
+      "show_arrows": "Afficher les flèches",
+      "duration": "Changer de diapositive toutes les",
+      "type": "Type",
+      "full": "Plein",
+      "box": "Boîte",
+      "content": "Contenu",
+      "content_alignment": "Alignement du contenu",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "content_color": "Couleur du contenu",
+      "button_background": "Arrière-plan du bouton",
+      "button_text": "Texte du bouton",
+      "arrows": "Flèches",
+      "arrow_position": "Position des flèches",
+      "arrows_color": "Couleur des flèches",
+      "arrows_background": "Arrière-plan des flèches",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "slide": {
+          "label": "Diapositive",
+          "image": "Image",
+          "heading": "En-tête",
+          "heading_default": "Diapositive d'image",
+          "subheading": "Sous-titre",
+          "subheading_default": "Une image vaut mille mots",
+          "button_text": "Texte du bouton",
+          "button_link": "Lien du bouton"
+        }
+      }
+    },
+    "thank_you": {
+      "label": "Merci",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "upsell": {
+      "label": "Vente incitative",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    }
+  }
+}

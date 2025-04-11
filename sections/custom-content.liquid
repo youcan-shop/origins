@@ -10,23 +10,27 @@
 
 {%- schema -%}
 {
-  "label": "Custom Content",
+  "label": "t:sections.custom_content.label",
   "settings": [
     {
       "type": "richtext",
       "id": "content",
-      "label": "Content"
+      "label": "t:sections.custom_content.content"
     },
     {
       "id": "background_color",
       "type": "color",
-      "label": "Background color",
+      "label": "t:sections.custom_content.background_color",
       "default": "#FFFFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.custom_content.section_spacing"
     },
     {
       "id": "space_top",
       "type": "range",
-      "label": "Space top",
+      "label": "t:sections.custom_content.space_top",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -36,7 +40,7 @@
     {
       "id": "space_bottom",
       "type": "range",
-      "label": "Space bottom",
+      "label": "t:sections.custom_content.space_bottom",
       "min": 0,
       "max": 200,
       "step": 10,

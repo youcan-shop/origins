@@ -1,0 +1,526 @@
+{
+  "settings_schema": {
+    "seo": {
+      "label": "SEO",
+      "images": "Images",
+      "favicon_image": "Favicon image",
+      "open_graph_image": "Open Graph Image",
+      "og_image_learn_more": "[Click here](https://ogp.me/#metadata) to learn more about OG Image",
+      "meta_tags": "Meta tags",
+      "keywords": "Keywords"
+    },
+    "typography": {
+      "label": "Typography",
+      "font_family": "Font Family",
+      "font_family_label": "Font family",
+      "headings": "Headings",
+      "font_size_scale": "Font size scale",
+      "body": "Body"
+    },
+    "buttons": {
+      "label": "Buttons",
+      "colors": "Colors",
+      "primary_button_background": "Primary button background",
+      "primary_button_text": "Primary button text",
+      "secondary_button": "Secondary button",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "inputs": {
+      "label": "Inputs",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "product_cards": {
+      "label": "Product cards",
+      "style": "Style",
+      "card_style": "Card style",
+      "standard": "Standard",
+      "compact": "Compact",
+      "text_alignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "collection_cards": {
+      "label": "Collection cards",
+      "style": "Style",
+      "text_alignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "multi_column_cards": {
+      "label": "Multi column cards",
+      "style": "Style",
+      "text_alignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "review_cards": {
+      "label": "Review cards",
+      "style": "Style",
+      "text_alignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "modals": {
+      "label": "Modals",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "drawers": {
+      "label": "Drawers",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "toasts": {
+      "label": "Toasts",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "badges": {
+      "label": "Badges",
+      "colors": "Colors",
+      "badge_text_color": "Badge text color",
+      "badge_background_color": "Badge background color",
+      "style": "Style",
+      "position_on_card": "Position on card",
+      "right": "Right",
+      "left": "Left"
+    },
+    "checkout": {
+      "label": "Checkout",
+      "types": "Types",
+      "type": "Type",
+      "normal": "Normal (Cart)",
+      "express": "Express checkout"
+    }
+  },
+  "sections": {
+    "all_collections": {
+      "label": "All collections",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "collection_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "announcement_bar": {
+      "label": "Announcement bar",
+      "show_bar": "Show bar",
+      "position": "Position",
+      "above_header": "Above Header",
+      "below_header": "Below Header",
+      "text": "Text",
+      "text_placeholder": "Welcome to our store!",
+      "link": "Link",
+      "link_placeholder": "Paste a link",
+      "background_color": "Background color",
+      "text_color": "Text color"
+    },
+    "cart": {
+      "label": "Cart",
+      "show_coupon": "Show coupon",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "collections": {
+      "label": "Collections",
+      "title": "Title",
+      "default_title": "Featured Collections",
+      "description": "Description",
+      "default_description": "Collections worth exploring",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "collection_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "collection": "Collection"
+      }
+    },
+    "custom_content": {
+      "label": "Custom Content",
+      "content": "Content",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "featured_product": {
+      "label": "Featured Product",
+      "product": "Product",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "inventory_status": {
+          "label": "Inventory Status",
+          "threshold": "Low inventory threshold",
+          "show_count": "Show inventory count"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "price": {
+          "label": "Price"
+        },
+        "rating": {
+          "label": "Rating"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "countdown_timer": {
+          "label": "Countdown Timer",
+          "title": "Title",
+          "title_placeholder": "Time is running out",
+          "background_color": "Background color",
+          "text_color": "Text color",
+          "countdown_end_date": "Countdown End Date",
+          "date_paragraph": "Set the date to when the timer should count down to.",
+          "year": "Year",
+          "month": "Month",
+          "day": "Day",
+          "hour": "Hour",
+          "minute": "Minute",
+          "second": "Second"
+        },
+        "accordion": {
+          "label": "Accordion",
+          "title": "Title",
+          "title_placeholder": "Title",
+          "content": "Content",
+          "content_placeholder": "Content"
+        }
+      }
+    },
+    "footer": {
+      "label": "Footer",
+      "footer_links_paragraph": "Footer links can be managed from your [menu settings](https://seller-area.youcan.shop/admin/menus)",
+      "social_links_paragraph": "Social links can be managed from your [social media settings](https://seller-area.youcan.shop/admin/settings/general#social-media)",
+      "show_footer": "Show footer",
+      "social_links": "Social Links",
+      "logo": "Logo",
+      "width": "Width",
+      "style": "Style",
+      "background_color": "Background color",
+      "text_color": "Text color",
+      "copyright_text": "Copyright text"
+    },
+    "header": {
+      "label": "Header",
+      "menu_links_paragraph": "Main menu links can be managed from your [menu settings](https://seller-area.youcan.shop/admin/menus)",
+      "logo": "Logo",
+      "width": "Width",
+      "desktop_logo_position": "Desktop logo position",
+      "top_left": "Top left",
+      "top_center": "Top center",
+      "middle_left": "Middle left",
+      "middle_center": "Middle center",
+      "mobile_logo_position": "Mobile logo position",
+      "center": "Center",
+      "left": "Left",
+      "style": "Style",
+      "sticky_mode": "Sticky mode",
+      "bottom_border": "Bottom border",
+      "text_color": "Text color",
+      "background_color": "Background color"
+    },
+    "multi_column": {
+      "label": "Multi column",
+      "blocks": {
+        "column": {
+          "label": "Column",
+          "image": "Image",
+          "title": "Title",
+          "title_default": "Column title",
+          "subtitle": "Subtitle",
+          "subtitle_default": "Column subtitle"
+        }
+      },
+      "title": "Title",
+      "title_default": "Benefit with Us",
+      "description": "Description",
+      "description_default": "What sets us apart",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "columns": "Number of columns on desktop",
+      "image_width": "Image width",
+      "full": "Full",
+      "medium": "Medium",
+      "small": "Small",
+      "image_shape": "Image shape",
+      "adapt_to_image": "Adapt to image",
+      "square": "Square",
+      "circle": "Circle",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "page": {
+      "label": "Page",
+      "show_title": "Show title",
+      "title_position": "Title position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "page_width": "Page width",
+      "full_width": "Full width",
+      "reading_mode": "Reading mode",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "product_reviews": {
+      "label": "Product Reviews",
+      "show_write_review": "Show 'Write review' button",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "product_testimonials": {
+      "label": "Product Testimonials",
+      "product": "Product",
+      "title": "Title",
+      "title_default": "My title",
+      "description": "Description",
+      "description_default": "My subtitle",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "products_by_collection": {
+      "label": "Products by Collection",
+      "collection": "Collection",
+      "title": "Title",
+      "title_default": "Products by Collection",
+      "description": "Description",
+      "description_default": "List out products from a collection of your choosing",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "view_style": "View style",
+      "grid": "Grid",
+      "slides": "Slides",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "max_products": "Maximum products to show",
+      "product_columns": "Number of columns on desktop",
+      "show_link_to_collection": "Show link to collection",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "products": {
+      "label": "Products",
+      "title": "Title",
+      "title_default": "Featured Products",
+      "description": "Description",
+      "description_default": "Products that take the spotlight",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "view_style": "View style",
+      "grid": "Grid",
+      "slides": "Slides",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "product_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "product": {
+          "label": "Product",
+          "product": "Product",
+          "badge_text": "Badge text",
+          "badge_colors_paragraph": "You can customize the badge colors from the global settings"
+        }
+      }
+    },
+    "related_products": {
+      "label": "Related Products",
+      "info_paragraph": "ℹ️ The Related Products section requires at least one related product to appear on page",
+      "title": "Title",
+      "title_default": "Related Products",
+      "description": "Description",
+      "description_default": "Products that take the spotlight",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "view_style": "View style",
+      "grid": "Grid",
+      "slides": "Slides",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "product_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "search": {
+      "label": "Search",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "product_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "single_collection": {
+      "label": "Single collection",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "collection_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "product_information": {
+      "label": "Product Information",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "inventory_status": {
+          "label": "Inventory Status",
+          "threshold": "Low inventory threshold",
+          "show_count": "Show inventory count"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "price": {
+          "label": "Price"
+        },
+        "rating": {
+          "label": "Rating"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "countdown_timer": {
+          "label": "Countdown Timer",
+          "title": "Title",
+          "title_placeholder": "Time is running out",
+          "background_color": "Background color",
+          "text_color": "Text color",
+          "countdown_end_date": "Countdown End Date",
+          "date_paragraph": "Set the date to when the timer should count down to.",
+          "year": "Year",
+          "month": "Month",
+          "day": "Day",
+          "hour": "Hour",
+          "minute": "Minute",
+          "second": "Second"
+        },
+        "accordion": {
+          "label": "Accordion",
+          "title": "Title",
+          "title_placeholder": "Title",
+          "content": "Content",
+          "content_placeholder": "Content"
+        }
+      }
+    },
+    "slideshow": {
+      "label": "Slideshow",
+      "height": "Height",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large",
+      "autoplay": "Autoplay",
+      "show_arrows": "Show arrows",
+      "duration": "Change slides every",
+      "type": "Type",
+      "full": "Full",
+      "box": "Box",
+      "content": "Content",
+      "content_alignment": "Content Alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "content_color": "Content Color",
+      "button_background": "Button background",
+      "button_text": "Button text",
+      "arrows": "Arrows",
+      "arrow_position": "Arrow position",
+      "arrows_color": "Arrows color",
+      "arrows_background": "Arrows background",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "slide": {
+          "label": "Slide",
+          "image": "Image",
+          "heading": "Heading",
+          "heading_default": "Image Slide",
+          "subheading": "Subheading",
+          "subheading_default": "An image is worth a thousand words",
+          "button_text": "Button text",
+          "button_link": "Button link"
+        }
+      }
+    },
+    "thank_you": {
+      "label": "Thank you",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "upsell": {
+      "label": "Upsell",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    }
+  }
+}
