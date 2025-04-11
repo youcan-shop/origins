@@ -138,6 +138,26 @@
       "section_spacing": "Espacement de section",
       "space_top": "Espace en haut",
       "space_bottom": "Espace en bas"
+    },
+    "collections": {
+      "label": "Collections",
+      "title": "Titre",
+      "default_title": "Collections en vedette",
+      "description": "Description",
+      "default_description": "Collections qui valent la peine d'être explorées",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "collection_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "collection": "Collection"
+      }
     }
   }
 }

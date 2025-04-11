@@ -138,6 +138,26 @@
       "section_spacing": "Section Spacing",
       "space_top": "Space top",
       "space_bottom": "Space bottom"
+    },
+    "collections": {
+      "label": "Collections",
+      "title": "Title",
+      "default_title": "Featured Collections",
+      "description": "Description",
+      "default_description": "Collections worth exploring",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "collection_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "collection": "Collection"
+      }
     }
   }
 }

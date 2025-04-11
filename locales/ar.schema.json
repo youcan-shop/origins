@@ -138,6 +138,26 @@
       "section_spacing": "المسافات",
       "space_top": "المسافة العلوية",
       "space_bottom": "المسافة السفلية"
+    },
+    "collections": {
+      "label": "المجموعات",
+      "title": "العنوان",
+      "default_title": "مجموعات مميزة",
+      "description": "الوصف",
+      "default_description": "مجموعات تستحق الاستكشاف",
+      "header_position": "موضع الترويسة",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "collection_columns": "عدد الأعمدة على سطح المكتب",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية",
+      "blocks": {
+        "collection": "مجموعة"
+      }
     }
   }
 }
