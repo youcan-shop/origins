@@ -1,0 +1,8 @@
+{
+  "settings_schema": {
+    "global": {
+      "foo": "مرحبا"
+    }
+  },
+  "sections": {}
+}
