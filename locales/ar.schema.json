@@ -465,6 +465,46 @@
           "content_placeholder": "المحتوى"
         }
       }
+    },
+    "slideshow": {
+      "label": "عرض الشرائح",
+      "height": "الارتفاع",
+      "small": "صغير",
+      "medium": "متوسط",
+      "large": "كبير",
+      "autoplay": "تشغيل تلقائي",
+      "show_arrows": "عرض الأسهم",
+      "duration": "تغيير الشرائح كل",
+      "type": "النوع",
+      "full": "كامل",
+      "box": "صندوق",
+      "content": "المحتوى",
+      "content_alignment": "محاذاة المحتوى",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "content_color": "لون المحتوى",
+      "button_background": "خلفية الزر",
+      "button_text": "نص الزر",
+      "arrows": "الأسهم",
+      "arrow_position": "موضع السهم",
+      "arrows_color": "لون الأسهم",
+      "arrows_background": "خلفية الأسهم",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية",
+      "blocks": {
+        "slide": {
+          "label": "شريحة",
+          "image": "صورة",
+          "heading": "العنوان",
+          "heading_default": "شريحة صورة",
+          "subheading": "العنوان الفرعي",
+          "subheading_default": "الصورة تساوي ألف كلمة",
+          "button_text": "نص الزر",
+          "button_link": "رابط الزر"
+        }
+      }
     }
   }
 }

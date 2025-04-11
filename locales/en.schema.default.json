@@ -465,6 +465,46 @@
           "content_placeholder": "Content"
         }
       }
+    },
+    "slideshow": {
+      "label": "Slideshow",
+      "height": "Height",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large",
+      "autoplay": "Autoplay",
+      "show_arrows": "Show arrows",
+      "duration": "Change slides every",
+      "type": "Type",
+      "full": "Full",
+      "box": "Box",
+      "content": "Content",
+      "content_alignment": "Content Alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "content_color": "Content Color",
+      "button_background": "Button background",
+      "button_text": "Button text",
+      "arrows": "Arrows",
+      "arrow_position": "Arrow position",
+      "arrows_color": "Arrows color",
+      "arrows_background": "Arrows background",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "slide": {
+          "label": "Slide",
+          "image": "Image",
+          "heading": "Heading",
+          "heading_default": "Image Slide",
+          "subheading": "Subheading",
+          "subheading_default": "An image is worth a thousand words",
+          "button_text": "Button text",
+          "button_link": "Button link"
+        }
+      }
     }
   }
 }

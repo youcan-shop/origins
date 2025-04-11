@@ -466,6 +466,46 @@
           "content_placeholder": "Contenu"
         }
       }
+    },
+    "slideshow": {
+      "label": "Diaporama",
+      "height": "Hauteur",
+      "small": "Petite",
+      "medium": "Moyenne",
+      "large": "Grande",
+      "autoplay": "Lecture automatique",
+      "show_arrows": "Afficher les flèches",
+      "duration": "Changer de diapositive toutes les",
+      "type": "Type",
+      "full": "Plein",
+      "box": "Boîte",
+      "content": "Contenu",
+      "content_alignment": "Alignement du contenu",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "content_color": "Couleur du contenu",
+      "button_background": "Arrière-plan du bouton",
+      "button_text": "Texte du bouton",
+      "arrows": "Flèches",
+      "arrow_position": "Position des flèches",
+      "arrows_color": "Couleur des flèches",
+      "arrows_background": "Arrière-plan des flèches",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "slide": {
+          "label": "Diapositive",
+          "image": "Image",
+          "heading": "En-tête",
+          "heading_default": "Diapositive d'image",
+          "subheading": "Sous-titre",
+          "subheading_default": "Une image vaut mille mots",
+          "button_text": "Texte du bouton",
+          "button_link": "Lien du bouton"
+        }
+      }
     }
   }
 }
