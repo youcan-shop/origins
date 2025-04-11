@@ -1,7 +1,110 @@
 {
   "settings_schema": {
-    "global": {
-      "foo": "Hello"
+    "seo": {
+      "label": "SEO",
+      "images": "Images",
+      "favicon_image": "Favicon image",
+      "open_graph_image": "Open Graph Image",
+      "og_image_learn_more": "[Click here](https://ogp.me/#metadata) to learn more about OG Image",
+      "meta_tags": "Meta tags",
+      "keywords": "Keywords"
+    },
+    "typography": {
+      "label": "Typography",
+      "font_family": "Font Family",
+      "font_family_label": "Font family",
+      "headings": "Headings",
+      "font_size_scale": "Font size scale",
+      "body": "Body"
+    },
+    "buttons": {
+      "label": "Buttons",
+      "colors": "Colors",
+      "primary_button_background": "Primary button background",
+      "primary_button_text": "Primary button text",
+      "secondary_button": "Secondary button",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "inputs": {
+      "label": "Inputs",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "product_cards": {
+      "label": "Product cards",
+      "style": "Style",
+      "card_style": "Card style",
+      "standard": "Standard",
+      "compact": "Compact",
+      "text_alignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "collection_cards": {
+      "label": "Collection cards",
+      "style": "Style",
+      "text_alignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "multi_column_cards": {
+      "label": "Multi column cards",
+      "style": "Style",
+      "text_alignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "review_cards": {
+      "label": "Review cards",
+      "style": "Style",
+      "text_alignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "modals": {
+      "label": "Modals",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "drawers": {
+      "label": "Drawers",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "toasts": {
+      "label": "Toasts",
+      "border": "Border",
+      "corner_radius": "Corner radius"
+    },
+    "badges": {
+      "label": "Badges",
+      "colors": "Colors",
+      "badge_text_color": "Badge text color",
+      "badge_background_color": "Badge background color",
+      "style": "Style",
+      "position_on_card": "Position on card",
+      "right": "Right",
+      "left": "Left"
+    },
+    "checkout": {
+      "label": "Checkout",
+      "types": "Types",
+      "type": "Type",
+      "normal": "Normal (Cart)",
+      "express": "Express checkout"
     }
   },
   "sections": {}

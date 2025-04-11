@@ -1,7 +1,110 @@
 {
   "settings_schema": {
-    "global": {
-      "foo": "مرحبا"
+    "seo": {
+      "label": "تحسين محركات البحث",
+      "images": "الصور",
+      "favicon_image": "صورة الأيقونة",
+      "open_graph_image": "صورة Open Graph",
+      "og_image_learn_more": "[انقر هنا](https://ogp.me/#metadata) لمعرفة المزيد عن صورة OG",
+      "meta_tags": "علامات الميتا",
+      "keywords": "الكلمات المفتاحية"
+    },
+    "typography": {
+      "label": "الخط",
+      "font_family": "عائلة الخط",
+      "font_family_label": "عائلة الخط",
+      "headings": "العناوين",
+      "font_size_scale": "مقياس حجم الخط",
+      "body": "النص الرئيسي"
+    },
+    "buttons": {
+      "label": "الأزرار",
+      "colors": "الألوان",
+      "primary_button_background": "خلفية الزر الرئيسي",
+      "primary_button_text": "نص الزر الرئيسي",
+      "secondary_button": "الزر الثانوي",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "inputs": {
+      "label": "حقول الإدخال",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "product_cards": {
+      "label": "بطاقات المنتجات",
+      "style": "النمط",
+      "card_style": "نمط البطاقة",
+      "standard": "قياسي",
+      "compact": "مضغوط",
+      "text_alignment": "محاذاة النص",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "collection_cards": {
+      "label": "بطاقات المجموعات",
+      "style": "النمط",
+      "text_alignment": "محاذاة النص",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "multi_column_cards": {
+      "label": "بطاقات متعددة الأعمدة",
+      "style": "النمط",
+      "text_alignment": "محاذاة النص",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "review_cards": {
+      "label": "بطاقات التقييمات",
+      "style": "النمط",
+      "text_alignment": "محاذاة النص",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "modals": {
+      "label": "النوافذ",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "drawers": {
+      "label": "الأدراج",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "toasts": {
+      "label": "الإشعارات",
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "badges": {
+      "label": "الشارات",
+      "colors": "الألوان",
+      "badge_text_color": "لون نص الشارة",
+      "badge_background_color": "لون خلفية الشارة",
+      "style": "النمط",
+      "position_on_card": "الموقع على البطاقة",
+      "right": "يمين",
+      "left": "يسار"
+    },
+    "checkout": {
+      "label": "الدفع",
+      "types": "الأنواع",
+      "type": "النوع",
+      "normal": "عادي (سلة التسوق)",
+      "express": "دفع سريع"
     }
   },
   "sections": {}

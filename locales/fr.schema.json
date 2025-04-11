@@ -1,7 +1,110 @@
 {
   "settings_schema": {
-    "global": {
-      "foo": "Bonjour"
+    "seo": {
+      "label": "SEO",
+      "images": "Images",
+      "favicon_image": "Image favicon",
+      "open_graph_image": "Image Open Graph",
+      "og_image_learn_more": "[Cliquez ici](https://ogp.me/#metadata) pour en savoir plus sur l'image OG",
+      "meta_tags": "Balises méta",
+      "keywords": "Mots-clés"
+    },
+    "typography": {
+      "label": "Typographie",
+      "font_family": "Famille de polices",
+      "font_family_label": "Famille de polices",
+      "headings": "Titres",
+      "font_size_scale": "Échelle de taille de police",
+      "body": "Corps"
+    },
+    "buttons": {
+      "label": "Boutons",
+      "colors": "Couleurs",
+      "primary_button_background": "Arrière-plan du bouton principal",
+      "primary_button_text": "Texte du bouton principal",
+      "secondary_button": "Bouton secondaire",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "inputs": {
+      "label": "Champs de saisie",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "product_cards": {
+      "label": "Cartes produit",
+      "style": "Style",
+      "card_style": "Style de carte",
+      "standard": "Standard",
+      "compact": "Compact",
+      "text_alignment": "Alignement du texte",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "collection_cards": {
+      "label": "Cartes de collection",
+      "style": "Style",
+      "text_alignment": "Alignement du texte",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "multi_column_cards": {
+      "label": "Cartes multi-colonnes",
+      "style": "Style",
+      "text_alignment": "Alignement du texte",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "review_cards": {
+      "label": "Cartes d'avis",
+      "style": "Style",
+      "text_alignment": "Alignement du texte",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "modals": {
+      "label": "Fenêtres modales",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "drawers": {
+      "label": "Tiroirs",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "toasts": {
+      "label": "Notifications",
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "badges": {
+      "label": "Badges",
+      "colors": "Couleurs",
+      "badge_text_color": "Couleur du texte du badge",
+      "badge_background_color": "Couleur d'arrière-plan du badge",
+      "style": "Style",
+      "position_on_card": "Position sur la carte",
+      "right": "Droite",
+      "left": "Gauche"
+    },
+    "checkout": {
+      "label": "Paiement",
+      "types": "Types",
+      "type": "Type",
+      "normal": "Normal (Panier)",
+      "express": "Paiement express"
     }
   },
   "sections": {}
