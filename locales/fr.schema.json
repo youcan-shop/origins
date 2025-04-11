@@ -506,6 +506,14 @@
           "button_link": "Lien du bouton"
         }
       }
+    },
+    "thank_you": {
+      "label": "Merci",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }

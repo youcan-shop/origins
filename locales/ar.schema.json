@@ -505,6 +505,14 @@
           "button_link": "رابط الزر"
         }
       }
+    },
+    "thank_you": {
+      "label": "شكراً لك",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }

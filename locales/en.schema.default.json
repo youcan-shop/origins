@@ -505,6 +505,14 @@
           "button_link": "Button link"
         }
       }
+    },
+    "thank_you": {
+      "label": "Thank you",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
     }
   }
 }
