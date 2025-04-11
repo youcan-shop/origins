@@ -158,6 +158,14 @@
       "blocks": {
         "collection": "Collection"
       }
+    },
+    "custom_content": {
+      "label": "Contenu personnalisé",
+      "content": "Contenu",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }

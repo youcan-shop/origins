@@ -158,6 +158,14 @@
       "blocks": {
         "collection": "مجموعة"
       }
+    },
+    "custom_content": {
+      "label": "محتوى مخصص",
+      "content": "المحتوى",
+      "background_color": "لون الخلفية",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }
