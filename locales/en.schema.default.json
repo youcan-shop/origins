@@ -299,6 +299,15 @@
       "section_spacing": "Section Spacing",
       "space_top": "Space top",
       "space_bottom": "Space bottom"
+    },
+    "product_reviews": {
+      "label": "Product Reviews",
+      "show_write_review": "Show 'Write review' button",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
     }
   }
 }

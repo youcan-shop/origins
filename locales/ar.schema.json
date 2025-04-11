@@ -299,6 +299,15 @@
       "section_spacing": "المسافات",
       "space_top": "المسافة العلوية",
       "space_bottom": "المسافة السفلية"
+    },
+    "product_reviews": {
+      "label": "تقييمات المنتج",
+      "show_write_review": "عرض زر 'كتابة تقييم'",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }

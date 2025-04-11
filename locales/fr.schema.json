@@ -299,6 +299,15 @@
       "section_spacing": "Espacement de section",
       "space_top": "Espace en haut",
       "space_bottom": "Espace en bas"
+    },
+    "product_reviews": {
+      "label": "Avis sur les produits",
+      "show_write_review": "Afficher le bouton 'Écrire un avis'",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }
