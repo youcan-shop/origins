@@ -166,6 +166,56 @@
       "section_spacing": "المسافات",
       "space_top": "المسافة العلوية",
       "space_bottom": "المسافة السفلية"
+    },
+    "featured_product": {
+      "label": "المنتج المميز",
+      "product": "المنتج",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية",
+      "blocks": {
+        "inventory_status": {
+          "label": "حالة المخزون",
+          "threshold": "حد المخزون المنخفض",
+          "show_count": "عرض عدد المخزون"
+        },
+        "title": {
+          "label": "العنوان"
+        },
+        "price": {
+          "label": "السعر"
+        },
+        "rating": {
+          "label": "التقييم"
+        },
+        "description": {
+          "label": "الوصف"
+        },
+        "countdown_timer": {
+          "label": "العد التنازلي",
+          "title": "العنوان",
+          "title_placeholder": "الوقت ينفد",
+          "background_color": "لون الخلفية",
+          "text_color": "لون النص",
+          "countdown_end_date": "تاريخ انتهاء العد التنازلي",
+          "date_paragraph": "حدد التاريخ الذي يجب أن يعد إليه المؤقت تنازليًا.",
+          "year": "السنة",
+          "month": "الشهر",
+          "day": "اليوم",
+          "hour": "الساعة",
+          "minute": "الدقيقة",
+          "second": "الثانية"
+        },
+        "accordion": {
+          "label": "أكورديون",
+          "title": "العنوان",
+          "title_placeholder": "العنوان",
+          "content": "المحتوى",
+          "content_placeholder": "المحتوى"
+        }
+      }
     }
   }
 }

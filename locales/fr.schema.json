@@ -166,6 +166,56 @@
       "section_spacing": "Espacement de section",
       "space_top": "Espace en haut",
       "space_bottom": "Espace en bas"
+    },
+    "featured_product": {
+      "label": "Produit en vedette",
+      "product": "Produit",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "inventory_status": {
+          "label": "État de l'inventaire",
+          "threshold": "Seuil d'inventaire bas",
+          "show_count": "Afficher le nombre d'inventaire"
+        },
+        "title": {
+          "label": "Titre"
+        },
+        "price": {
+          "label": "Prix"
+        },
+        "rating": {
+          "label": "Évaluation"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "countdown_timer": {
+          "label": "Compte à rebours",
+          "title": "Titre",
+          "title_placeholder": "Le temps presse",
+          "background_color": "Couleur d'arrière-plan",
+          "text_color": "Couleur du texte",
+          "countdown_end_date": "Date de fin du compte à rebours",
+          "date_paragraph": "Définissez la date jusqu'à laquelle le minuteur doit compter.",
+          "year": "Année",
+          "month": "Mois",
+          "day": "Jour",
+          "hour": "Heure",
+          "minute": "Minute",
+          "second": "Seconde"
+        },
+        "accordion": {
+          "label": "Accordéon",
+          "title": "Titre",
+          "title_placeholder": "Titre",
+          "content": "Contenu",
+          "content_placeholder": "Contenu"
+        }
+      }
     }
   }
 }
