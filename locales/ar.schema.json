@@ -513,6 +513,14 @@
       "section_spacing": "المسافات",
       "space_top": "المسافة العلوية",
       "space_bottom": "المسافة السفلية"
+    },
+    "upsell": {
+      "label": "عرض منتجات إضافية",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }
