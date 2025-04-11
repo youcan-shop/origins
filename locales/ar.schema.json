@@ -129,6 +129,15 @@
       "link_placeholder": "الصق رابطاً",
       "background_color": "لون الخلفية",
       "text_color": "لون النص"
+    },
+    "cart": {
+      "label": "سلة التسوق",
+      "show_coupon": "إظهار القسيمة",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }

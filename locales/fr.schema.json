@@ -129,6 +129,15 @@
       "link_placeholder": "Collez un lien",
       "background_color": "Couleur d'arrière-plan",
       "text_color": "Couleur du texte"
+    },
+    "cart": {
+      "label": "Panier",
+      "show_coupon": "Afficher le coupon",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }

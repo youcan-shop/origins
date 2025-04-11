@@ -129,6 +129,15 @@
       "link_placeholder": "Paste a link",
       "background_color": "Background color",
       "text_color": "Text color"
+    },
+    "cart": {
+      "label": "Cart",
+      "show_coupon": "Show coupon",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
     }
   }
 }
