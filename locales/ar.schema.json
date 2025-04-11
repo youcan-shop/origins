@@ -349,6 +349,34 @@
       "section_spacing": "المسافات",
       "space_top": "المسافة العلوية",
       "space_bottom": "المسافة السفلية"
+    },
+    "products": {
+      "label": "المنتجات",
+      "title": "العنوان",
+      "title_default": "منتجات مميزة",
+      "description": "الوصف",
+      "description_default": "منتجات تحت الأضواء",
+      "header_position": "موضع الترويسة",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "view_style": "نمط العرض",
+      "grid": "شبكة",
+      "slides": "شرائح",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "product_columns": "عدد الأعمدة على سطح المكتب",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية",
+      "blocks": {
+        "product": {
+          "label": "منتج",
+          "product": "منتج",
+          "badge_text": "نص الشارة",
+          "badge_colors_paragraph": "يمكنك تخصيص ألوان الشارات من الإعدادات العامة"
+        }
+      }
     }
   }
 }

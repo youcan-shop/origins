@@ -349,6 +349,34 @@
       "section_spacing": "Section Spacing",
       "space_top": "Space top",
       "space_bottom": "Space bottom"
+    },
+    "products": {
+      "label": "Products",
+      "title": "Title",
+      "title_default": "Featured Products",
+      "description": "Description",
+      "description_default": "Products that take the spotlight",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "view_style": "View style",
+      "grid": "Grid",
+      "slides": "Slides",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "product_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "product": {
+          "label": "Product",
+          "product": "Product",
+          "badge_text": "Badge text",
+          "badge_colors_paragraph": "You can customize the badge colors from the global settings"
+        }
+      }
     }
   }
 }

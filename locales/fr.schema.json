@@ -1,4 +1,5 @@
 {
+  "foo": "bar",
   "settings_schema": {
     "seo": {
       "label": "SEO",
@@ -349,6 +350,34 @@
       "section_spacing": "Espacement de section",
       "space_top": "Espace en haut",
       "space_bottom": "Espace en bas"
+    },
+    "products": {
+      "label": "Produits",
+      "title": "Titre",
+      "title_default": "Produits en vedette",
+      "description": "Description",
+      "description_default": "Produits qui sont mis en avant",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "view_style": "Style d'affichage",
+      "grid": "Grille",
+      "slides": "Diapositives",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "product_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas",
+      "blocks": {
+        "product": {
+          "label": "Produit",
+          "product": "Produit",
+          "badge_text": "Texte du badge",
+          "badge_colors_paragraph": "Vous pouvez personnaliser les couleurs des badges à partir des paramètres globaux"
+        }
+      }
     }
   }
 }
