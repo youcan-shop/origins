@@ -308,6 +308,47 @@
       "section_spacing": "Section Spacing",
       "space_top": "Space top",
       "space_bottom": "Space bottom"
+    },
+    "product_testimonials": {
+      "label": "Product Testimonials",
+      "product": "Product",
+      "title": "Title",
+      "title_default": "My title",
+      "description": "Description",
+      "description_default": "My subtitle",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "products_by_collection": {
+      "label": "Products by Collection",
+      "collection": "Collection",
+      "title": "Title",
+      "title_default": "Products by Collection",
+      "description": "Description",
+      "description_default": "List out products from a collection of your choosing",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "view_style": "View style",
+      "grid": "Grid",
+      "slides": "Slides",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "max_products": "Maximum products to show",
+      "product_columns": "Number of columns on desktop",
+      "show_link_to_collection": "Show link to collection",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
     }
   }
 }

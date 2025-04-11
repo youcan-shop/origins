@@ -308,6 +308,47 @@
       "section_spacing": "المسافات",
       "space_top": "المسافة العلوية",
       "space_bottom": "المسافة السفلية"
+    },
+    "product_testimonials": {
+      "label": "شهادات المنتج",
+      "product": "المنتج",
+      "title": "العنوان",
+      "title_default": "عنواني",
+      "description": "الوصف",
+      "description_default": "عنواني الفرعي",
+      "header_position": "موضع الترويسة",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "columns": "عدد الأعمدة على سطح المكتب",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
+    },
+    "products_by_collection": {
+      "label": "المنتجات حسب المجموعة",
+      "collection": "المجموعة",
+      "title": "العنوان",
+      "title_default": "المنتجات حسب المجموعة",
+      "description": "الوصف",
+      "description_default": "اعرض المنتجات من مجموعة من اختيارك",
+      "header_position": "موضع الترويسة",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "view_style": "نمط العرض",
+      "grid": "شبكة",
+      "slides": "شرائح",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "max_products": "الحد الأقصى للمنتجات المعروضة",
+      "product_columns": "عدد الأعمدة على سطح المكتب",
+      "show_link_to_collection": "عرض رابط إلى المجموعة",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }

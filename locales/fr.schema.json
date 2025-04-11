@@ -308,6 +308,47 @@
       "section_spacing": "Espacement de section",
       "space_top": "Espace en haut",
       "space_bottom": "Espace en bas"
+    },
+    "product_testimonials": {
+      "label": "Témoignages de produits",
+      "product": "Produit",
+      "title": "Titre",
+      "title_default": "Mon titre",
+      "description": "Description",
+      "description_default": "Mon sous-titre",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "products_by_collection": {
+      "label": "Produits par collection",
+      "collection": "Collection",
+      "title": "Titre",
+      "title_default": "Produits par collection",
+      "description": "Description",
+      "description_default": "Listez les produits d'une collection de votre choix",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "view_style": "Style d'affichage",
+      "grid": "Grille",
+      "slides": "Diapositives",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "max_products": "Nombre maximum de produits à afficher",
+      "product_columns": "Nombre de colonnes sur bureau",
+      "show_link_to_collection": "Afficher le lien vers la collection",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }
