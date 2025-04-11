@@ -107,5 +107,15 @@
       "express": "Paiement express"
     }
   },
-  "sections": {}
+  "sections": {
+    "all_collections": {
+      "label": "Toutes les collections",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "collection_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    }
+  }
 }

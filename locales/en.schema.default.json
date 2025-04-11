@@ -107,5 +107,15 @@
       "express": "Express checkout"
     }
   },
-  "sections": {}
+  "sections": {
+    "all_collections": {
+      "label": "All collections",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "collection_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    }
+  }
 }
