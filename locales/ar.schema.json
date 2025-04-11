@@ -229,6 +229,25 @@
       "background_color": "لون الخلفية",
       "text_color": "لون النص",
       "copyright_text": "نص حقوق النشر"
+    },
+    "header": {
+      "label": "الترويسة",
+      "menu_links_paragraph": "يمكن إدارة روابط القائمة الرئيسية من [إعدادات القائمة](https://seller-area.youcan.shop/admin/menus) الخاصة بك",
+      "logo": "الشعار",
+      "width": "العرض",
+      "desktop_logo_position": "موضع الشعار في سطح المكتب",
+      "top_left": "أعلى اليسار",
+      "top_center": "أعلى الوسط",
+      "middle_left": "وسط اليسار",
+      "middle_center": "وسط المنتصف",
+      "mobile_logo_position": "موضع الشعار في الجوال",
+      "center": "وسط",
+      "left": "يسار",
+      "style": "النمط",
+      "sticky_mode": "وضع ثابت",
+      "bottom_border": "حدود سفلية",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية"
     }
   }
 }

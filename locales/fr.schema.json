@@ -229,6 +229,25 @@
       "background_color": "Couleur d'arrière-plan",
       "text_color": "Couleur du texte",
       "copyright_text": "Texte de copyright"
+    },
+    "header": {
+      "label": "En-tête",
+      "menu_links_paragraph": "Les liens du menu principal peuvent être gérés depuis vos [paramètres de menu](https://seller-area.youcan.shop/admin/menus)",
+      "logo": "Logo",
+      "width": "Largeur",
+      "desktop_logo_position": "Position du logo sur ordinateur",
+      "top_left": "En haut à gauche",
+      "top_center": "En haut au centre",
+      "middle_left": "Au milieu à gauche",
+      "middle_center": "Au milieu au centre",
+      "mobile_logo_position": "Position du logo sur mobile",
+      "center": "Centre",
+      "left": "Gauche",
+      "style": "Style",
+      "sticky_mode": "Mode fixe",
+      "bottom_border": "Bordure inférieure",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan"
     }
   }
 }
