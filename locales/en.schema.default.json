@@ -377,6 +377,27 @@
           "badge_colors_paragraph": "You can customize the badge colors from the global settings"
         }
       }
+    },
+    "related_products": {
+      "label": "Related Products",
+      "info_paragraph": "ℹ️ The Related Products section requires at least one related product to appear on page",
+      "title": "Title",
+      "title_default": "Related Products",
+      "description": "Description",
+      "description_default": "Products that take the spotlight",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "view_style": "View style",
+      "grid": "Grid",
+      "slides": "Slides",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "product_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
     }
   }
 }

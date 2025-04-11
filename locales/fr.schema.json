@@ -378,6 +378,27 @@
           "badge_colors_paragraph": "Vous pouvez personnaliser les couleurs des badges à partir des paramètres globaux"
         }
       }
+    },
+    "related_products": {
+      "label": "Produits associés",
+      "info_paragraph": "ℹ️ La section Produits associés nécessite au moins un produit associé pour apparaître sur la page",
+      "title": "Titre",
+      "title_default": "Produits associés",
+      "description": "Description",
+      "description_default": "Produits qui sont mis en avant",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "view_style": "Style d'affichage",
+      "grid": "Grille",
+      "slides": "Diapositives",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "product_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }
