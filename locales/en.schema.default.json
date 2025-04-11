@@ -416,6 +416,55 @@
       "section_spacing": "Section Spacing",
       "space_top": "Space top",
       "space_bottom": "Space bottom"
+    },
+    "product_information": {
+      "label": "Product Information",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom",
+      "blocks": {
+        "inventory_status": {
+          "label": "Inventory Status",
+          "threshold": "Low inventory threshold",
+          "show_count": "Show inventory count"
+        },
+        "title": {
+          "label": "Title"
+        },
+        "price": {
+          "label": "Price"
+        },
+        "rating": {
+          "label": "Rating"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "countdown_timer": {
+          "label": "Countdown Timer",
+          "title": "Title",
+          "title_placeholder": "Time is running out",
+          "background_color": "Background color",
+          "text_color": "Text color",
+          "countdown_end_date": "Countdown End Date",
+          "date_paragraph": "Set the date to when the timer should count down to.",
+          "year": "Year",
+          "month": "Month",
+          "day": "Day",
+          "hour": "Hour",
+          "minute": "Minute",
+          "second": "Second"
+        },
+        "accordion": {
+          "label": "Accordion",
+          "title": "Title",
+          "title_placeholder": "Title",
+          "content": "Content",
+          "content_placeholder": "Content"
+        }
+      }
     }
   }
 }
