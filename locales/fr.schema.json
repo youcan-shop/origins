@@ -399,6 +399,15 @@
       "section_spacing": "Espacement de section",
       "space_top": "Espace en haut",
       "space_bottom": "Espace en bas"
+    },
+    "search": {
+      "label": "Recherche",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "product_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }

@@ -398,6 +398,15 @@
       "section_spacing": "تباعد القسم",
       "space_top": "المساحة العلوية",
       "space_bottom": "المساحة السفلية"
+    },
+    "search": {
+      "label": "البحث",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "product_columns": "عدد الأعمدة على سطح المكتب",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }

@@ -398,6 +398,15 @@
       "section_spacing": "Section Spacing",
       "space_top": "Space top",
       "space_bottom": "Space bottom"
+    },
+    "search": {
+      "label": "Search",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "product_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
     }
   }
 }
