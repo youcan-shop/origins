@@ -248,6 +248,57 @@
       "bottom_border": "Bottom border",
       "text_color": "Text color",
       "background_color": "Background color"
+    },
+    "multi_column": {
+      "label": "Multi column",
+      "blocks": {
+        "column": {
+          "label": "Column",
+          "image": "Image",
+          "title": "Title",
+          "title_default": "Column title",
+          "subtitle": "Subtitle",
+          "subtitle_default": "Column subtitle"
+        }
+      },
+      "title": "Title",
+      "title_default": "Benefit with Us",
+      "description": "Description",
+      "description_default": "What sets us apart",
+      "header_position": "Header position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "columns": "Number of columns on desktop",
+      "image_width": "Image width",
+      "full": "Full",
+      "medium": "Medium",
+      "small": "Small",
+      "image_shape": "Image shape",
+      "adapt_to_image": "Adapt to image",
+      "square": "Square",
+      "circle": "Circle",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
+    },
+    "page": {
+      "label": "Page",
+      "show_title": "Show title",
+      "title_position": "Title position",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "page_width": "Page width",
+      "full_width": "Full width",
+      "reading_mode": "Reading mode",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
     }
   }
 }

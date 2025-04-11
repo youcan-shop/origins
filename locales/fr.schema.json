@@ -248,6 +248,57 @@
       "bottom_border": "Bordure inférieure",
       "text_color": "Couleur du texte",
       "background_color": "Couleur d'arrière-plan"
+    },
+    "multi_column": {
+      "label": "Multi-colonnes",
+      "blocks": {
+        "column": {
+          "label": "Colonne",
+          "image": "Image",
+          "title": "Titre",
+          "title_default": "Titre de la colonne",
+          "subtitle": "Sous-titre",
+          "subtitle_default": "Sous-titre de la colonne"
+        }
+      },
+      "title": "Titre",
+      "title_default": "Bénéficiez avec nous",
+      "description": "Description",
+      "description_default": "Ce qui nous distingue",
+      "header_position": "Position de l'en-tête",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "columns": "Nombre de colonnes sur bureau",
+      "image_width": "Largeur de l'image",
+      "full": "Complète",
+      "medium": "Moyenne",
+      "small": "Petite",
+      "image_shape": "Forme de l'image",
+      "adapt_to_image": "Adapter à l'image",
+      "square": "Carré",
+      "circle": "Cercle",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "page": {
+      "label": "Page",
+      "show_title": "Afficher le titre",
+      "title_position": "Position du titre",
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "page_width": "Largeur de page",
+      "full_width": "Pleine largeur",
+      "reading_mode": "Mode lecture",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }

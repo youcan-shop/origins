@@ -248,6 +248,57 @@
       "bottom_border": "حدود سفلية",
       "text_color": "لون النص",
       "background_color": "لون الخلفية"
+    },
+    "multi_column": {
+      "label": "متعدد الأعمدة",
+      "blocks": {
+        "column": {
+          "label": "عمود",
+          "image": "صورة",
+          "title": "العنوان",
+          "title_default": "عنوان العمود",
+          "subtitle": "العنوان الفرعي",
+          "subtitle_default": "العنوان الفرعي للعمود"
+        }
+      },
+      "title": "العنوان",
+      "title_default": "استفد معنا",
+      "description": "الوصف",
+      "description_default": "ما يميزنا",
+      "header_position": "موضع الترويسة",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "columns": "عدد الأعمدة على سطح المكتب",
+      "image_width": "عرض الصورة",
+      "full": "كامل",
+      "medium": "متوسط",
+      "small": "صغير",
+      "image_shape": "شكل الصورة",
+      "adapt_to_image": "التكيف مع الصورة",
+      "square": "مربع",
+      "circle": "دائرة",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
+    },
+    "page": {
+      "label": "الصفحة",
+      "show_title": "عرض العنوان",
+      "title_position": "موضع العنوان",
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "page_width": "عرض الصفحة",
+      "full_width": "عرض كامل",
+      "reading_mode": "وضع القراءة",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }
