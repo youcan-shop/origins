@@ -407,6 +407,15 @@
       "section_spacing": "Section Spacing",
       "space_top": "Space top",
       "space_bottom": "Space bottom"
+    },
+    "single_collection": {
+      "label": "Single collection",
+      "text_color": "Text color",
+      "background_color": "Background color",
+      "collection_columns": "Number of columns on desktop",
+      "section_spacing": "Section Spacing",
+      "space_top": "Space top",
+      "space_bottom": "Space bottom"
     }
   }
 }

@@ -408,6 +408,15 @@
       "section_spacing": "Espacement de section",
       "space_top": "Espace en haut",
       "space_bottom": "Espace en bas"
+    },
+    "single_collection": {
+      "label": "Collection unique",
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan",
+      "collection_columns": "Nombre de colonnes sur bureau",
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
     }
   }
 }

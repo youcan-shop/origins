@@ -407,6 +407,15 @@
       "section_spacing": "المسافات",
       "space_top": "المسافة العلوية",
       "space_bottom": "المسافة السفلية"
+    },
+    "single_collection": {
+      "label": "المجموعة",
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية",
+      "collection_columns": "عدد الأعمدة على سطح المكتب",
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
     }
   }
 }
