@@ -116,6 +116,19 @@
       "section_spacing": "Section Spacing",
       "space_top": "Space top",
       "space_bottom": "Space bottom"
+    },
+    "announcement_bar": {
+      "label": "Announcement bar",
+      "show_bar": "Show bar",
+      "position": "Position",
+      "above_header": "Above Header",
+      "below_header": "Below Header",
+      "text": "Text",
+      "text_placeholder": "Welcome to our store!",
+      "link": "Link",
+      "link_placeholder": "Paste a link",
+      "background_color": "Background color",
+      "text_color": "Text color"
     }
   }
 }

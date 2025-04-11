@@ -24,27 +24,27 @@
 
 {% schema %}
 {
-  "label": "Announcement bar",
+  "label": "t:sections.announcement_bar.label",
   "limit": 1,
   "settings": [
     {
       "type": "checkbox",
       "id": "is_visible",
-      "label": "Show bar",
+      "label": "t:sections.announcement_bar.show_bar",
       "default": true
     },
     {
       "type": "select",
       "id": "position",
-      "label": "Position",
+      "label": "t:sections.announcement_bar.position",
       "options": [
         {
           "value": "0",
-          "label": "Above Header"
+          "label": "t:sections.announcement_bar.above_header"
         },
         {
           "value": "1",
-          "label": "Below Header"
+          "label": "t:sections.announcement_bar.below_header"
         }
       ],
       "default": "0"
@@ -52,25 +52,25 @@
     {
       "type": "text",
       "id": "announcement_message",
-      "label": "Text",
-      "placeholder": "Welcome to our store!"
+      "label": "t:sections.announcement_bar.text",
+      "placeholder": "t:sections.announcement_bar.text_placeholder"
     },
     {
       "type": "url",
       "id": "announcement_link",
-      "label": "Link",
-      "placeholder": "Paste a link"
+      "label": "t:sections.announcement_bar.link",
+      "placeholder": "t:sections.announcement_bar.link_placeholder"
     },
     {
       "type": "color",
       "id": "announcement_bar_background_color",
-      "label": "Background color",
+      "label": "t:sections.announcement_bar.background_color",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "announcement_bar_text_color",
-      "label": "Text color",
+      "label": "t:sections.announcement_bar.text_color",
       "default": "#121212"
     }
   ]

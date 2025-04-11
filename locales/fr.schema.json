@@ -116,6 +116,19 @@
       "section_spacing": "Espacement de section",
       "space_top": "Espace en haut",
       "space_bottom": "Espace en bas"
+    },
+    "announcement_bar": {
+      "label": "Barre d'annonces",
+      "show_bar": "Afficher la barre",
+      "position": "Position",
+      "above_header": "Au-dessus de l'en-tête",
+      "below_header": "En dessous de l'en-tête",
+      "text": "Texte",
+      "text_placeholder": "Bienvenue dans notre boutique !",
+      "link": "Lien",
+      "link_placeholder": "Collez un lien",
+      "background_color": "Couleur d'arrière-plan",
+      "text_color": "Couleur du texte"
     }
   }
 }

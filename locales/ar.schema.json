@@ -116,6 +116,19 @@
       "section_spacing": "المسافات",
       "space_top": "المسافة العلوية",
       "space_bottom": "المسافة السفلية"
+    },
+    "announcement_bar": {
+      "label": "شريط الإعلانات",
+      "show_bar": "إظهار الشريط",
+      "position": "الموضع",
+      "above_header": "فوق القائمة الرئيسية",
+      "below_header": "تحت القائمة الرئيسية",
+      "text": "النص",
+      "text_placeholder": "مرحباً بكم في متجرنا!",
+      "link": "الرابط",
+      "link_placeholder": "الصق رابطاً",
+      "background_color": "لون الخلفية",
+      "text_color": "لون النص"
     }
   }
 }
