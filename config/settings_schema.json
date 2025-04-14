@@ -183,7 +183,7 @@
       },
       {
         "type": "header",
-        "content": "t:settings_schema.buttons.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -192,7 +192,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.buttons.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 10
       }
     ]
@@ -202,7 +202,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.inputs.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -211,7 +211,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.inputs.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 10
       }
     ]
@@ -221,7 +221,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.product_cards.style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -245,23 +245,23 @@
         "options": [
           {
             "value": "flex-start",
-            "label": "t:settings_schema.product_cards.left"
+            "label": "t:common.alignment.left"
           },
           {
             "value": "center",
-            "label": "t:settings_schema.product_cards.center"
+            "label": "t:common.alignment.center"
           },
           {
             "value": "flex-end",
-            "label": "t:settings_schema.product_cards.right"
+            "label": "t:common.alignment.right"
           }
         ],
         "default": "flex-start",
-        "label": "t:settings_schema.product_cards.text_alignment"
+        "label": "t:common.alignment.text_alignment"
       },
       {
         "type": "header",
-        "content": "t:settings_schema.product_cards.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -270,7 +270,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.product_cards.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
@@ -280,7 +280,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.collection_cards.style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -288,23 +288,23 @@
         "options": [
           {
             "value": "flex-start",
-            "label": "t:settings_schema.collection_cards.left"
+            "label": "t:common.alignment.left"
           },
           {
             "value": "center",
-            "label": "t:settings_schema.collection_cards.center"
+            "label": "t:common.alignment.center"
           },
           {
             "value": "flex-end",
-            "label": "t:settings_schema.collection_cards.right"
+            "label": "t:common.alignment.right"
           }
         ],
         "default": "flex-start",
-        "label": "t:settings_schema.collection_cards.text_alignment"
+        "label": "t:common.alignment.text_alignment"
       },
       {
         "type": "header",
-        "content": "t:settings_schema.collection_cards.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -313,7 +313,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.collection_cards.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
@@ -323,7 +323,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.multi_column_cards.style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -331,23 +331,23 @@
         "options": [
           {
             "value": "start",
-            "label": "t:settings_schema.multi_column_cards.left"
+            "label": "t:common.alignment.left"
           },
           {
             "value": "center",
-            "label": "t:settings_schema.multi_column_cards.center"
+            "label": "t:common.alignment.center"
           },
           {
             "value": "end",
-            "label": "t:settings_schema.multi_column_cards.right"
+            "label": "t:common.alignment.right"
           }
         ],
         "default": "center",
-        "label": "t:settings_schema.multi_column_cards.text_alignment"
+        "label": "t:common.alignment.text_alignment"
       },
       {
         "type": "header",
-        "content": "t:settings_schema.multi_column_cards.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -356,7 +356,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.multi_column_cards.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
@@ -366,7 +366,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.review_cards.style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -374,23 +374,23 @@
         "options": [
           {
             "value": "start",
-            "label": "t:settings_schema.review_cards.left"
+            "label": "t:common.alignment.left"
           },
           {
             "value": "center",
-            "label": "t:settings_schema.review_cards.center"
+            "label": "t:common.alignment.center"
           },
           {
             "value": "end",
-            "label": "t:settings_schema.review_cards.right"
+            "label": "t:common.alignment.right"
           }
         ],
         "default": "center",
-        "label": "t:settings_schema.review_cards.text_alignment"
+        "label": "t:common.alignment.text_alignment"
       },
       {
         "type": "header",
-        "content": "t:settings_schema.review_cards.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -399,7 +399,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.review_cards.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
@@ -409,7 +409,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.modals.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -418,7 +418,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.modals.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
@@ -428,7 +428,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.drawers.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -437,7 +437,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.drawers.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
@@ -447,7 +447,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.toasts.border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -456,7 +456,7 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.toasts.corner_radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
@@ -482,7 +482,7 @@
       },
       {
         "type": "header",
-        "content": "t:settings_schema.badges.style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -490,11 +490,11 @@
         "options": [
           {
             "value": "right",
-            "label": "t:settings_schema.badges.right"
+            "label": "t:common.alignment.right"
           },
           {
             "value": "left",
-            "label": "t:settings_schema.badges.left"
+            "label": "t:common.alignment.left"
           }
         ],
         "default": "right",

@@ -1,4 +1,65 @@
 {
+  "common": {
+    "colors": {
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية"
+    },
+    "spacing": {
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
+    },
+    "alignment": {
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين"
+    },
+    "product": {
+      "label": "المنتج",
+      "columns": "عدد الأعمدة على سطح المكتب"
+    },
+    "collection": {
+      "label": "المجموعة"
+    },
+    "style": {
+      "style": "النمط"
+    },
+    "border": {
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "content": {
+      "title": "العنوان",
+      "description": "الوصف"
+    },
+    "position": {
+      "header_position": "موضع الترويسة",
+      "position": "الموضع"
+    },
+    "view": {
+      "view_style": "نمط العرض",
+      "grid": "شبكة",
+      "slides": "شرائح"
+    },
+    "blocks": {
+      "product": "منتج",
+      "collection": "مجموعة",
+      "content": "المحتوى",
+      "image": "الصورة",
+      "title": "العنوان",
+      "subtitle": "العنوان الفرعي"
+    },
+    "sizes": {
+      "small": "صغير",
+      "medium": "متوسط",
+      "large": "كبير",
+      "full": "كامل"
+    },
+    "buttons": {
+      "button_text": "نص الزر",
+      "button_background": "خلفية الزر"
+    }
+  },
   "settings_schema": {
     "seo": {
       "label": "تحسين محركات البحث",
@@ -22,82 +83,45 @@
       "colors": "الألوان",
       "primary_button_background": "خلفية الزر الرئيسي",
       "primary_button_text": "نص الزر الرئيسي",
-      "secondary_button": "الزر الثانوي",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "secondary_button": "الزر الثانوي"
     },
     "inputs": {
-      "label": "حقول الإدخال",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "label": "حقول الإدخال"
     },
     "product_cards": {
       "label": "بطاقات المنتجات",
-      "style": "النمط",
       "card_style": "نمط البطاقة",
       "standard": "قياسي",
       "compact": "مضغوط",
-      "text_alignment": "محاذاة النص",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "text_alignment": "محاذاة النص"
     },
     "collection_cards": {
       "label": "بطاقات المجموعات",
-      "style": "النمط",
-      "text_alignment": "محاذاة النص",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "text_alignment": "محاذاة النص"
     },
     "multi_column_cards": {
       "label": "بطاقات متعددة الأعمدة",
-      "style": "النمط",
-      "text_alignment": "محاذاة النص",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "text_alignment": "محاذاة النص"
     },
     "review_cards": {
       "label": "بطاقات التقييمات",
-      "style": "النمط",
-      "text_alignment": "محاذاة النص",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "text_alignment": "محاذاة النص"
     },
     "modals": {
-      "label": "النوافذ",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "label": "النوافذ"
     },
     "drawers": {
-      "label": "الأدراج",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "label": "الأدراج"
     },
     "toasts": {
-      "label": "الإشعارات",
-      "border": "الحدود",
-      "corner_radius": "حدة الزاوية"
+      "label": "الإشعارات"
     },
     "badges": {
       "label": "الشارات",
       "colors": "الألوان",
       "badge_text_color": "لون نص الشارة",
       "badge_background_color": "لون خلفية الشارة",
-      "style": "النمط",
-      "position_on_card": "الموقع على البطاقة",
-      "right": "يمين",
-      "left": "يسار"
+      "position_on_card": "الموقع على البطاقة"
     },
     "checkout": {
       "label": "الدفع",
@@ -109,72 +133,32 @@
   },
   "sections": {
     "all_collections": {
-      "label": "جميع المجموعات",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "collection_columns": "عدد الأعمدة على سطح المكتب",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "label": "جميع المجموعات"
     },
     "announcement_bar": {
       "label": "شريط الإعلانات",
       "show_bar": "إظهار الشريط",
-      "position": "الموضع",
       "above_header": "فوق القائمة الرئيسية",
       "below_header": "تحت القائمة الرئيسية",
       "text": "النص",
       "text_placeholder": "مرحباً بكم في متجرنا!",
       "link": "الرابط",
-      "link_placeholder": "الصق رابطاً",
-      "background_color": "لون الخلفية",
-      "text_color": "لون النص"
+      "link_placeholder": "الصق رابطاً"
     },
     "cart": {
       "label": "سلة التسوق",
-      "show_coupon": "إظهار القسيمة",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "show_coupon": "إظهار القسيمة"
     },
     "collections": {
       "label": "المجموعات",
-      "title": "العنوان",
       "default_title": "مجموعات مميزة",
-      "description": "الوصف",
-      "default_description": "مجموعات تستحق الاستكشاف",
-      "header_position": "موضع الترويسة",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "collection_columns": "عدد الأعمدة على سطح المكتب",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية",
-      "blocks": {
-        "collection": "مجموعة"
-      }
+      "default_description": "مجموعات تستحق الاستكشاف"
     },
     "custom_content": {
-      "label": "محتوى مخصص",
-      "content": "المحتوى",
-      "background_color": "لون الخلفية",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "label": "محتوى مخصص"
     },
     "featured_product": {
       "label": "المنتج المميز",
-      "product": "المنتج",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية",
       "blocks": {
         "inventory_status": {
           "label": "حالة المخزون",
@@ -195,10 +179,7 @@
         },
         "countdown_timer": {
           "label": "العد التنازلي",
-          "title": "العنوان",
           "title_placeholder": "الوقت ينفد",
-          "background_color": "لون الخلفية",
-          "text_color": "لون النص",
           "countdown_end_date": "تاريخ انتهاء العد التنازلي",
           "date_paragraph": "حدد التاريخ الذي يجب أن يعد إليه المؤقت تنازليًا.",
           "year": "السنة",
@@ -210,9 +191,7 @@
         },
         "accordion": {
           "label": "أكورديون",
-          "title": "العنوان",
           "title_placeholder": "العنوان",
-          "content": "المحتوى",
           "content_placeholder": "المحتوى"
         }
       }
@@ -225,9 +204,6 @@
       "social_links": "روابط التواصل الاجتماعي",
       "logo": "الشعار",
       "width": "العرض",
-      "style": "النمط",
-      "background_color": "لون الخلفية",
-      "text_color": "لون النص",
       "copyright_text": "نص حقوق النشر"
     },
     "header": {
@@ -241,138 +217,57 @@
       "middle_left": "وسط اليسار",
       "middle_center": "وسط المنتصف",
       "mobile_logo_position": "موضع الشعار في الجوال",
-      "center": "وسط",
-      "left": "يسار",
-      "style": "النمط",
       "sticky_mode": "وضع ثابت",
-      "bottom_border": "حدود سفلية",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية"
+      "bottom_border": "حدود سفلية"
     },
     "multi_column": {
       "label": "متعدد الأعمدة",
       "blocks": {
         "column": {
           "label": "عمود",
-          "image": "صورة",
-          "title": "العنوان",
           "title_default": "عنوان العمود",
-          "subtitle": "العنوان الفرعي",
           "subtitle_default": "العنوان الفرعي للعمود"
         }
       },
-      "title": "العنوان",
       "title_default": "استفد معنا",
-      "description": "الوصف",
       "description_default": "ما يميزنا",
-      "header_position": "موضع الترويسة",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "columns": "عدد الأعمدة على سطح المكتب",
       "image_width": "عرض الصورة",
-      "full": "كامل",
-      "medium": "متوسط",
-      "small": "صغير",
       "image_shape": "شكل الصورة",
       "adapt_to_image": "التكيف مع الصورة",
       "square": "مربع",
-      "circle": "دائرة",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "circle": "دائرة"
     },
     "page": {
       "label": "الصفحة",
       "show_title": "عرض العنوان",
       "title_position": "موضع العنوان",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
       "page_width": "عرض الصفحة",
       "full_width": "عرض كامل",
-      "reading_mode": "وضع القراءة",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "reading_mode": "وضع القراءة"
     },
     "product_reviews": {
       "label": "تقييمات المنتج",
-      "show_write_review": "عرض زر 'كتابة تقييم'",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "show_write_review": "عرض زر 'كتابة تقييم'"
     },
     "product_testimonials": {
       "label": "شهادات المنتج",
-      "product": "المنتج",
-      "title": "العنوان",
       "title_default": "عنواني",
-      "description": "الوصف",
-      "description_default": "عنواني الفرعي",
-      "header_position": "موضع الترويسة",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "columns": "عدد الأعمدة على سطح المكتب",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "description_default": "عنواني الفرعي"
     },
     "products_by_collection": {
       "label": "المنتجات حسب المجموعة",
-      "collection": "المجموعة",
-      "title": "العنوان",
       "title_default": "المنتجات حسب المجموعة",
-      "description": "الوصف",
       "description_default": "اعرض المنتجات من مجموعة من اختيارك",
-      "header_position": "موضع الترويسة",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "view_style": "نمط العرض",
-      "grid": "شبكة",
-      "slides": "شرائح",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
       "max_products": "الحد الأقصى للمنتجات المعروضة",
-      "product_columns": "عدد الأعمدة على سطح المكتب",
-      "show_link_to_collection": "عرض رابط إلى المجموعة",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "show_link_to_collection": "عرض رابط إلى المجموعة"
     },
     "products": {
       "label": "المنتجات",
-      "title": "العنوان",
       "title_default": "منتجات مميزة",
-      "description": "الوصف",
       "description_default": "منتجات تحت الأضواء",
-      "header_position": "موضع الترويسة",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "view_style": "نمط العرض",
-      "grid": "شبكة",
-      "slides": "شرائح",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "product_columns": "عدد الأعمدة على سطح المكتب",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية",
       "blocks": {
         "product": {
           "label": "منتج",
-          "product": "منتج",
           "badge_text": "نص الشارة",
           "badge_colors_paragraph": "يمكنك تخصيص ألوان الشارات من الإعدادات العامة"
         }
@@ -381,49 +276,17 @@
     "related_products": {
       "label": "منتجات ذات صلة",
       "info_paragraph": "ℹ️ يتطلب قسم المنتجات ذات الصلة منتجًا واحدًا على الأقل ذا صلة ليظهر في الصفحة",
-      "title": "العنوان",
       "title_default": "المنتجات ذات الصلة",
-      "description": "الوصف",
-      "description_default": "منتجات تحت الأضواء",
-      "header_position": "موضع الترويسة",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
-      "view_style": "نمط العرض",
-      "grid": "شبكة",
-      "slides": "شرائح",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "product_columns": "عدد الأعمدة على سطح المكتب",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "description_default": "منتجات تحت الأضواء"
     },
     "search": {
-      "label": "البحث",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "product_columns": "عدد الأعمدة على سطح المكتب",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "label": "البحث"
     },
     "single_collection": {
-      "label": "المجموعة",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "collection_columns": "عدد الأعمدة على سطح المكتب",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "label": "المجموعة"
     },
     "product_information": {
       "label": "معلومات المنتج",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية",
       "blocks": {
         "inventory_status": {
           "label": "حالة المخزون",
@@ -444,10 +307,7 @@
         },
         "countdown_timer": {
           "label": "العد التنازلي",
-          "title": "العنوان",
           "title_placeholder": "الوقت ينفد",
-          "background_color": "لون الخلفية",
-          "text_color": "لون النص",
           "countdown_end_date": "تاريخ انتهاء العد التنازلي",
           "date_paragraph": "حدد التاريخ الذي يجب أن يعد إليه المؤقت تنازليًا.",
           "year": "السنة",
@@ -459,9 +319,7 @@
         },
         "accordion": {
           "label": "أكورديون",
-          "title": "العنوان",
           "title_placeholder": "العنوان",
-          "content": "المحتوى",
           "content_placeholder": "المحتوى"
         }
       }
@@ -469,58 +327,34 @@
     "slideshow": {
       "label": "عرض الشرائح",
       "height": "الارتفاع",
-      "small": "صغير",
-      "medium": "متوسط",
-      "large": "كبير",
       "autoplay": "تشغيل تلقائي",
       "show_arrows": "عرض الأسهم",
       "duration": "تغيير الشرائح كل",
       "type": "النوع",
-      "full": "كامل",
       "box": "صندوق",
       "content": "المحتوى",
       "content_alignment": "محاذاة المحتوى",
-      "left": "يسار",
-      "center": "وسط",
-      "right": "يمين",
       "content_color": "لون المحتوى",
-      "button_background": "خلفية الزر",
-      "button_text": "نص الزر",
       "arrows": "الأسهم",
       "arrow_position": "موضع السهم",
       "arrows_color": "لون الأسهم",
       "arrows_background": "خلفية الأسهم",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية",
       "blocks": {
         "slide": {
           "label": "شريحة",
-          "image": "صورة",
           "heading": "العنوان",
           "heading_default": "شريحة صورة",
           "subheading": "العنوان الفرعي",
           "subheading_default": "الصورة تساوي ألف كلمة",
-          "button_text": "نص الزر",
           "button_link": "رابط الزر"
         }
       }
     },
     "thank_you": {
-      "label": "شكراً لك",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "label": "شكراً لك"
     },
     "upsell": {
-      "label": "عرض منتجات إضافية",
-      "text_color": "لون النص",
-      "background_color": "لون الخلفية",
-      "section_spacing": "المسافات",
-      "space_top": "المسافة العلوية",
-      "space_bottom": "المسافة السفلية"
+      "label": "عرض منتجات إضافية"
     }
   }
 }

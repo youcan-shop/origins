@@ -96,31 +96,31 @@
     {
       "id": "title",
       "type": "text",
-      "label": "t:sections.products.title",
+      "label": "t:common.content.title",
       "default": "t:sections.products.title_default"
     },
     {
       "id": "description",
       "type": "textarea",
-      "label": "t:sections.products.description",
+      "label": "t:common.content.description",
       "default": "t:sections.products.description_default"
     },
     {
       "id": "position",
       "type": "select",
-      "label": "t:sections.products.header_position",
+      "label": "t:common.position.header_position",
       "options": [
         {
           "value": "left",
-          "label": "t:sections.products.left"
+          "label": "t:common.alignment.left"
         },
         {
           "value": "center",
-          "label": "t:sections.products.center"
+          "label": "t:common.alignment.center"
         },
         {
           "value": "right",
-          "label": "t:sections.products.right"
+          "label": "t:common.alignment.right"
         }
       ],
       "default": "center"
@@ -128,15 +128,15 @@
     {
       "id": "view_style",
       "type": "select",
-      "label": "t:sections.products.view_style",
+      "label": "t:common.view.view_style",
       "options": [
         {
           "value": "grid",
-          "label": "t:sections.products.grid"
+          "label": "t:common.view.grid"
         },
         {
           "value": "slides",
-          "label": "t:sections.products.slides"
+          "label": "t:common.view.slides"
         }
       ],
       "default": "grid"
@@ -144,19 +144,19 @@
     {
       "id": "text_color",
       "type": "color",
-      "label": "t:sections.products.text_color",
+      "label": "t:common.colors.text_color",
       "default": "#121212"
     },
     {
       "id": "background_color",
       "type": "color",
-      "label": "t:sections.products.background_color",
+      "label": "t:common.colors.background_color",
       "default": "#FFFFFFFF"
     },
     {
       "id": "product_columns",
       "type": "range",
-      "label": "t:sections.products.product_columns",
+      "label": "t:common.product.columns",
       "min": 1,
       "max": 4,
       "step": 1,
@@ -165,12 +165,12 @@
     },
     {
       "type": "header",
-      "content": "t:sections.products.section_spacing"
+      "content": "t:common.spacing.section_spacing"
     },
     {
       "id": "space_top",
       "type": "range",
-      "label": "t:sections.products.space_top",
+      "label": "t:common.spacing.space_top",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -180,7 +180,7 @@
     {
       "id": "space_bottom",
       "type": "range",
-      "label": "t:sections.products.space_bottom",
+      "label": "t:common.spacing.space_bottom",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -196,7 +196,7 @@
         {
           "id": "item",
           "type": "product",
-          "label": "t:sections.products.blocks.product.product"
+          "label": "t:common.product.label"
         },
         {
           "id": "badge_text",
