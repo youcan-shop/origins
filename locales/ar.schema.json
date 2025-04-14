@@ -12,7 +12,8 @@
     "alignment": {
       "left": "يسار",
       "center": "وسط",
-      "right": "يمين"
+      "right": "يمين",
+      "text_alignment": "محاذاة النص"
     },
     "product": {
       "label": "المنتج",
@@ -92,20 +93,16 @@
       "label": "بطاقات المنتجات",
       "card_style": "نمط البطاقة",
       "standard": "قياسي",
-      "compact": "مضغوط",
-      "text_alignment": "محاذاة النص"
+      "compact": "مضغوط"
     },
     "collection_cards": {
-      "label": "بطاقات المجموعات",
-      "text_alignment": "محاذاة النص"
+      "label": "بطاقات المجموعات"
     },
     "multi_column_cards": {
-      "label": "بطاقات متعددة الأعمدة",
-      "text_alignment": "محاذاة النص"
+      "label": "بطاقات متعددة الأعمدة"
     },
     "review_cards": {
-      "label": "بطاقات التقييمات",
-      "text_alignment": "محاذاة النص"
+      "label": "بطاقات التقييمات"
     },
     "modals": {
       "label": "النوافذ"

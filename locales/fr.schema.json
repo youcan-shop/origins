@@ -12,7 +12,8 @@
     "alignment": {
       "left": "Gauche",
       "center": "Centre",
-      "right": "Droite"
+      "right": "Droite",
+      "text_alignment": "Alignement du texte"
     },
     "product": {
       "label": "Produit",
@@ -92,20 +93,16 @@
       "label": "Cartes produit",
       "card_style": "Style de carte",
       "standard": "Standard",
-      "compact": "Compact",
-      "text_alignment": "Alignement du texte"
+      "compact": "Compact"
     },
     "collection_cards": {
-      "label": "Cartes de collection",
-      "text_alignment": "Alignement du texte"
+      "label": "Cartes de collection"
     },
     "multi_column_cards": {
-      "label": "Cartes multi-colonnes",
-      "text_alignment": "Alignement du texte"
+      "label": "Cartes multi-colonnes"
     },
     "review_cards": {
-      "label": "Cartes d'avis",
-      "text_alignment": "Alignement du texte"
+      "label": "Cartes d'avis"
     },
     "modals": {
       "label": "Fenêtres modales"
