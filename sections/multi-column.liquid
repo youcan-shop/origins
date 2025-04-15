@@ -32,29 +32,29 @@
 {%- schema -%}
 {
   "templates": ["index", "product"],
-  "label": "Multi column",
+  "label": "t:sections.multi_column.label",
   "max_blocks": 6,
   "blocks": [
     {
       "type": "column",
-      "label": "Column",
+      "label": "t:sections.multi_column.blocks.column.label",
       "settings": [
         {
           "id": "image",
           "type": "image_picker",
-          "label": "Image"
+          "label": "t:common.blocks.image"
         },
         {
           "id": "title",
           "type": "text",
-          "label": "Title",
-          "default": "Column title"
+          "label": "t:common.blocks.title",
+          "default": "t:sections.multi_column.blocks.column.title_default"
         },
         {
           "id": "subtitle",
           "type": "textarea",
-          "label": "Subtitle",
-          "default": "Column subtitle"
+          "label": "t:common.blocks.subtitle",
+          "default": "t:sections.multi_column.blocks.column.subtitle_default"
         }
       ]
     }
@@ -63,31 +63,31 @@
     {
       "id": "title",
       "type": "text",
-      "label": "Title",
-      "default": "Benefit with Us"
+      "label": "t:common.content.title",
+      "default": "t:sections.multi_column.title_default"
     },
     {
       "id": "description",
       "type": "textarea",
-      "label": "Description",
-      "default": "What sets us apart"
+      "label": "t:common.content.description",
+      "default": "t:sections.multi_column.description_default"
     },
     {
       "id": "position",
       "type": "select",
-      "label": "Header position",
+      "label": "t:common.position.header_position",
       "options": [
         {
           "value": "left",
-          "label": "Left"
+          "label": "t:common.alignment.left"
         },
         {
           "value": "center",
-          "label": "Center"
+          "label": "t:common.alignment.center"
         },
         {
           "value": "right",
-          "label": "Right"
+          "label": "t:common.alignment.right"
         }
       ],
       "default": "center"
@@ -95,19 +95,19 @@
     {
       "id": "text_color",
       "type": "color",
-      "label": "Text color",
+      "label": "t:common.colors.text_color",
       "default": "#121212"
     },
     {
       "id": "background_color",
       "type": "color",
-      "label": "Background color",
+      "label": "t:common.colors.background_color",
       "default": "#FFFFFFFF"
     },
     {
       "id": "columns",
       "type": "range",
-      "label": "Number of columns on desktop",
+      "label": "t:common.product.columns",
       "min": 1,
       "max": 4,
       "step": 1,
@@ -117,19 +117,19 @@
     {
       "id": "image_width",
       "type": "select",
-      "label": "Image width",
+      "label": "t:sections.multi_column.image_width",
       "options": [
         {
           "value": "full",
-          "label": "Full"
+          "label": "t:common.sizes.full"
         },
         {
           "value": "medium",
-          "label": "Medium"
+          "label": "t:common.sizes.medium"
         },
         {
           "value": "small",
-          "label": "Small"
+          "label": "t:common.sizes.small"
         }
       ],
       "default": "small"
@@ -137,31 +137,31 @@
     {
       "id": "image_ratio",
       "type": "select",
-      "label": "Image shape",
+      "label": "t:sections.multi_column.image_shape",
       "options": [
         {
           "value": "contain",
-          "label": "Adapt to image"
+          "label": "t:sections.multi_column.adapt_to_image"
         },
         {
           "value": "square",
-          "label": "Square"
+          "label": "t:sections.multi_column.square"
         },
         {
           "value": "circle",
-          "label": "Circle"
+          "label": "t:sections.multi_column.circle"
         }
       ],
       "default": "circle"
     },
     {
       "type": "header",
-      "content": "Section Spacing"
+      "content": "t:common.spacing.section_spacing"
     },
     {
       "id": "space_top",
       "type": "range",
-      "label": "Space top",
+      "label": "t:common.spacing.space_top",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -171,7 +171,7 @@
     {
       "id": "space_bottom",
       "type": "range",
-      "label": "Space bottom",
+      "label": "t:common.spacing.space_bottom",
       "min": 0,
       "max": 200,
       "step": 10,

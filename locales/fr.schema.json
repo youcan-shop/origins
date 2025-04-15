@@ -1,0 +1,357 @@
+{
+  "common": {
+    "colors": {
+      "text_color": "Couleur du texte",
+      "background_color": "Couleur d'arrière-plan"
+    },
+    "spacing": {
+      "section_spacing": "Espacement de section",
+      "space_top": "Espace en haut",
+      "space_bottom": "Espace en bas"
+    },
+    "alignment": {
+      "left": "Gauche",
+      "center": "Centre",
+      "right": "Droite",
+      "text_alignment": "Alignement du texte"
+    },
+    "product": {
+      "label": "Produit",
+      "columns": "Nombre de colonnes sur bureau"
+    },
+    "collection": {
+      "label": "Collection"
+    },
+    "style": {
+      "style": "Style"
+    },
+    "border": {
+      "border": "Bordure",
+      "corner_radius": "Rayon d'angle"
+    },
+    "content": {
+      "title": "Titre",
+      "description": "Description"
+    },
+    "position": {
+      "header_position": "Position de l'en-tête",
+      "position": "Position"
+    },
+    "view": {
+      "view_style": "Style d'affichage",
+      "grid": "Grille",
+      "slides": "Diapositives"
+    },
+    "blocks": {
+      "product": "Produit",
+      "collection": "Collection",
+      "content": "Contenu",
+      "image": "Image",
+      "title": "Titre",
+      "subtitle": "Sous-titre"
+    },
+    "sizes": {
+      "small": "Petite",
+      "medium": "Moyenne",
+      "large": "Grande",
+      "full": "Plein"
+    },
+    "buttons": {
+      "button_text": "Texte du bouton",
+      "button_background": "Arrière-plan du bouton"
+    }
+  },
+  "settings_schema": {
+    "seo": {
+      "label": "SEO",
+      "images": "Images",
+      "favicon_image": "Image favicon",
+      "open_graph_image": "Image Open Graph",
+      "og_image_learn_more": "[Cliquez ici](https://ogp.me/#metadata) pour en savoir plus sur l'image OG",
+      "meta_tags": "Balises méta",
+      "keywords": "Mots-clés"
+    },
+    "typography": {
+      "label": "Typographie",
+      "font_family": "Famille de polices",
+      "font_family_label": "Famille de polices",
+      "headings": "Titres",
+      "font_size_scale": "Échelle de taille de police",
+      "body": "Corps"
+    },
+    "buttons": {
+      "label": "Boutons",
+      "colors": "Couleurs",
+      "primary_button_background": "Arrière-plan du bouton principal",
+      "primary_button_text": "Texte du bouton principal",
+      "secondary_button": "Bouton secondaire"
+    },
+    "inputs": {
+      "label": "Champs de saisie"
+    },
+    "product_cards": {
+      "label": "Cartes produit",
+      "card_style": "Style de carte",
+      "standard": "Standard",
+      "compact": "Compact"
+    },
+    "collection_cards": {
+      "label": "Cartes de collection"
+    },
+    "multi_column_cards": {
+      "label": "Cartes multi-colonnes"
+    },
+    "review_cards": {
+      "label": "Cartes d'avis"
+    },
+    "modals": {
+      "label": "Fenêtres modales"
+    },
+    "drawers": {
+      "label": "Tiroirs"
+    },
+    "toasts": {
+      "label": "Notifications"
+    },
+    "badges": {
+      "label": "Badges",
+      "colors": "Couleurs",
+      "badge_text_color": "Couleur du texte du badge",
+      "badge_background_color": "Couleur d'arrière-plan du badge",
+      "position_on_card": "Position sur la carte"
+    },
+    "checkout": {
+      "label": "Paiement",
+      "types": "Types",
+      "type": "Type",
+      "normal": "Normal (Panier)",
+      "express": "Paiement express"
+    }
+  },
+  "sections": {
+    "all_collections": {
+      "label": "Toutes les collections"
+    },
+    "announcement_bar": {
+      "label": "Barre d'annonces",
+      "show_bar": "Afficher la barre",
+      "above_header": "Au-dessus de l'en-tête",
+      "below_header": "En dessous de l'en-tête",
+      "text": "Texte",
+      "text_placeholder": "Bienvenue dans notre boutique !",
+      "link": "Lien",
+      "link_placeholder": "Collez un lien"
+    },
+    "cart": {
+      "label": "Panier",
+      "show_coupon": "Afficher le coupon"
+    },
+    "collections": {
+      "label": "Collections",
+      "default_title": "Collections en vedette",
+      "default_description": "Collections qui valent la peine d'être explorées"
+    },
+    "custom_content": {
+      "label": "Contenu personnalisé"
+    },
+    "featured_product": {
+      "label": "Produit en vedette",
+      "blocks": {
+        "inventory_status": {
+          "label": "État de l'inventaire",
+          "threshold": "Seuil d'inventaire bas",
+          "show_count": "Afficher le nombre d'inventaire"
+        },
+        "title": {
+          "label": "Titre"
+        },
+        "price": {
+          "label": "Prix"
+        },
+        "rating": {
+          "label": "Évaluation"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "countdown_timer": {
+          "label": "Compte à rebours",
+          "title_placeholder": "Le temps presse",
+          "countdown_end_date": "Date de fin du compte à rebours",
+          "date_paragraph": "Définissez la date jusqu'à laquelle le minuteur doit compter.",
+          "year": "Année",
+          "month": "Mois",
+          "day": "Jour",
+          "hour": "Heure",
+          "minute": "Minute",
+          "second": "Seconde"
+        },
+        "accordion": {
+          "label": "Accordéon",
+          "title_placeholder": "Titre",
+          "content_placeholder": "Contenu"
+        }
+      }
+    },
+    "footer": {
+      "label": "Pied de page",
+      "footer_links_paragraph": "Les liens de pied de page peuvent être gérés depuis vos [paramètres de menu](https://seller-area.youcan.shop/admin/menus)",
+      "social_links_paragraph": "Les liens sociaux peuvent être gérés depuis vos [paramètres de médias sociaux](https://seller-area.youcan.shop/admin/settings/general#social-media)",
+      "show_footer": "Afficher le pied de page",
+      "social_links": "Liens sociaux",
+      "logo": "Logo",
+      "width": "Largeur",
+      "copyright_text": "Texte de copyright"
+    },
+    "header": {
+      "label": "En-tête",
+      "menu_links_paragraph": "Les liens du menu principal peuvent être gérés depuis vos [paramètres de menu](https://seller-area.youcan.shop/admin/menus)",
+      "logo": "Logo",
+      "width": "Largeur",
+      "desktop_logo_position": "Position du logo sur ordinateur",
+      "top_left": "En haut à gauche",
+      "top_center": "En haut au centre",
+      "middle_left": "Au milieu à gauche",
+      "middle_center": "Au milieu au centre",
+      "mobile_logo_position": "Position du logo sur mobile",
+      "sticky_mode": "Mode fixe",
+      "bottom_border": "Bordure inférieure"
+    },
+    "multi_column": {
+      "label": "Multi-colonnes",
+      "blocks": {
+        "column": {
+          "label": "Colonne",
+          "title_default": "Titre de la colonne",
+          "subtitle_default": "Sous-titre de la colonne"
+        }
+      },
+      "title_default": "Bénéficiez avec nous",
+      "description_default": "Ce qui nous distingue",
+      "image_width": "Largeur de l'image",
+      "image_shape": "Forme de l'image",
+      "adapt_to_image": "Adapter à l'image",
+      "square": "Carré",
+      "circle": "Cercle"
+    },
+    "page": {
+      "label": "Page",
+      "show_title": "Afficher le titre",
+      "title_position": "Position du titre",
+      "page_width": "Largeur de page",
+      "full_width": "Pleine largeur",
+      "reading_mode": "Mode lecture"
+    },
+    "product_reviews": {
+      "label": "Avis sur les produits",
+      "show_write_review": "Afficher le bouton 'Écrire un avis'"
+    },
+    "product_testimonials": {
+      "label": "Témoignages de produits",
+      "title_default": "Mon titre",
+      "description_default": "Mon sous-titre"
+    },
+    "products_by_collection": {
+      "label": "Produits par collection",
+      "title_default": "Produits par collection",
+      "description_default": "Listez les produits d'une collection de votre choix",
+      "max_products": "Nombre maximum de produits à afficher",
+      "show_link_to_collection": "Afficher le lien vers la collection"
+    },
+    "products": {
+      "label": "Produits",
+      "title_default": "Produits en vedette",
+      "description_default": "Produits qui sont mis en avant",
+      "blocks": {
+        "product": {
+          "label": "Produit",
+          "badge_text": "Texte du badge",
+          "badge_colors_paragraph": "Vous pouvez personnaliser les couleurs des badges à partir des paramètres globaux"
+        }
+      }
+    },
+    "related_products": {
+      "label": "Produits associés",
+      "info_paragraph": "ℹ️ La section Produits associés nécessite au moins un produit associé pour apparaître sur la page",
+      "title_default": "Produits associés",
+      "description_default": "Produits qui sont mis en avant"
+    },
+    "search": {
+      "label": "Recherche"
+    },
+    "single_collection": {
+      "label": "Collection unique"
+    },
+    "product_information": {
+      "label": "Informations sur le produit",
+      "blocks": {
+        "inventory_status": {
+          "label": "État de l'inventaire",
+          "threshold": "Seuil d'inventaire bas",
+          "show_count": "Afficher le nombre d'inventaire"
+        },
+        "title": {
+          "label": "Titre"
+        },
+        "price": {
+          "label": "Prix"
+        },
+        "rating": {
+          "label": "Évaluation"
+        },
+        "description": {
+          "label": "Description"
+        },
+        "countdown_timer": {
+          "label": "Compte à rebours",
+          "title_placeholder": "Le temps presse",
+          "countdown_end_date": "Date de fin du compte à rebours",
+          "date_paragraph": "Définissez la date jusqu'à laquelle le minuteur doit compter.",
+          "year": "Année",
+          "month": "Mois",
+          "day": "Jour",
+          "hour": "Heure",
+          "minute": "Minute",
+          "second": "Seconde"
+        },
+        "accordion": {
+          "label": "Accordéon",
+          "title_placeholder": "Titre",
+          "content_placeholder": "Contenu"
+        }
+      }
+    },
+    "slideshow": {
+      "label": "Diaporama",
+      "height": "Hauteur",
+      "autoplay": "Lecture automatique",
+      "show_arrows": "Afficher les flèches",
+      "duration": "Changer de diapositive toutes les",
+      "type": "Type",
+      "box": "Boîte",
+      "content": "Contenu",
+      "content_alignment": "Alignement du contenu",
+      "content_color": "Couleur du contenu",
+      "arrows": "Flèches",
+      "arrow_position": "Position des flèches",
+      "arrows_color": "Couleur des flèches",
+      "arrows_background": "Arrière-plan des flèches",
+      "blocks": {
+        "slide": {
+          "label": "Diapositive",
+          "heading": "En-tête",
+          "heading_default": "Diapositive d'image",
+          "subheading": "Sous-titre",
+          "subheading_default": "Une image vaut mille mots",
+          "button_link": "Lien du bouton"
+        }
+      }
+    },
+    "thank_you": {
+      "label": "Merci"
+    },
+    "upsell": {
+      "label": "Vente incitative"
+    }
+  }
+}

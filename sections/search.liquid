@@ -60,26 +60,26 @@
 
 {%- schema -%}
 {
-  "label": "Search",
+  "label": "t:sections.search.label",
   "templates": ["search"],
   "limit": 1,
   "settings": [
     {
       "id": "text_color",
       "type": "color",
-      "label": "Text color",
+      "label": "t:common.colors.text_color",
       "default": "#121212"
     },
     {
       "id": "background_color",
       "type": "color",
-      "label": "Background color",
+      "label": "t:common.colors.background_color",
       "default": "#FFFFFFFF"
     },
     {
       "id": "product_columns",
       "type": "range",
-      "label": "Number of columns on desktop",
+      "label": "t:common.product.columns",
       "min": 1,
       "max": 4,
       "step": 1,
@@ -88,12 +88,12 @@
     },
     {
       "type": "header",
-      "content": "Section Spacing"
+      "content": "t:common.spacing.section_spacing"
     },
     {
       "id": "space_top",
       "type": "range",
-      "label": "Space top",
+      "label": "t:common.spacing.space_top",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -103,7 +103,7 @@
     {
       "id": "space_bottom",
       "type": "range",
-      "label": "Space bottom",
+      "label": "t:common.spacing.space_bottom",
       "min": 0,
       "max": 200,
       "step": 10,

@@ -1,0 +1,357 @@
+{
+  "common": {
+    "colors": {
+      "text_color": "لون النص",
+      "background_color": "لون الخلفية"
+    },
+    "spacing": {
+      "section_spacing": "المسافات",
+      "space_top": "المسافة العلوية",
+      "space_bottom": "المسافة السفلية"
+    },
+    "alignment": {
+      "left": "يسار",
+      "center": "وسط",
+      "right": "يمين",
+      "text_alignment": "محاذاة النص"
+    },
+    "product": {
+      "label": "المنتج",
+      "columns": "عدد الأعمدة على سطح المكتب"
+    },
+    "collection": {
+      "label": "المجموعة"
+    },
+    "style": {
+      "style": "النمط"
+    },
+    "border": {
+      "border": "الحدود",
+      "corner_radius": "حدة الزاوية"
+    },
+    "content": {
+      "title": "العنوان",
+      "description": "الوصف"
+    },
+    "position": {
+      "header_position": "موضع الترويسة",
+      "position": "الموضع"
+    },
+    "view": {
+      "view_style": "نمط العرض",
+      "grid": "شبكة",
+      "slides": "شرائح"
+    },
+    "blocks": {
+      "product": "منتج",
+      "collection": "مجموعة",
+      "content": "المحتوى",
+      "image": "الصورة",
+      "title": "العنوان",
+      "subtitle": "العنوان الفرعي"
+    },
+    "sizes": {
+      "small": "صغير",
+      "medium": "متوسط",
+      "large": "كبير",
+      "full": "كامل"
+    },
+    "buttons": {
+      "button_text": "نص الزر",
+      "button_background": "خلفية الزر"
+    }
+  },
+  "settings_schema": {
+    "seo": {
+      "label": "تحسين محركات البحث",
+      "images": "الصور",
+      "favicon_image": "صورة الأيقونة",
+      "open_graph_image": "صورة Open Graph",
+      "og_image_learn_more": "[انقر هنا](https://ogp.me/#metadata) لمعرفة المزيد عن صورة OG",
+      "meta_tags": "علامات الميتا",
+      "keywords": "الكلمات المفتاحية"
+    },
+    "typography": {
+      "label": "الخط",
+      "font_family": "عائلة الخط",
+      "font_family_label": "عائلة الخط",
+      "headings": "العناوين",
+      "font_size_scale": "مقياس حجم الخط",
+      "body": "النص الرئيسي"
+    },
+    "buttons": {
+      "label": "الأزرار",
+      "colors": "الألوان",
+      "primary_button_background": "خلفية الزر الرئيسي",
+      "primary_button_text": "نص الزر الرئيسي",
+      "secondary_button": "الزر الثانوي"
+    },
+    "inputs": {
+      "label": "حقول الإدخال"
+    },
+    "product_cards": {
+      "label": "بطاقات المنتجات",
+      "card_style": "نمط البطاقة",
+      "standard": "قياسي",
+      "compact": "مضغوط"
+    },
+    "collection_cards": {
+      "label": "بطاقات المجموعات"
+    },
+    "multi_column_cards": {
+      "label": "بطاقات متعددة الأعمدة"
+    },
+    "review_cards": {
+      "label": "بطاقات التقييمات"
+    },
+    "modals": {
+      "label": "النوافذ"
+    },
+    "drawers": {
+      "label": "الأدراج"
+    },
+    "toasts": {
+      "label": "الإشعارات"
+    },
+    "badges": {
+      "label": "الشارات",
+      "colors": "الألوان",
+      "badge_text_color": "لون نص الشارة",
+      "badge_background_color": "لون خلفية الشارة",
+      "position_on_card": "الموقع على البطاقة"
+    },
+    "checkout": {
+      "label": "الدفع",
+      "types": "الأنواع",
+      "type": "النوع",
+      "normal": "عادي (سلة التسوق)",
+      "express": "دفع سريع"
+    }
+  },
+  "sections": {
+    "all_collections": {
+      "label": "جميع المجموعات"
+    },
+    "announcement_bar": {
+      "label": "شريط الإعلانات",
+      "show_bar": "إظهار الشريط",
+      "above_header": "فوق القائمة الرئيسية",
+      "below_header": "تحت القائمة الرئيسية",
+      "text": "النص",
+      "text_placeholder": "مرحباً بكم في متجرنا!",
+      "link": "الرابط",
+      "link_placeholder": "الصق رابطاً"
+    },
+    "cart": {
+      "label": "سلة التسوق",
+      "show_coupon": "إظهار القسيمة"
+    },
+    "collections": {
+      "label": "المجموعات",
+      "default_title": "مجموعات مميزة",
+      "default_description": "مجموعات تستحق الاستكشاف"
+    },
+    "custom_content": {
+      "label": "محتوى مخصص"
+    },
+    "featured_product": {
+      "label": "المنتج المميز",
+      "blocks": {
+        "inventory_status": {
+          "label": "حالة المخزون",
+          "threshold": "حد المخزون المنخفض",
+          "show_count": "عرض عدد المخزون"
+        },
+        "title": {
+          "label": "العنوان"
+        },
+        "price": {
+          "label": "السعر"
+        },
+        "rating": {
+          "label": "التقييم"
+        },
+        "description": {
+          "label": "الوصف"
+        },
+        "countdown_timer": {
+          "label": "العد التنازلي",
+          "title_placeholder": "الوقت ينفد",
+          "countdown_end_date": "تاريخ انتهاء العد التنازلي",
+          "date_paragraph": "حدد التاريخ الذي يجب أن يعد إليه المؤقت تنازليًا.",
+          "year": "السنة",
+          "month": "الشهر",
+          "day": "اليوم",
+          "hour": "الساعة",
+          "minute": "الدقيقة",
+          "second": "الثانية"
+        },
+        "accordion": {
+          "label": "أكورديون",
+          "title_placeholder": "العنوان",
+          "content_placeholder": "المحتوى"
+        }
+      }
+    },
+    "footer": {
+      "label": "التذييل",
+      "footer_links_paragraph": "يمكن إدارة روابط التذييل من [إعدادات القائمة](https://seller-area.youcan.shop/admin/menus) الخاصة بك",
+      "social_links_paragraph": "يمكن إدارة روابط التواصل الاجتماعي من [إعدادات وسائل التواصل الاجتماعي](https://seller-area.youcan.shop/admin/settings/general#social-media) الخاصة بك",
+      "show_footer": "عرض التذييل",
+      "social_links": "روابط التواصل الاجتماعي",
+      "logo": "الشعار",
+      "width": "العرض",
+      "copyright_text": "نص حقوق النشر"
+    },
+    "header": {
+      "label": "الترويسة",
+      "menu_links_paragraph": "يمكن إدارة روابط القائمة الرئيسية من [إعدادات القائمة](https://seller-area.youcan.shop/admin/menus) الخاصة بك",
+      "logo": "الشعار",
+      "width": "العرض",
+      "desktop_logo_position": "موضع الشعار في سطح المكتب",
+      "top_left": "أعلى اليسار",
+      "top_center": "أعلى الوسط",
+      "middle_left": "وسط اليسار",
+      "middle_center": "وسط المنتصف",
+      "mobile_logo_position": "موضع الشعار في الجوال",
+      "sticky_mode": "وضع ثابت",
+      "bottom_border": "حدود سفلية"
+    },
+    "multi_column": {
+      "label": "متعدد الأعمدة",
+      "blocks": {
+        "column": {
+          "label": "عمود",
+          "title_default": "عنوان العمود",
+          "subtitle_default": "العنوان الفرعي للعمود"
+        }
+      },
+      "title_default": "استفد معنا",
+      "description_default": "ما يميزنا",
+      "image_width": "عرض الصورة",
+      "image_shape": "شكل الصورة",
+      "adapt_to_image": "التكيف مع الصورة",
+      "square": "مربع",
+      "circle": "دائرة"
+    },
+    "page": {
+      "label": "الصفحة",
+      "show_title": "عرض العنوان",
+      "title_position": "موضع العنوان",
+      "page_width": "عرض الصفحة",
+      "full_width": "عرض كامل",
+      "reading_mode": "وضع القراءة"
+    },
+    "product_reviews": {
+      "label": "تقييمات المنتج",
+      "show_write_review": "عرض زر 'كتابة تقييم'"
+    },
+    "product_testimonials": {
+      "label": "شهادات المنتج",
+      "title_default": "عنواني",
+      "description_default": "عنواني الفرعي"
+    },
+    "products_by_collection": {
+      "label": "المنتجات حسب المجموعة",
+      "title_default": "المنتجات حسب المجموعة",
+      "description_default": "اعرض المنتجات من مجموعة من اختيارك",
+      "max_products": "الحد الأقصى للمنتجات المعروضة",
+      "show_link_to_collection": "عرض رابط إلى المجموعة"
+    },
+    "products": {
+      "label": "المنتجات",
+      "title_default": "منتجات مميزة",
+      "description_default": "منتجات تحت الأضواء",
+      "blocks": {
+        "product": {
+          "label": "منتج",
+          "badge_text": "نص الشارة",
+          "badge_colors_paragraph": "يمكنك تخصيص ألوان الشارات من الإعدادات العامة"
+        }
+      }
+    },
+    "related_products": {
+      "label": "منتجات ذات صلة",
+      "info_paragraph": "ℹ️ يتطلب قسم المنتجات ذات الصلة منتجًا واحدًا على الأقل ذا صلة ليظهر في الصفحة",
+      "title_default": "المنتجات ذات الصلة",
+      "description_default": "منتجات تحت الأضواء"
+    },
+    "search": {
+      "label": "البحث"
+    },
+    "single_collection": {
+      "label": "المجموعة"
+    },
+    "product_information": {
+      "label": "معلومات المنتج",
+      "blocks": {
+        "inventory_status": {
+          "label": "حالة المخزون",
+          "threshold": "حد المخزون المنخفض",
+          "show_count": "عرض عدد المخزون"
+        },
+        "title": {
+          "label": "العنوان"
+        },
+        "price": {
+          "label": "السعر"
+        },
+        "rating": {
+          "label": "التقييم"
+        },
+        "description": {
+          "label": "الوصف"
+        },
+        "countdown_timer": {
+          "label": "العد التنازلي",
+          "title_placeholder": "الوقت ينفد",
+          "countdown_end_date": "تاريخ انتهاء العد التنازلي",
+          "date_paragraph": "حدد التاريخ الذي يجب أن يعد إليه المؤقت تنازليًا.",
+          "year": "السنة",
+          "month": "الشهر",
+          "day": "اليوم",
+          "hour": "الساعة",
+          "minute": "الدقيقة",
+          "second": "الثانية"
+        },
+        "accordion": {
+          "label": "أكورديون",
+          "title_placeholder": "العنوان",
+          "content_placeholder": "المحتوى"
+        }
+      }
+    },
+    "slideshow": {
+      "label": "عرض الشرائح",
+      "height": "الارتفاع",
+      "autoplay": "تشغيل تلقائي",
+      "show_arrows": "عرض الأسهم",
+      "duration": "تغيير الشرائح كل",
+      "type": "النوع",
+      "box": "صندوق",
+      "content": "المحتوى",
+      "content_alignment": "محاذاة المحتوى",
+      "content_color": "لون المحتوى",
+      "arrows": "الأسهم",
+      "arrow_position": "موضع السهم",
+      "arrows_color": "لون الأسهم",
+      "arrows_background": "خلفية الأسهم",
+      "blocks": {
+        "slide": {
+          "label": "شريحة",
+          "heading": "العنوان",
+          "heading_default": "شريحة صورة",
+          "subheading": "العنوان الفرعي",
+          "subheading_default": "الصورة تساوي ألف كلمة",
+          "button_link": "رابط الزر"
+        }
+      }
+    },
+    "thank_you": {
+      "label": "شكراً لك"
+    },
+    "upsell": {
+      "label": "عرض منتجات إضافية"
+    }
+  }
+}

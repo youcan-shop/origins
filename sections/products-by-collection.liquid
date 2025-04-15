@@ -131,41 +131,41 @@
 {%- schema -%}
 {
   "templates": ["index"],
-  "label": "Products by Collection",
+  "label": "t:sections.products_by_collection.label",
   "settings": [
     {
       "type": "category",
       "id": "collection",
-      "label": "Collection"
+      "label": "t:sections.products_by_collection.label"
     },
     {
       "id": "title",
       "type": "text",
-      "label": "Title",
-      "default": "Products by Collection"
+      "label": "t:common.content.title",
+      "default": "t:sections.products_by_collection.title_default"
     },
     {
       "id": "description",
       "type": "textarea",
-      "label": "Description",
-      "default": "List out products from a collection of your choosing"
+      "label": "t:common.content.description",
+      "default": "t:sections.products_by_collection.description_default"
     },
     {
       "id": "position",
       "type": "select",
-      "label": "Header position",
+      "label": "t:common.position.header_position",
       "options": [
         {
           "value": "left",
-          "label": "Left"
+          "label": "t:common.alignment.left"
         },
         {
           "value": "center",
-          "label": "Center"
+          "label": "t:common.alignment.center"
         },
         {
           "value": "right",
-          "label": "Right"
+          "label": "t:common.alignment.right"
         }
       ],
       "default": "center"
@@ -173,15 +173,15 @@
     {
       "id": "view_style",
       "type": "select",
-      "label": "View style",
+      "label": "t:common.view.view_style",
       "options": [
         {
           "value": "grid",
-          "label": "Grid"
+          "label": "t:common.view.grid"
         },
         {
           "value": "slides",
-          "label": "Slides"
+          "label": "t:common.view.slides"
         }
       ],
       "default": "grid"
@@ -189,19 +189,19 @@
     {
       "id": "text_color",
       "type": "color",
-      "label": "Text color",
+      "label": "t:common.colors.text_color",
       "default": "#121212"
     },
     {
       "id": "background_color",
       "type": "color",
-      "label": "Background color",
+      "label": "t:common.colors.background_color",
       "default": "#FFFFFFFF"
     },
     {
       "id": "max_products",
       "type": "range",
-      "label": "Maximum products to show",
+      "label": "t:common.product.columns",
       "min": 2,
       "max": 25,
       "step": 1,
@@ -211,7 +211,7 @@
     {
       "id": "product_columns",
       "type": "range",
-      "label": "Number of columns on desktop",
+      "label": "t:common.product.columns",
       "min": 1,
       "max": 4,
       "step": 1,
@@ -221,17 +221,17 @@
     {
       "id": "show_view_more",
       "type": "checkbox",
-      "label": "Show link to collection",
+      "label": "t:sections.products_by_collection.show_link_to_collection",
       "default": true
     },
     {
       "type": "header",
-      "content": "Section Spacing"
+      "content": "t:common.spacing.section_spacing"
     },
     {
       "id": "space_top",
       "type": "range",
-      "label": "Space top",
+      "label": "t:common.spacing.space_top",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -241,7 +241,7 @@
     {
       "id": "space_bottom",
       "type": "range",
-      "label": "Space bottom",
+      "label": "t:common.spacing.space_bottom",
       "min": 0,
       "max": 200,
       "step": 10,

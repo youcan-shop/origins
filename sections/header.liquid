@@ -63,22 +63,22 @@
 
 {% schema %}
 {
-  "label": "Header",
+  "label": "t:sections.header.label",
   "tag": "header",
   "limit": 1,
   "settings": [
     {
       "type": "paragraph",
-      "content": "Main menu links can be managed from your [menu settings](https:\/\/seller-area.youcan.shop\/admin\/menus)"
+      "content": "t:sections.header.menu_links_paragraph"
     },
     {
       "type": "header",
-      "content": "Logo"
+      "content": "t:sections.header.logo"
     },
     {
       "type": "image_picker",
       "id": "header_logo",
-      "label": "Logo"
+      "label": "t:sections.header.logo"
     },
     {
       "type": "range",
@@ -87,7 +87,7 @@
       "max": 200,
       "step": 10,
       "unit": "px",
-      "label": "Width",
+      "label": "t:sections.header.width",
       "default": 60
     },
     {
@@ -96,23 +96,23 @@
       "options": [
         {
           "value": "top-left",
-          "label": "Top left"
+          "label": "t:sections.header.top_left"
         },
         {
           "value": "top-center",
-          "label": "Top center"
+          "label": "t:sections.header.top_center"
         },
         {
           "value": "middle-left",
-          "label": "Middle left"
+          "label": "t:sections.header.middle_left"
         },
         {
           "value": "middle-center",
-          "label": "Middle center"
+          "label": "t:sections.header.middle_center"
         }
       ],
       "default": "middle-left",
-      "label": "Desktop logo position"
+      "label": "t:sections.header.desktop_logo_position"
     },
     {
       "type": "select",
@@ -120,42 +120,42 @@
       "options": [
         {
           "value": "center",
-          "label": "Center"
+          "label": "t:common.alignment.center"
         },
         {
           "value": "left",
-          "label": "Left"
+          "label": "t:common.alignment.left"
         }
       ],
       "default": "center",
-      "label": "Mobile logo position"
+      "label": "t:sections.header.mobile_logo_position"
     },
     {
       "type": "header",
-      "content": "Style"
+      "content": "t:common.style.style"
     },
     {
       "type": "checkbox",
       "id": "header_sticky",
-      "label": "Sticky mode",
+      "label": "t:sections.header.sticky_mode",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "header_border",
-      "label": "Bottom border",
+      "label": "t:sections.header.bottom_border",
       "default": true
     },
     {
       "type": "color",
       "id": "header_text_color",
-      "label": "Text color",
+      "label": "t:common.colors.text_color",
       "default": "#121212"
     },
     {
       "type": "color",
       "id": "header_background_color",
-      "label": "Background color",
+      "label": "t:common.colors.background_color",
       "default": "#ffffff"
     }
   ]

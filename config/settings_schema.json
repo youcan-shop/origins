@@ -1,47 +1,47 @@
 [
   {
-    "label": "SEO",
+    "label": "t:settings_schema.seo.label",
     "settings": [
       {
         "type": "header",
-        "content": "Images"
+        "content": "t:settings_schema.seo.images"
       },
       {
         "type": "image_picker",
         "id": "favicon",
-        "label": "Favicon image"
+        "label": "t:settings_schema.seo.favicon_image"
       },
       {
         "type": "image_picker",
         "id": "og_image",
-        "label": "Open Graph Image"
+        "label": "t:settings_schema.seo.open_graph_image"
       },
       {
         "type": "paragraph",
-        "content": "[Click here](https:\/\/ogp.me\/#metadata) to learn more about OG Image"
+        "content": "t:settings_schema.seo.og_image_learn_more"
       },
       {
         "type": "header",
-        "content": "Meta tags"
+        "content": "t:settings_schema.seo.meta_tags"
       },
       {
         "type": "text",
         "id": "keywords",
-        "label": "Keywords"
+        "label": "t:settings_schema.seo.keywords"
       }
     ]
   },
   {
-    "label": "Typography",
+    "label": "t:settings_schema.typography.label",
     "settings": [
       {
         "type": "header",
-        "content": "Font Family"
+        "content": "t:settings_schema.typography.font_family"
       },
       {
         "type": "select",
         "id": "font_family",
-        "label": "Font family",
+        "label": "t:settings_schema.typography.font_family_label",
         "options": [
           {
             "value": "Roboto",
@@ -128,7 +128,7 @@
       },
       {
         "type": "header",
-        "content": "Headings"
+        "content": "t:settings_schema.typography.headings"
       },
       {
         "type": "range",
@@ -137,12 +137,12 @@
         "max": 150,
         "step": 5,
         "unit": "%",
-        "label": "Font size scale",
+        "label": "t:settings_schema.typography.font_size_scale",
         "default": 100
       },
       {
         "type": "header",
-        "content": "Body"
+        "content": "t:settings_schema.typography.body"
       },
       {
         "type": "range",
@@ -151,39 +151,39 @@
         "max": 130,
         "step": 5,
         "unit": "%",
-        "label": "Font size scale",
+        "label": "t:settings_schema.typography.font_size_scale",
         "default": 100
       }
     ]
   },
   {
-    "label": "Buttons",
+    "label": "t:settings_schema.buttons.label",
     "settings": [
       {
         "type": "header",
-        "content": "Colors"
+        "content": "t:settings_schema.buttons.colors"
       },
       {
         "type": "color",
         "id": "button_background_color",
-        "label": "Primary button background",
+        "label": "t:settings_schema.buttons.primary_button_background",
         "default": "#121212"
       },
       {
         "type": "color",
         "id": "button_text_color",
-        "label": "Primary button text",
+        "label": "t:settings_schema.buttons.primary_button_text",
         "default": "#ffffff"
       },
       {
         "type": "color",
         "id": "secondary_button_color",
-        "label": "Secondary button",
+        "label": "t:settings_schema.buttons.secondary_button",
         "default": "#121212"
       },
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -192,17 +192,17 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 10
       }
     ]
   },
   {
-    "label": "Inputs",
+    "label": "t:settings_schema.inputs.label",
     "settings": [
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -211,17 +211,17 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 10
       }
     ]
   },
   {
-    "label": "Product cards",
+    "label": "t:settings_schema.product_cards.label",
     "settings": [
       {
         "type": "header",
-        "content": "Style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -229,15 +229,15 @@
         "options": [
           {
             "value": "standard",
-            "label": "Standard"
+            "label": "t:settings_schema.product_cards.standard"
           },
           {
             "value": "compact",
-            "label": "Compact"
+            "label": "t:settings_schema.product_cards.compact"
           }
         ],
         "default": "standard",
-        "label": "Card style"
+        "label": "t:settings_schema.product_cards.card_style"
       },
       {
         "type": "select",
@@ -245,23 +245,23 @@
         "options": [
           {
             "value": "flex-start",
-            "label": "Left"
+            "label": "t:common.alignment.left"
           },
           {
             "value": "center",
-            "label": "Center"
+            "label": "t:common.alignment.center"
           },
           {
             "value": "flex-end",
-            "label": "Right"
+            "label": "t:common.alignment.right"
           }
         ],
         "default": "flex-start",
-        "label": "Text alignment"
+        "label": "t:common.alignment.text_alignment"
       },
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -270,17 +270,17 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
   },
   {
-    "label": "Collection cards",
+    "label": "t:settings_schema.collection_cards.label",
     "settings": [
       {
         "type": "header",
-        "content": "Style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -288,23 +288,23 @@
         "options": [
           {
             "value": "flex-start",
-            "label": "Left"
+            "label": "t:common.alignment.left"
           },
           {
             "value": "center",
-            "label": "Center"
+            "label": "t:common.alignment.center"
           },
           {
             "value": "flex-end",
-            "label": "Right"
+            "label": "t:common.alignment.right"
           }
         ],
         "default": "flex-start",
-        "label": "Text alignment"
+        "label": "t:common.alignment.text_alignment"
       },
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -313,17 +313,17 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
   },
   {
-    "label": "Multi column cards",
+    "label": "t:settings_schema.multi_column_cards.label",
     "settings": [
       {
         "type": "header",
-        "content": "Style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -331,23 +331,23 @@
         "options": [
           {
             "value": "start",
-            "label": "Left"
+            "label": "t:common.alignment.left"
           },
           {
             "value": "center",
-            "label": "Center"
+            "label": "t:common.alignment.center"
           },
           {
             "value": "end",
-            "label": "Right"
+            "label": "t:common.alignment.right"
           }
         ],
         "default": "center",
-        "label": "Text alignment"
+        "label": "t:common.alignment.text_alignment"
       },
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -356,17 +356,17 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
   },
   {
-    "label": "Review cards",
+    "label": "t:settings_schema.review_cards.label",
     "settings": [
       {
         "type": "header",
-        "content": "Style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -374,23 +374,23 @@
         "options": [
           {
             "value": "start",
-            "label": "Left"
+            "label": "t:common.alignment.left"
           },
           {
             "value": "center",
-            "label": "Center"
+            "label": "t:common.alignment.center"
           },
           {
             "value": "end",
-            "label": "Right"
+            "label": "t:common.alignment.right"
           }
         ],
         "default": "center",
-        "label": "Text alignment"
+        "label": "t:common.alignment.text_alignment"
       },
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -399,17 +399,17 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
   },
   {
-    "label": "Modals",
+    "label": "t:settings_schema.modals.label",
     "settings": [
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -418,17 +418,17 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
   },
   {
-    "label": "Drawers",
+    "label": "t:settings_schema.drawers.label",
     "settings": [
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -437,17 +437,17 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
   },
   {
-    "label": "Toasts",
+    "label": "t:settings_schema.toasts.label",
     "settings": [
       {
         "type": "header",
-        "content": "Border"
+        "content": "t:common.border.border"
       },
       {
         "type": "range",
@@ -456,33 +456,33 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Corner radius",
+        "label": "t:common.border.corner_radius",
         "default": 14
       }
     ]
   },
   {
-    "label": "Badges",
+    "label": "t:settings_schema.badges.label",
     "settings": [
       {
         "type": "header",
-        "content": "Colors"
+        "content": "t:settings_schema.badges.colors"
       },
       {
         "type": "color",
         "id": "badge_text_color",
-        "label": "Badge text color",
+        "label": "t:settings_schema.badges.badge_text_color",
         "default": "#ffffff"
       },
       {
         "type": "color",
         "id": "badge_background_color",
-        "label": "Badge background color",
+        "label": "t:settings_schema.badges.badge_background_color",
         "default": "#121212"
       },
       {
         "type": "header",
-        "content": "Style"
+        "content": "t:common.style.style"
       },
       {
         "type": "select",
@@ -490,24 +490,24 @@
         "options": [
           {
             "value": "right",
-            "label": "Right"
+            "label": "t:common.alignment.right"
           },
           {
             "value": "left",
-            "label": "Left"
+            "label": "t:common.alignment.left"
           }
         ],
         "default": "right",
-        "label": "Position on card"
+        "label": "t:settings_schema.badges.position_on_card"
       }
     ]
   },
   {
-    "label": "Checkout",
+    "label": "t:settings_schema.checkout.label",
     "settings": [
       {
         "type": "header",
-        "content": "Types"
+        "content": "t:settings_schema.checkout.types"
       },
       {
         "type": "select",
@@ -515,15 +515,15 @@
         "options": [
           {
             "value": "normal",
-            "label": "Normal (Cart)"
+            "label": "t:settings_schema.checkout.normal"
           },
           {
             "value": "express",
-            "label": "Express checkout"
+            "label": "t:settings_schema.checkout.express"
           }
         ],
         "default": "normal",
-        "label": "Type"
+        "label": "t:settings_schema.checkout.type"
       }
     ]
   }

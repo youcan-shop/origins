@@ -66,26 +66,26 @@
 
 {%- schema -%}
 {
-  "label": "Slideshow",
+  "label": "t:sections.slideshow.label",
   "templates": ["index", "page"],
   "max_blocks": 4,
   "settings": [
     {
       "type": "select",
       "id": "height",
-      "label": "Height",
+      "label": "t:sections.slideshow.height",
       "options": [
         {
           "value": "420",
-          "label": "Small"
+          "label": "t:common.sizes.small"
         },
         {
           "value": "560",
-          "label": "Medium"
+          "label": "t:common.sizes.medium"
         },
         {
           "value": "720",
-          "label": "Large"
+          "label": "t:common.sizes.large"
         }
       ],
       "default": "560"
@@ -93,13 +93,13 @@
     {
       "type": "checkbox",
       "id": "autoplay",
-      "label": "Autoplay",
+      "label": "t:sections.slideshow.autoplay",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "show_arrows",
-      "label": "Show arrows",
+      "label": "t:sections.slideshow.show_arrows",
       "default": true
     },
     {
@@ -109,45 +109,45 @@
       "max": 9,
       "step": 1,
       "unit": "s",
-      "label": "Change slides every",
+      "label": "t:sections.slideshow.duration",
       "default": 3
     },
     {
       "type": "select",
       "id": "type",
-      "label": "Type",
+      "label": "t:sections.slideshow.type",
       "options": [
         {
           "value": "full",
-          "label": "Full"
+          "label": "t:common.sizes.full"
         },
         {
           "value": "box",
-          "label": "Box"
+          "label": "t:sections.slideshow.box"
         }
       ],
       "default": "full"
     },
     {
       "type": "header",
-      "content": "Content"
+      "content": "t:sections.slideshow.content"
     },
     {
       "type": "select",
       "id": "content_alignment",
-      "label": "Content Alignment",
+      "label": "t:sections.slideshow.content_alignment",
       "options": [
         {
           "value": "left",
-          "label": "Left"
+          "label": "t:common.alignment.left"
         },
         {
           "value": "center",
-          "label": "Center"
+          "label": "t:common.alignment.center"
         },
         {
           "value": "right",
-          "label": "Right"
+          "label": "t:common.alignment.left"
         }
       ],
       "default": "center"
@@ -155,41 +155,41 @@
     {
       "type": "color",
       "id": "content_color",
-      "label": "Content Color",
+      "label": "t:sections.slideshow.content_color",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "button_background",
-      "label": "Button background",
+      "label": "t:common.buttons.button_background",
       "default": "#121212"
     },
     {
       "type": "color",
       "id": "button_foreground",
-      "label": "Button text",
+      "label": "t:common.buttons.button_text",
       "default": "#ffffff"
     },
     {
       "type": "header",
-      "content": "Arrows"
+      "content": "t:sections.slideshow.arrows"
     },
     {
       "type": "select",
       "id": "arrow_position",
-      "label": "Arrow position",
+      "label": "t:sections.slideshow.arrow_position",
       "options": [
         {
           "value": "left",
-          "label": "Left"
+          "label": "t:common.alignment.left"
         },
         {
           "value": "center",
-          "label": "Center"
+          "label": "t:common.alignment.center"
         },
         {
           "value": "right",
-          "label": "Right"
+          "label": "t:common.alignment.right"
         }
       ],
       "default": "center"
@@ -197,23 +197,23 @@
     {
       "type": "color",
       "id": "arrows_foreground",
-      "label": "Arrows color",
+      "label": "t:sections.slideshow.arrows_color",
       "default": "#121212"
     },
     {
       "type": "color",
       "id": "arrows_background",
-      "label": "Arrows background",
+      "label": "t:sections.slideshow.arrows_background",
       "default": "#ffffff"
     },
     {
       "type": "header",
-      "content": "Section Spacing"
+      "content": "t:common.spacing.section_spacing"
     },
     {
       "id": "space_top",
       "type": "range",
-      "label": "Space top",
+      "label": "t:common.spacing.space_top",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -223,7 +223,7 @@
     {
       "id": "space_bottom",
       "type": "range",
-      "label": "Space bottom",
+      "label": "t:common.spacing.space_top",
       "min": 0,
       "max": 200,
       "step": 10,
@@ -234,35 +234,35 @@
   "blocks": [
     {
       "type": "slide",
-      "label": "Slide",
+      "label": "t:sections.slideshow.blocks.slide.label",
       "settings": [
         {
           "id": "image",
           "type": "image_picker",
-          "label": "Image"
+          "label": "t:common.blocks.image"
         },
         {
           "id": "heading",
           "type": "text",
-          "label": "Heading",
-          "default": "Image Slide"
+          "label": "t:sections.slideshow.blocks.slide.heading",
+          "default": "t:sections.slideshow.blocks.slide.heading_default"
         },
         {
           "id": "subheading",
           "type": "text",
-          "label": "Subheading",
-          "default": "An image is worth a thousand words"
+          "label": "t:sections.slideshow.blocks.slide.subheading",
+          "default": "t:sections.slideshow.blocks.slide.subheading_default"
         },
         {
           "id": "button_text",
           "type": "text",
-          "label": "Button text",
+          "label": "t:common.buttons.button_text",
           "default": ""
         },
         {
           "id": "button_url",
           "type": "text",
-          "label": "Button link",
+          "label": "t:sections.slideshow.blocks.slide.button_link",
           "default": ""
         }
       ]
