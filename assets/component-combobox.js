@@ -106,6 +106,153 @@ if (!customElements.get("yc-combobox")) {
       });
     }
   }
+  class LinkedFields extends Combobox {
+    constructor() {
+      super();
+
+      this.countryField = null;
+      this.regionField = null;
+      this.cityField = null;
+      this.locale = document.documentElement.lang || "en";
+    }
+
+    connectedCallback() {
+      this.setupLikedFields();
+    }
+
+    setupLikedFields() {
+      console.log("linked-fields.js: Initializing linked fields");
+      this.countryField = document.querySelector('yc-linked-fields[data-field="country"]');
+      this.regionField = document.querySelector('yc-linked-fields[data-field="region"]');
+      this.cityField = document.querySelector('yc-linked-fields[data-field="city"]');
+      
+      if (this.countryField) {
+        this.setupCountryField();
+      }
+
+      if (this.countryField && this.regionField) {
+        this.setupRegionField();
+      }
+
+      if (this.countryField && this.regionField && this.cityField) {
+        this.setupCityField();
+      }
+    }
+
+    async setupCountryField() {
+      const countries = await this.fetchCountries();
+      this.updateComboboxOptions(this.countryField, countries);
+      this.countryField.setup();
+      this.countryField.attachListeners();
+    }
+
+    async setupRegionField() {
+      const regions = await this.fetchRegions();
+      this.updateComboboxOptions(this.countryField, regions);
+      this.regionField.setup();
+      this.regionField.attachListeners();
+      const regionValue = this.regionField.querySelector("yc-combobox-value");
+
+      regionValue.addEventListener("change", async (e) => {
+        if (this.cityField) {
+          const selectedRegion = e.target.value;
+          const cities = await this.fetchCities(this.countryField.value, selectedRegion);
+          this.updateComboboxOptions(this.cityField, cities);
+        }
+      });
+    }
+
+    async setupCityField() {
+      const contryValue = this.countryField.querySelector("yc-combobox-value");
+      const regionValue = this.regionField.querySelector("yc-combobox-value");
+      const cities = await this.fetchCities(contryValue, regionValue);  
+      this.updateComboboxOptions(this.cityField, cities);
+      this.cityField.setup();
+      this.cityField.attachListeners();
+    }
+
+    async fetchCountries() {
+      try {
+        const response = await youcanjs.misc.getCountries(this.locale);
+
+        if (response && response.countries.length) {
+          return response.countries.map((country) => ({
+            name: country.name,
+            value: country.name,
+          }));
+        }
+        return [];
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+        return [];
+      }
+    }
+
+    async fetchRegions(countryCode) {
+      if (!countryCode) return [];
+
+      try {
+        const response = await youcanjs.misc.getCountryRegions(countryCode, this.locale);
+
+        if (response && response.states.length) {
+          return response.states.map((region) => ({
+            name: region.name,
+            value: region.code,
+          }));
+        }
+        return [];
+      } catch (error) {
+        console.error("Error fetching regions:", error);
+        return [];
+      }
+    }
+
+    async fetchCities(countryCode, regionCode) {
+      if (!countryCode || !regionCode) return [];
+
+      try {
+        const response = await youcanjs.misc.getCountryCities(countryCode, regionCode, this.locale);
+
+        if (response && response.cities.length) {
+          return response.cities.map((city) => ({
+            name: city,
+            value: city,
+          }));
+        }
+        return [];
+      } catch (error) {
+        console.error("Error fetching cities:", error);
+        return [];
+      }
+    }
+
+    async updateComboboxOptions(combobox, options) {
+      if (!combobox) return;
+
+      const contentEl = combobox.querySelector("yc-combobox-content");
+      contentEl.innerHTML = "";
+
+      options.forEach((option) => {
+        const item = document.createElement("yc-combobox-item");
+        item.setAttribute("value", option.value);
+        item.textContent = option.name;
+        contentEl.appendChild(item);
+      });
+      // this.resetCombobox(combobox);
+
+      console.log('linked-fields.js: Countries fetched data was appended to yc-combobox-item');
+    }
+
+    resetCombobox(combobox) {
+      if (!combobox) return;
+
+      const valueEl = combobox.querySelector("yc-combobox-value");
+      if (valueEl) {
+        valueEl.textContent = combobox.getAttribute("placeholder") || "Select";
+      }
+    }
+  }
 
   customElements.define("yc-combobox", Combobox);
+  customElements.define("yc-linked-fields", LinkedFields);  
 }

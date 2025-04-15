@@ -153,8 +153,8 @@
 {{ 'component-modal.js' | asset_url | script_tag_deferred }}
 {{ 'global.js' | asset_url | script_tag_deferred }}
 {{ 'pubsub.js' | asset_url | script_tag_deferred }}
-{{ 'youcan-js.min.js' | asset_url | script_tag_deferred }}
 {{ 'cart.js' | asset_url | script_tag_deferred }}
+<script src="https://unpkg.com/@youcan/js@1.0.4/dist/index.umd.js" defer></script>
 
 {% if template.name != 'cart' and template.name != 'thankyou' and template.name != 'page' %}
   {{ 'product-card.css' | asset_url | stylesheet_tag }}

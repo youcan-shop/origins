@@ -1,0 +1,14 @@
+<yc-linked-fields name="{{ field_name }} " data-field="{{ field_name }}">
+  <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
+    <yc-combobox-value>{{ field.placeholder | default: 'Select' }}</yc-combobox-value>
+  </yc-combobox-trigger>
+  <yc-combobox-content role="listbox">
+    <yc-combobox-item
+      value=""
+      {% if field.required %}
+        required
+      {% endif %}
+    >
+    </yc-combobox-item>
+  </yc-combobox-content>
+</yc-linked-fields>
