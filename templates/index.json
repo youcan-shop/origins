@@ -40,89 +40,108 @@
       },
       "order": ["block_ivq4v3h4226mym", "block_iwvczf05m32mujk", "block_ixt4cxjee09wq24"]
     },
-    "multi-column": {
-      "type": "multi-column",
-      "settings": {
-        "background_color": "#FFFFFFFF",
-        "text_color": "#121212FF",
-        "title": "Benefit with Us"
-      },
-      "blocks": {
-        "block_j35a5pwrgdnk0dc": {
-          "type": "column",
-          "settings": {
-            "title": "Column title",
-            "subtitle": "Column subtitle"
-          }
-        },
-        "block_j405t4mzyq7jkbc": {
-          "type": "column",
-          "settings": {
-            "title": "Column title",
-            "subtitle": "Column subtitle"
-          }
-        },
-        "block_j4rac7u2uwwa7we": {
-          "type": "column",
-          "settings": {
-            "title": "Column title",
-            "subtitle": "Column subtitle"
-          }
-        }
-      },
-      "order": ["block_j35a5pwrgdnk0dc", "block_j405t4mzyq7jkbc", "block_j4rac7u2uwwa7we"]
-    },
-    "collections": {
-      "type": "collections",
-      "settings": {
-        "text_color": "#121212FF",
-        "background_color": "#FFFFFFFF",
-        "space_top": 0
-      },
-      "blocks": {
-        "block_l2qx1grfhiuuuva": {
-          "type": "collection",
-          "settings": {}
-        },
-        "block_l3m9fu26xgrbowj": {
-          "type": "collection",
-          "settings": {}
-        },
-        "block_l4dz0931di9aciiy": {
-          "type": "collection",
-          "settings": {}
-        }
-      },
-      "order": ["block_l2qx1grfhiuuuva", "block_l3m9fu26xgrbowj", "block_l4dz0931di9aciiy"]
-    },
-    "products": {
+    "section_1fqn362ai98y51h": {
       "type": "products",
       "settings": {
+        "title": "Featured Products",
+        "description": "Products that take the spotlight",
+        "position": "center",
+        "view_style": "grid",
         "text_color": "#121212FF",
-        "background_color": "#FFFFFFFF"
+        "background_color": "#FFFFFFFF",
+        "product_columns": "3",
+        "space_top": "50",
+        "space_bottom": "50"
       },
       "blocks": {
-        "block_li6181d6bbrvblo": {
+        "block_1ku94agatzletgn": {
           "type": "product",
           "settings": {
             "badge_text": ""
           }
         },
-        "block_lj00cajems7tmg9": {
+        "block_1lp0ub9ifgwdmlh": {
           "type": "product",
           "settings": {
             "badge_text": ""
           }
         },
-        "block_ljvoer4prvpgyjv": {
+        "block_1mfebeh6q405bt": {
           "type": "product",
           "settings": {
             "badge_text": ""
           }
         }
       },
-      "order": ["block_li6181d6bbrvblo", "block_lj00cajems7tmg9", "block_ljvoer4prvpgyjv"]
+      "order": ["block_1ku94agatzletgn", "block_1lp0ub9ifgwdmlh", "block_1mfebeh6q405bt"]
+    },
+    "section_1hgf4l3hb1hk92u": {
+      "type": "collections",
+      "settings": {
+        "title": "Featured Collections",
+        "description": "Collections worth exploring",
+        "position": "center",
+        "text_color": "#121212FF",
+        "background_color": "#FFFFFFFF",
+        "collection_columns": "3",
+        "space_top": "50",
+        "space_bottom": "50"
+      },
+      "blocks": {
+        "block_1nrvruteah0eu": {
+          "type": "collection",
+          "settings": {}
+        },
+        "block_1or6nfc2t5gkxv": {
+          "type": "collection",
+          "settings": {}
+        },
+        "block_1pgci2mrzdwk9oo": {
+          "type": "collection",
+          "settings": {}
+        }
+      },
+      "order": ["block_1nrvruteah0eu", "block_1or6nfc2t5gkxv", "block_1pgci2mrzdwk9oo"]
+    },
+    "section_1j9gjg1x8gok4sk": {
+      "type": "multi-column",
+      "settings": {
+        "title": "Benefit with Us",
+        "description": "What sets us apart",
+        "position": "center",
+        "text_color": "#121212FF",
+        "background_color": "#FFFFFFFF",
+        "columns": "3",
+        "image_width": "small",
+        "image_ratio": "circle",
+        "space_top": "50",
+        "space_bottom": "50"
+      },
+      "blocks": {
+        "block_1ql85yo4uicfhmp": {
+          "type": "column",
+          "settings": {
+            "title": "Column title",
+            "subtitle": "Column subtitle"
+          }
+        },
+        "block_1rcue0pnw6gqjd8": {
+          "type": "column",
+          "settings": {
+            "title": "Column title",
+            "subtitle": "Column subtitle"
+          }
+        },
+        "block_1s6tb4j02ge30ws": {
+          "type": "column",
+          "settings": {
+            "title": "Column title",
+            "subtitle": "Column subtitle"
+          }
+        }
+      },
+      "order": ["block_1ql85yo4uicfhmp", "block_1rcue0pnw6gqjd8", "block_1s6tb4j02ge30ws"]
     }
   },
-  "order": ["slideshow", "products", "collections", "multi-column"]
+  "order": ["slideshow", "section_1fqn362ai98y51h", "section_1hgf4l3hb1hk92u", "section_1j9gjg1x8gok4sk"]
 }
