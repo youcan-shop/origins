@@ -39,6 +39,9 @@ if (!customElements.get("yc-combobox")) {
     }
 
     attachListeners() {
+      if (this.listenersAttached) return;
+
+      this.listenersAttached = true;
       this.onSelect();
       this.onTrigger();
       this.onClickOutSide();
@@ -116,59 +119,66 @@ if (!customElements.get("yc-combobox")) {
       this.locale = document.documentElement.lang || "en";
     }
 
-    connectedCallback() {
-      this.setupLikedFields();
+    async connectedCallback() {
+      await this.setupLinkedFields();
     }
 
-    setupLikedFields() {
-      console.log("linked-fields.js: Initializing linked fields");
+    async setupLinkedFields() {
       this.countryField = document.querySelector('yc-linked-fields[data-field="country"]');
       this.regionField = document.querySelector('yc-linked-fields[data-field="region"]');
       this.cityField = document.querySelector('yc-linked-fields[data-field="city"]');
-      
-      if (this.countryField) {
-        this.setupCountryField();
+
+      if (this.countryField && this.regionField) {
+        await this.setupCountryField();
       }
 
       if (this.countryField && this.regionField) {
-        this.setupRegionField();
+        await this.setupRegionField();
       }
 
       if (this.countryField && this.regionField && this.cityField) {
-        this.setupCityField();
+        await this.setupCityField();
       }
     }
 
     async setupCountryField() {
       const countries = await this.fetchCountries();
+
       this.updateComboboxOptions(this.countryField, countries);
-      this.countryField.setup();
-      this.countryField.attachListeners();
+      this.countryField.addEventListener("change", async (e) => {
+        const selectedCountry = e.target.value;
+        const regions = await this.fetchRegions(selectedCountry);
+
+        this.updateComboboxOptions(this.regionField, regions);
+      });
     }
 
     async setupRegionField() {
-      const regions = await this.fetchRegions();
-      this.updateComboboxOptions(this.countryField, regions);
-      this.regionField.setup();
-      this.regionField.attachListeners();
-      const regionValue = this.regionField.querySelector("yc-combobox-value");
+      const countryInput = this.countryField.querySelector("input:checked");
+      const countryCode = countryInput ? countryInput.value : "";
+      const regions = await this.fetchRegions(countryCode);
 
-      regionValue.addEventListener("change", async (e) => {
+      this.updateComboboxOptions(this.regionField, regions);
+      this.regionField.addEventListener("change", async (e) => {
         if (this.cityField) {
           const selectedRegion = e.target.value;
-          const cities = await this.fetchCities(this.countryField.value, selectedRegion);
+          const countryInput = this.countryField.querySelector("input:checked");
+          const countryCode = countryInput ? countryInput.value : "";
+          const cities = await this.fetchCities(countryCode, selectedRegion);
+
           this.updateComboboxOptions(this.cityField, cities);
         }
       });
     }
 
     async setupCityField() {
-      const contryValue = this.countryField.querySelector("yc-combobox-value");
-      const regionValue = this.regionField.querySelector("yc-combobox-value");
-      const cities = await this.fetchCities(contryValue, regionValue);  
+      const countryInput = this.countryField.querySelector("input:checked");
+      const regionInput = this.regionField.querySelector("input:checked");
+      const countryCode = countryInput ? countryInput.value : "";
+      const regionCode = regionInput ? regionInput.value : "";
+      const cities = await this.fetchCities(countryCode, regionCode);
+
       this.updateComboboxOptions(this.cityField, cities);
-      this.cityField.setup();
-      this.cityField.attachListeners();
     }
 
     async fetchCountries() {
@@ -178,7 +188,7 @@ if (!customElements.get("yc-combobox")) {
         if (response && response.countries.length) {
           return response.countries.map((country) => ({
             name: country.name,
-            value: country.name,
+            value: country.code,
           }));
         }
         return [];
@@ -226,21 +236,39 @@ if (!customElements.get("yc-combobox")) {
       }
     }
 
+    initializeListeners(combobox) {
+      combobox.attachListeners();
+    }
+
     async updateComboboxOptions(combobox, options) {
       if (!combobox) return;
 
       const contentEl = combobox.querySelector("yc-combobox-content");
+      const isRequired = contentEl.hasAttribute("required");
       contentEl.innerHTML = "";
 
-      options.forEach((option) => {
+      if (options.length === 0) {
+        this.resetCombobox(combobox);
+        return;
+      }
+
+      options.forEach((option, index) => {
         const item = document.createElement("yc-combobox-item");
         item.setAttribute("value", option.value);
+        if (isRequired) {
+          item.setAttribute("required", "");
+        }
+
+        if (index === 0) {
+          item.setAttribute("checked", "");
+        }
         item.textContent = option.name;
         contentEl.appendChild(item);
       });
-      // this.resetCombobox(combobox);
 
-      console.log('linked-fields.js: Countries fetched data was appended to yc-combobox-item');
+      combobox.setup();
+      this.initializeListeners(combobox);
+      combobox.onSelect();
     }
 
     resetCombobox(combobox) {
@@ -254,5 +282,5 @@ if (!customElements.get("yc-combobox")) {
   }
 
   customElements.define("yc-combobox", Combobox);
-  customElements.define("yc-linked-fields", LinkedFields);  
+  customElements.define("yc-linked-fields", LinkedFields);
 }
