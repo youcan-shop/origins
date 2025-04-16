@@ -130,14 +130,7 @@ if (!customElements.get("yc-combobox")) {
 
       if (this.countryField && this.regionField) {
         await this.setupCountryField();
-      }
-
-      if (this.countryField && this.regionField) {
         await this.setupRegionField();
-      }
-
-      if (this.countryField && this.regionField && this.cityField) {
-        await this.setupCityField();
       }
     }
 
@@ -146,10 +139,8 @@ if (!customElements.get("yc-combobox")) {
 
       this.updateComboboxOptions(this.countryField, countries);
       this.countryField.addEventListener("change", async (e) => {
-        const selectedCountry = e.target.value;
-        const regions = await this.fetchRegions(selectedCountry);
-
-        this.updateComboboxOptions(this.regionField, regions);
+        const countryCode = e.target.value;
+        await this.setupRegionField(countryCode);
       });
     }
 
@@ -159,15 +150,17 @@ if (!customElements.get("yc-combobox")) {
       const regions = await this.fetchRegions(countryCode);
 
       this.updateComboboxOptions(this.regionField, regions);
-      this.regionField.addEventListener("change", async (e) => {
-        if (this.cityField) {
-          const selectedRegion = e.target.value;
-          const countryInput = this.countryField.querySelector("input:checked");
-          const countryCode = countryInput ? countryInput.value : "";
-          const cities = await this.fetchCities(countryCode, selectedRegion);
 
-          this.updateComboboxOptions(this.cityField, cities);
-        }
+      if (!this.cityField) return;
+
+      await this.setupCityField();
+      this.regionField.addEventListener("change", async (e) => {
+        const selectedRegion = e.target.value;
+        const countryInput = this.countryField.querySelector("input:checked");
+        const countryCode = countryInput ? countryInput.value : "";
+        const cities = await this.fetchCities(countryCode, selectedRegion);
+
+        this.updateComboboxOptions(this.cityField, cities);
       });
     }
 
