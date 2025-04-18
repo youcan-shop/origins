@@ -2,105 +2,124 @@ if (!customElements.get("yc-linked-fields")) {
   class LinkedFields extends HTMLElement {
     constructor() {
       super();
-      this.locale = document.documentElement.lang || "en";
-      this.fieldType = this.getAttribute("data-field");
       this.trigger = this.querySelector("yc-combobox-trigger");
       this.placeholder = this.trigger?.querySelector("yc-combobox-value");
       this.content = this.querySelector("yc-combobox-content");
       this.search = this.querySelector("yc-combobox-search");
-
-      if (!this.constructor.fields) {
-        this.constructor.fields = {
-          country: null,
-          region: null,
-          city: null,
-        };
-      }
+      this.locale = document.documentElement.lang || "en";
+      this.fieldType = this.getAttribute("data-field");
+      this._onRegionChange = null;
+      this.onRegionChangeCallCount = 0;
+      this._onCountryChange = null;
+      this.onCountryChangeCallCount = 0;
     }
 
     connectedCallback() {
-      this.constructor.fields[this.fieldType] = this;
-
       if (this.fieldType === "country") {
-        this.setupAllFields();
+        this.setupAllField();
       }
     }
 
-    async setupAllFields() {
-      const { country } = this.constructor.fields;
-      if (!country) return;
+    async setupAllField() {
+      const countryField = document.querySelector('[data-field="country"]');
+      const regionField = document.querySelector('[data-field="region"]');
+      const cityField = document.querySelector('[data-field="city"]');
 
+      await this.updateCountries(countryField, regionField);
+
+      const selectedCountry = this.getSelectedValue(countryField);
+      
+      if (regionField && selectedCountry) { 
+        await this.updateRegions(regionField, selectedCountry);
+      }
+
+      const selectedRegion = this.getSelectedValue(regionField);
+
+      if (cityField && selectedCountry && selectedRegion) { 
+        await this.updateCities(cityField, selectedCountry, selectedRegion);
+      }
+    }
+
+    async updateCountries(countryField, regionField) {
       const countries = await this.fetchCountries();
-      this.updateOptions(country, countries);
-      let countryCode = '';
-
-      country.addEventListener("change", async (e) => {
-        countryCode = e.detail?.value || e.target.value;
-
-        await this.updateRegions(countryCode);
-      });
-
-      countryCode = this.getSelectedValue(country);
-      await this.updateRegions(countryCode);
-      this.setupRegionListeners();
-    }
+      console.log('update country in progress');
     
-    setupRegionListeners() {
-      const { country, region, city } = this.constructor.fields;
-  
-      if (region && city) {
-        region.addEventListener("change", async (e) => {
-          const regionCode = e.detail?.value || e.target.value;
-          const countryCode = this.getSelectedValue(country);
-
-          await this.updateCities(countryCode, regionCode);
-        });
-      }
+      this.updateOptions(countryField, countries);
+      
+      this._onCountryChange = (e) => this.onRegionChange(e, regionField);
+      countryField.addEventListener("change", this._onCountryChange);
     }
 
-    async updateRegions(countryCode) {
-      const { region, city } = this.constructor.fields;
+    async onCountryChange(e, regionField) {
+      this.onCountryChangeCallCount++;
 
-      if (!region) return;
+      console.log(`[CHANGE COUNTRY HANDLER] Called ${this.onRegionChangeCallCount} times`);
+      const countryCode = e.detail?.value || e.target.value;
 
+      if (regionField) {
+        await this.updateRegions(regionField, countryCode);
+      }
+    };
+
+    async updateRegions(regionField, countryCode) {
       const regions = await this.fetchRegions(countryCode);
-
-      this.updateOptions(region, regions);
-
-      if (city) {
-        const regionCode = this.getSelectedValue(region);
-
-        await this.updateCities(countryCode, regionCode);
+      console.log('update region in progress', regionField, countryCode, regions);
+      
+      if(regions) {
+        this.updateOptions(regionField, regions);
       }
+    
+      if (this._onRegionChange) {
+        regionField.removeEventListener("change", this._onRegionChange);
+      } 
+        
+      this._onRegionChange = (e) => this.onRegionChange(e, countryCode);
+      regionField.addEventListener("change", this._onRegionChange);
     }
 
-    async updateCities(countryCode, regionCode) {
-      const { city } = this.constructor.fields;
+    async onRegionChange(e, countryCode) {
+      this.onRegionChangeCallCount++;
+      console.log(`[CHANGE REGION HANDLER] Called ${this.onRegionChangeCallCount} times`);
+      const regionCode = e.detail?.value || e.target.value;
+      const cityField = document.querySelector('[data-field="city"]');
 
+      if (cityField) {
+        await this.updateCities(cityField, countryCode, regionCode);
+      }
+    };
+
+    async updateCities(cityField, countryCode, regionCode) {
       const cities = await this.fetchCities(countryCode, regionCode);
-      this.updateOptions(city, cities);
+      console.log('update city in progress', countryCode, regionCode, cities);
+      
+      if(cities) {
+        this.updateOptions(cityField, cities);
+      }
     }
 
     getSelectedValue(field) {
       if (!field || !field.content) return;
+      console.log('the selected field', field);
 
       const input = field.querySelector("input:checked");
+      console.log('the selected checked input', input);
       return input ? input.value : "";
     }
 
     updateOptions(field, options) {
-      if (!field || !field.content) return;
+      console.log('going inside updateOption()');
 
-      const content = field.content;
-      const isRequired = content.hasAttribute("required");
-      const searchInput = content.querySelector('input[type="search"]');
-      content.innerHTML = "";
-      
-      if (searchInput) {
-        content.appendChild(searchInput);
+      if (!field || !field.content) {
+        console.error("Missing field or field.content", field);
+        return;
       }
 
+      console.log(field.content);
+      const isRequired = field.content.hasAttribute("required");
+      field.content.innerHTML = "";
+
       if (options.length === 0) {
+        console.log("input field is 0");
         this.resetField(field);
         return;
       }
@@ -118,23 +137,25 @@ if (!customElements.get("yc-linked-fields")) {
         }
 
         item.textContent = option.name;
-        content.appendChild(item);
+        field.content.appendChild(item);
       });
 
       this.setupField(field);
     }
 
     setupField(field) {
+      console.log("going through the setupFieldd()");
       const items = field.content.querySelectorAll("yc-combobox-item");
+      console.log("get items", items);
 
       items.forEach((item) => {
         const { value } = item.attributes;
         const label = item.textContent.trim();
         const checked = item.hasAttribute("checked");
-        const disabled = item.hasAttribute("disabled");
         const required = item.hasAttribute("required");
 
         if (checked && field.placeholder) {
+          console.log("replacing the place holder");
           field.placeholder.textContent = label;
         }
 
@@ -142,8 +163,10 @@ if (!customElements.get("yc-linked-fields")) {
           <label role="option">
             <span>${label}</span>
             <input type="radio" name="${field.getAttribute("name")}" value="${value?.value}" 
-              ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} hidden>
+              ${checked ? "checked" : ""} ${required ? "required" : ""} hidden>
           </label>`;
+
+          console.log("dom modifier succecsfully");
       });
 
       this.attachListeners(field);
@@ -154,19 +177,16 @@ if (!customElements.get("yc-linked-fields")) {
     }
 
     attachListeners(field) {
-      if (field.listenersAttached) return;
-      field.listenersAttached = true;
-
+      console.log('attaching listners', field);
       const updatePlaceholder = (input) => {
-      if (field.placeholder) {
-        field.placeholder.textContent = input.closest("label").textContent.trim();
-      }
-      field.content.dataset.visible = false;
-      field.dispatchEvent(new CustomEvent("change", { bubbles: true, detail: { value: input.value } }));
+        if (field.placeholder) {
+          field.placeholder.textContent = input.closest("label").textContent.trim();
+        }
+        field.content.dataset.visible = false;
       };
 
       field.content.querySelectorAll("input").forEach((input) => {
-      input.addEventListener("change", () => updatePlaceholder(input));
+        input.addEventListener("change", () => updatePlaceholder(input));
       });
 
       field.trigger?.addEventListener("click", () => {
@@ -181,8 +201,10 @@ if (!customElements.get("yc-linked-fields")) {
     }
 
     enableSearch(field) {
+      console.log('start looking to enable search');
       if (!field.search || field.searchEnabled) return;
       field.searchEnabled = true;
+      console.log('enabling search in progress...');
 
       const placeholder = field.search.getAttribute("placeholder");
       const noResultsMsg = field.search.dataset.noResults;
@@ -193,6 +215,7 @@ if (!customElements.get("yc-linked-fields")) {
       searchInput.dataset.noResults = noResultsMsg;
 
       field.content.insertBefore(searchInput, field.content.firstChild);
+      console.log("search is enabled", field.content.insertBefore(searchInput, field.content.firstChild));
       this.setupSearchFunctionality(field, searchInput, noResultsMsg);
     }
 
