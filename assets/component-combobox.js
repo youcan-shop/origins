@@ -9,17 +9,16 @@ if (!customElements.get("yc-combobox")) {
       this.placeholder = this.trigger.querySelector("yc-combobox-value");
       this.content = this.querySelector("yc-combobox-content");
       this.search = this.querySelector("yc-combobox-search");
+      this.itemsContent = this.content.querySelectorAll("yc-combobox-item");
     }
 
     connectedCallback() {
-      this.setup();
+      this.setup(this.itemsContent);
       this.attachListeners();
       this.search && this.enableSearch();
     }
 
-    setup() {
-      const items = this.content.querySelectorAll("yc-combobox-item");
-
+    setup(items, callback = null) {
       items.forEach((item) => {
         const { value } = item.attributes;
         const label = item.textContent.trim();
@@ -36,6 +35,10 @@ if (!customElements.get("yc-combobox")) {
               ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} hidden>
           </label>`;
       });
+
+      if (callback) {
+        this.onSelect(callback);
+      }
     }
 
     attachListeners() {
@@ -64,11 +67,12 @@ if (!customElements.get("yc-combobox")) {
       this.content.dataset.visible = visible;
     }
 
-    onSelect() {
+    onSelect(callback) {
       const options = this.content.querySelectorAll("label");
 
       options.forEach((opt) =>
         opt.addEventListener("change", () => {
+          callback ?? callback.call(this, e);
           this.placeholder.textContent = opt.textContent.trim();
           this.toggleState(false);
         }),

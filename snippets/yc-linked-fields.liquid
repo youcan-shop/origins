@@ -1,16 +1,18 @@
-{{ 'component-combobox.css' | asset_url | stylesheet_tag }}
 {{ 'component-linked-fields.js' | asset_url | script_tag_deferred }}
 
-<yc-linked-fields name="{{ field_name }}" data-field="{{ field_name }}">
-  <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
-    <yc-combobox-value>{{ field.placeholder | default: 'Select' }}</yc-combobox-value>
-  </yc-combobox-trigger>
-  <yc-combobox-search placeholder="Search..." data-no-results="No result found"></yc-combobox-search>
-  <yc-combobox-content
-    role="listbox"
-    {% if field.required %}
-      required
-    {% endif %}
-  >
-  </yc-combobox-content>
+<yc-linked-fields name="{{ field_name }}">
+  <yc-combobox name="{{ field_name }}">
+    <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
+      <yc-combobox-value>{{ field.placeholder | default: 'Select' }}</yc-combobox-value>
+    </yc-combobox-trigger>
+    <yc-combobox-content
+      role="listbox"
+      {% if field.required %}
+        required
+      {% endif %}
+    >
+      <yc-combobox-search placeholder="Search..." data-no-results="No result found"></yc-combobox-search>
+      <yc-combobox-item> </yc-combobox-item>
+    </yc-combobox-content>
+  </yc-combobox>
 </yc-linked-fields>
