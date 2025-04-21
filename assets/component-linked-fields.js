@@ -10,43 +10,45 @@ if (!customElements.get("yc-linked-fields")) {
     }
 
     get checkedCountry() {
-      return document.querySelector("yc-combobox[name='country'] input:checked")?.value;
+      return document.querySelector("yc-combobox[name='country'] input:checked")?.dataset.country;
     }
 
     get checkedRegion() {
-      return document.querySelector("yc-combobox[name='region'] input:checked")?.value;
+      return document.querySelector("yc-combobox[name='region'] input:checked")?.dataset.region;
     }
   
     async connectedCallback() {
-      if(this.countryField) {
+      if (this.countryField) {
         await this.setupCountries();
       }
     }
   
-    setupOptions(options, name) {
+    setupOptions(newOptions, name) {
       const selector = document.querySelector(`yc-combobox[name=${name}]`);
       const content = selector?.querySelector("yc-combobox-content");
       const isRequired = content.hasAttribute("required");
+      const oldOptions = content.querySelectorAll("label");
 
       if (!selector || !content) {
         console.error(`Selector or content not found for ${name}`);
         return;
       };
+
+      if (oldOptions && oldOptions.length > 0) {
+        oldOptions.forEach(option => option.remove());
+      }
   
-      options.forEach((opt, index) => {
+      newOptions.forEach((opt, index) => {
         const option = document.createElement("yc-combobox-item");
+
+        option.setAttribute("value", opt.value);
+        option.setAttribute(`data-${name}`, opt.code);
+        option.textContent = opt.label;
 
         if (isRequired) {
           option.setAttribute("required", "");
         }
-
-        option.setAttribute("value", opt.value);
-        option.textContent = opt.label;
-
         
-          option.setAttribute("required", "");
-        
-
         if (index === 0) {
           option.setAttribute("checked", "");
         }
@@ -54,7 +56,7 @@ if (!customElements.get("yc-linked-fields")) {
         content.appendChild(option);
       });
   
-      selector.setup(content.querySelectorAll("yc-combobox-item"), (e) => this.onchange(name, e.target.value));
+      selector.setup(content.querySelectorAll("yc-combobox-item"), (e) => this.onchange(name, e.target.dataset[name]));
     }
   
     onchange(name, value) {
@@ -124,7 +126,8 @@ if (!customElements.get("yc-linked-fields")) {
         if (response && response.countries.length) {
           return response.countries.map((country) => ({
             label: country.name,
-            value: country.code,
+            value: country.name,
+            code: country.code,
           }));
         }
         return [];
@@ -143,7 +146,8 @@ if (!customElements.get("yc-linked-fields")) {
         if (response && response.states.length) {
           return response.states.map((region) => ({
             label: region.name,
-            value: region.code,
+            value: region.name,
+            code: region.code,
           }));
         }
         return [];

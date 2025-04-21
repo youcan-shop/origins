@@ -22,11 +22,12 @@ if (!customElements.get("yc-combobox")) {
       if (items.length === 0) return;
 
       items.forEach((item) => {
-        const { value } = item.attributes;
+        const { value, [`data-${this.getAttribute("name")}`]: dataCustomAttribute } = item.attributes;
         const label = item.textContent.trim();
         const checked = item.hasAttribute("checked");
         const disabled = item.hasAttribute("disabled");
         const required = item.hasAttribute("required");
+        const dataName = item.hasAttribute(`data-${this.getAttribute("name")}`);
 
         if (checked) this.placeholder.textContent = label;
 
@@ -34,7 +35,8 @@ if (!customElements.get("yc-combobox")) {
           <label role="option">
             <span>${label}</span>
             <input type="radio" name="${this.getAttribute("name")}" value="${value?.value}" 
-              ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} hidden>
+              ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""}  
+              ${dataName ? `data-${this.getAttribute("name")}=${dataCustomAttribute?.value}` : ""} hidden>
           </label>`;
       });
 
