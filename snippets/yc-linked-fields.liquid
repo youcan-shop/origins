@@ -3,7 +3,7 @@
 <yc-linked-fields name="{{ field_name }}">
   <yc-combobox name="{{ field_name }}">
     <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
-      <yc-combobox-value>{{ field.placeholder | default: 'Select' }}</yc-combobox-value>
+      <yc-combobox-value>{{ field.hello | default: 'general.select_option' | t }}</yc-combobox-value>
     </yc-combobox-trigger>
     <yc-combobox-content
       role="listbox"
@@ -11,7 +11,7 @@
         required
       {% endif %}
     >
-      <yc-combobox-search placeholder="Search..." no-results="No result found"></yc-combobox-search>
+      <yc-combobox-search placeholder="{{ 'general.search' | t }}" no-results="{{ 'search.empty.title' | t }}"></yc-combobox-search>
     </yc-combobox-content>
   </yc-combobox>
 </yc-linked-fields>
