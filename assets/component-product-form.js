@@ -88,7 +88,15 @@ if (!customElements.get("yc-product-form")) {
 
     async placeOrder(productVariantId, attachedImage, quantity) {
       const formData = new FormData(this.form);
-      const fields = Object.fromEntries(formData);
+      const filteredFormData = new FormData();
+      
+      for (const [key, value] of formData.entries()) {
+        if (!key.includes("search")) {
+          filteredFormData.append(key, value);
+        }
+      }
+
+      const fields = Object.fromEntries(filteredFormData);
 
       try {
         const response = await youcanjs.checkout.placeExpressCheckoutOrder({
