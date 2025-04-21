@@ -4,74 +4,117 @@ if (!customElements.get("yc-linked-fields")) {
       super();
 
       this.locale = document.documentElement.lang || "en";
+      this.countryField = this.querySelector('yc-combobox[name="country"]');
+      this.regionField = this.querySelector('yc-combobox[name="region"]');
+      this.cityField = this.querySelector('yc-combobox[name="city"]');
+    }
+
+    get checkedCountry() {
+      return document.querySelector("yc-combobox[name='country'] input:checked")?.value;
+    }
+
+    get checkedRegion() {
+      return document.querySelector("yc-combobox[name='region'] input:checked")?.value;
     }
   
     async connectedCallback() {
-      await this.setupCountries();
+      if(this.countryField) {
+        await this.setupCountries();
+      }
     }
   
     setupOptions(options, name) {
-      const selector = this.querySelector(`yc-combobox[name=${name}]`);
+      const selector = document.querySelector(`yc-combobox[name=${name}]`);
       const content = selector?.querySelector("yc-combobox-content");
+      const isRequired = content.hasAttribute("required");
+
+      if (!selector || !content) {
+        console.error(`Selector or content not found for ${name}`);
+        return;
+      };
   
-      options.forEach((opt) => {
+      options.forEach((opt, index) => {
         const option = document.createElement("yc-combobox-item");
+
+        if (isRequired) {
+          option.setAttribute("required", "");
+        }
+
         option.setAttribute("value", opt.value);
         option.textContent = opt.label;
+
+        
+          option.setAttribute("required", "");
+        
+
+        if (index === 0) {
+          option.setAttribute("checked", "");
+        }
   
-        content?.appendChild(option);
+        content.appendChild(option);
       });
   
-      selector?.setup(content.querySelectorAll("yc-combobox-item"), (e) => this.onchange(name, e.target.value));
+      selector.setup(content.querySelectorAll("yc-combobox-item"), (e) => this.onchange(name, e.target.value));
     }
   
     onchange(name, value) {
-      console.log(`NAME: ${name}`);
-      console.log(`VALUE: ${value}`);
+      if (this.cityField) return;
 
-      if (name === "country") {
+      if (this.countryField && name === "country") {
         this.setupRegions(value);
       }
       
       if (name === "region") {
-        const countryInput = this.querySelector("yc-combobox[name=country] input:checked");
-        const countryCode = countryInput ? countryInput.value : null;
-
-        this.setupCities(countryCode, value);
+        this.setupCities(this.checkedCountry, value);
       }
     }
 
     async setupCountries() {
       const countriesList = await this.fetchCountries();
 
-      if(!countriesList || !countriesList.length) {
+      if (!countriesList) {
         console.error("No countries found");
         return;
       }
 
       this.setupOptions(countriesList, "country");
+
+      const region = document.querySelector('yc-combobox[name="region"]');
+
+      if (region) {
+        await this.setupRegions();
+      }
     }
 
     async setupRegions(countryCode) {
-      const regionsList = await this.fetchRegions(countryCode);
+      const selectedCountryCode = countryCode || this.checkedCountry;
+      const regionsList = await this.fetchRegions(selectedCountryCode);
 
-      if(!regionsList || !regionsList.length) {
+      if (!regionsList) {
         console.error("No regions found");
         return;
       }
 
       this.setupOptions(regionsList, "region");
+
+      const city = document.querySelector('yc-combobox[name="city"]');
+
+      if (city) {
+        await this.setupCities();
+      }
     }
 
     async setupCities(countryCode, regionCode) {
-      const citiesList = await this.fetchCities(countryCode, regionCode);
+      const selectedCountryCode = countryCode || this.checkedCountry;
+      const selectedRegionCode = regionCode || this.checkedRegion;
+      const citiesList = await this.fetchCities(selectedCountryCode, selectedRegionCode);
 
-      if(!citiesList || !citiesList.length) {
+      if (!citiesList) {
         console.error("No cities found");
         return;
       }
 
-      this.setupOptions(citiesList, "cities");
+      this.setupOptions(citiesList, "city");
     }
 
     async fetchCountries() {

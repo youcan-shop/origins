@@ -19,6 +19,8 @@ if (!customElements.get("yc-combobox")) {
     }
 
     setup(items, callback = null) {
+      if (items.length === 0) return;
+
       items.forEach((item) => {
         const { value } = item.attributes;
         const label = item.textContent.trim();
@@ -36,13 +38,10 @@ if (!customElements.get("yc-combobox")) {
           </label>`;
       });
 
-      if (callback) {
-        this.onSelect(callback);
-      }
+      this.onSelect(callback);
     }
 
     attachListeners() {
-      this.onSelect();
       this.onTrigger();
       this.onClickOutSide();
     }
@@ -57,9 +56,7 @@ if (!customElements.get("yc-combobox")) {
 
       this.search.replaceWith(searchInput);
       this.search = searchInput;
-
-      const options = [...this.content.querySelectorAll("label")];
-      this.onSearch(options, noResultsMsg);
+      this.onSearch(noResultsMsg);
     }
 
     toggleState(visible) {
@@ -67,12 +64,15 @@ if (!customElements.get("yc-combobox")) {
       this.content.dataset.visible = visible;
     }
 
-    onSelect(callback) {
+    onSelect(callback = null) {
       const options = this.content.querySelectorAll("label");
 
       options.forEach((opt) =>
-        opt.addEventListener("change", () => {
-          callback ?? callback.call(this, e);
+        opt.addEventListener("change", (e) => {
+          if (callback) {
+            callback.call(this, e);
+          }
+
           this.placeholder.textContent = opt.textContent.trim();
           this.toggleState(false);
         }),
@@ -95,9 +95,10 @@ if (!customElements.get("yc-combobox")) {
       });
     }
 
-    onSearch(options, no_results_message) {
+    onSearch(no_results_message) {
       this.search.addEventListener("input", (e) => {
         const query = e.target.value.toLowerCase();
+        const options = e.target.parentElement.querySelectorAll('label');
         let hasMatch = false;
 
         options.forEach((opt) => {
