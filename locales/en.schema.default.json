@@ -274,7 +274,7 @@
       "label": "Related Products",
       "info_paragraph": "ℹ️ The Related Products section requires at least one related product to appear on page",
       "title_default": "Related Products",
-      "description_default": "Products that take the spotlight"
+      "description_default": "Products you may also like"
     },
     "search": {
       "label": "Search"
