@@ -274,7 +274,7 @@
       "label": "Produits associés",
       "info_paragraph": "ℹ️ La section Produits associés nécessite au moins un produit associé pour apparaître sur la page",
       "title_default": "Produits associés",
-      "description_default": "Produits qui sont mis en avant"
+      "description_default": "Produits qui pourraient aussi vous plaire"
     },
     "search": {
       "label": "Recherche"

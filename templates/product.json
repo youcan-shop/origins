@@ -37,7 +37,11 @@
       "type": "product-reviews"
     },
     "related-products": {
-      "type": "related-products"
+      "type": "related-products",
+      "settings": {
+        "title": "Related Products",
+        "description": "Products you may also like"
+      }
     }
   },
   "order": ["single-product", "product-reviews", "related-products"]
