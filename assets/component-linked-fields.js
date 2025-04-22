@@ -28,6 +28,8 @@ if (!customElements.get("yc-linked-fields")) {
       const content = selector?.querySelector("yc-combobox-content");
       const isRequired = content.hasAttribute("required");
       const oldOptions = content.querySelectorAll("label");
+      const customerLocal = new Intl.Locale(window.Dotshop?.customer_locale);
+      const customerCountry = customerLocal?.region;
 
       if (!selector || !content) {
         console.error(`Selector or content not found for ${name}`);
@@ -48,8 +50,10 @@ if (!customElements.get("yc-linked-fields")) {
         if (isRequired) {
           option.setAttribute("required", "");
         }
-        
-        if (index === 0) {
+
+        if ((name === "country") && (customerCountry === opt.code)) {
+          option.setAttribute("checked", "");
+        } else if (index === 0) {
           option.setAttribute("checked", "");
         }
   
