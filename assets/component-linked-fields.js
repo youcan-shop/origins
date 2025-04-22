@@ -29,7 +29,7 @@ if (!customElements.get("yc-linked-fields")) {
       const isRequired = content.hasAttribute("required");
       const oldOptions = content.querySelectorAll("label");
       const customerLocal = new Intl.Locale(window.Dotshop?.customer_locale);
-      const customerCountry = customerLocal?.region;
+      const customerCountryCode = customerLocal?.region;
 
       if (!selector || !content) {
         console.error(`Selector or content not found for ${name}`);
@@ -51,7 +51,7 @@ if (!customElements.get("yc-linked-fields")) {
           option.setAttribute("required", "");
         }
 
-        if ((name === "country") && (customerCountry === opt.code)) {
+        if ((name === "country") && (customerCountryCode === opt.code)) {
           option.setAttribute("checked", "");
         } else if (index === 0) {
           option.setAttribute("checked", "");
