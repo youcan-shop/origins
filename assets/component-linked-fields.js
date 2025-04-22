@@ -2,6 +2,7 @@ if (!window.LocationFieldBase) {
   window.LocationFieldBase = class LocationFieldBase extends HTMLElement {
     constructor() {
       super();
+
       this.locale = document.documentElement.lang || "en";
       this.productForm = this.closest("yc-product-form");
     }
@@ -42,8 +43,6 @@ if (!window.LocationFieldBase) {
       comboBoxContent.append(fragment);
 
       comboBox.setUp(comboBoxContent.querySelectorAll("yc-combobox-item"), callback);
-
-      return items.length > 0 ? items[0] : null;
     }
 
     handleAPIError(error, message) {
@@ -200,6 +199,7 @@ if (!customElements.get("yc-city-field")) {
             value: city,
           }));
         }
+
         return [];
       } catch (error) {
         return this.handleAPIError(error, "Error fetching cities:");
