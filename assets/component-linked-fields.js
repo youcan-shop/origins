@@ -1,122 +1,88 @@
-if (!customElements.get("yc-linked-fields")) {
-  class LinkedFields extends HTMLElement {
+if (!window.LocationFieldBase) {
+  window.LocationFieldBase = class LocationFieldBase extends HTMLElement {
     constructor() {
       super();
-
       this.locale = document.documentElement.lang || "en";
-      this.countryField = this.querySelector('yc-combobox[name="country"]');
-      this.regionField = this.querySelector('yc-combobox[name="region"]');
-      this.cityField = this.querySelector('yc-combobox[name="city"]');
+      this.productForm = this.closest("yc-product-form");
     }
 
-    get checkedCountry() {
-      return document.querySelector("yc-combobox[name='country'] input:checked")?.dataset.country;
-    }
+    populateField(items, fieldName, extraAttributes = {}, callback) {
+      const comboBox = this.querySelector(`yc-combobox[name=${fieldName}]`);
+      const comboBoxContent = comboBox.querySelector("yc-combobox-content");
 
-    get checkedRegion() {
-      return document.querySelector("yc-combobox[name='region'] input:checked")?.dataset.region;
-    }
-  
-    async connectedCallback() {
-      if (this.countryField) {
-        await this.setupCountries();
+      const fragment = document.createDocumentFragment();
+
+      if (fieldName !== "country" && comboBoxContent.children.length > 0) {
+        comboBoxContent.replaceChildren(comboBoxContent.children[0]);
       }
-    }
-  
-    setupOptions(newOptions, name) {
-      const selector = document.querySelector(`yc-combobox[name=${name}]`);
-      const content = selector?.querySelector("yc-combobox-content");
-      const isRequired = content.hasAttribute("required");
-      const oldOptions = content.querySelectorAll("label");
 
-      if (!selector || !content) {
-        console.error(`Selector or content not found for ${name}`);
-        return;
-      };
-
-      if (oldOptions && oldOptions.length > 0) {
-        oldOptions.forEach(option => option.remove());
-      }
-  
-      newOptions.forEach((opt, index) => {
+      items.forEach((item, index) => {
         const option = document.createElement("yc-combobox-item");
 
-        option.setAttribute("value", opt.value);
-        option.setAttribute(`data-${name}`, opt.code);
-        option.textContent = opt.label;
+        option.setAttribute("value", item.value);
 
-        if (isRequired) {
-          option.setAttribute("required", "");
+        if (item.code) {
+          option.setAttribute(`data-${fieldName}-code`, item.code);
         }
-        
-        if (index === 0) {
-          option.setAttribute("checked", "");
+
+        for (const [key, value] of Object.entries(extraAttributes)) {
+          if (!!value) {
+            option.setAttribute(`data-${key}`, value);
+          }
         }
-  
-        content.appendChild(option);
+
+        option.toggleAttribute("required", comboBoxContent.hasAttribute("required"));
+        option.toggleAttribute("checked", index === 0);
+
+        option.textContent = item.label;
+
+        fragment.appendChild(option);
       });
-  
-      selector.setup(content.querySelectorAll("yc-combobox-item"), (e) => this.onchange(name, e.target.dataset[name]));
-    }
-  
-    onchange(name, value) {
-      if (this.cityField) return;
 
-      if (this.countryField && name === "country") {
-        this.setupRegions(value);
-      }
-      
-      if (name === "region") {
-        this.setupCities(this.checkedCountry, value);
-      }
+      comboBoxContent.append(fragment);
+
+      comboBox.setUp(comboBoxContent.querySelectorAll("yc-combobox-item"), callback);
+
+      return items.length > 0 ? items[0] : null;
     }
 
-    async setupCountries() {
-      const countriesList = await this.fetchCountries();
+    handleAPIError(error, message) {
+      console.error(message, error);
+      toast.show(error.message, "error");
 
-      if (!countriesList) {
-        console.error("No countries found");
-        return;
-      }
+      return [];
+    }
+  };
+}
 
-      this.setupOptions(countriesList, "country");
-
-      const region = document.querySelector('yc-combobox[name="region"]');
-
-      if (region) {
-        await this.setupRegions();
-      }
+if (!customElements.get("yc-country-field")) {
+  class CountryField extends window.LocationFieldBase {
+    connectedCallback() {
+      this.listCountries();
     }
 
-    async setupRegions(countryCode) {
-      const selectedCountryCode = countryCode || this.checkedCountry;
-      const regionsList = await this.fetchRegions(selectedCountryCode);
+    async listCountries() {
+      const countries = await this.fetchCountries();
 
-      if (!regionsList) {
-        console.error("No regions found");
-        return;
-      }
+      this.populateField(countries, "country", {}, (e) => {
+        this.dispatch(e.target.dataset.countryCode);
+      });
 
-      this.setupOptions(regionsList, "region");
-
-      const city = document.querySelector('yc-combobox[name="city"]');
-
-      if (city) {
-        await this.setupCities();
+      if (countries.length > 0) {
+        this.dispatch(countries[0].code);
       }
     }
 
-    async setupCities(countryCode, regionCode) {
-      const selectedCountryCode = countryCode || this.checkedCountry;
-      const selectedRegionCode = regionCode || this.checkedRegion;
-      const citiesList = await this.fetchCities(selectedCountryCode, selectedRegionCode);
+    populateField(countries, fieldName, extraAttributes, callback) {
+      return super.populateField(countries, fieldName, extraAttributes, callback);
+    }
 
-      if (!citiesList) {
-        console.error("No cities found");
-        return;
-      }
+    dispatch(countryCode) {
+      const changeEvent = new CustomEvent("country-field:change", {
+        detail: { countryCode },
+      });
 
-      this.setupOptions(citiesList, "city");
+      this.productForm.dispatchEvent(changeEvent);
     }
 
     async fetchCountries() {
@@ -132,16 +98,52 @@ if (!customElements.get("yc-linked-fields")) {
         }
         return [];
       } catch (error) {
-        console.error("Error fetching countries:", error);
-        return [];
+        return this.handleAPIError(error, "Error fetching countries:");
       }
+    }
+  }
+
+  customElements.define("yc-country-field", CountryField);
+}
+
+if (!customElements.get("yc-region-field")) {
+  class RegionField extends window.LocationFieldBase {
+    connectedCallback() {
+      this.productForm.addEventListener("country-field:change", async (e) => {
+        await this.listRegions(e.detail.countryCode);
+      });
+    }
+
+    async listRegions(countryCode) {
+      const regions = await this.fetchRegions(countryCode);
+
+      this.populateField(regions, "region", { "country-code": countryCode }, (e) => {
+        const { regionCode, countryCode } = e.target.dataset;
+        this.dispatch(regionCode, countryCode);
+      });
+
+      if (regions.length > 0) {
+        this.dispatch(regions[0].code, countryCode);
+      }
+    }
+
+    populateField(regions, fieldName, extraAttributes, callback) {
+      return super.populateField(regions, fieldName, extraAttributes, callback);
+    }
+
+    dispatch(regionCode, countryCode) {
+      const changeEvent = new CustomEvent("region-field:change", {
+        detail: { regionCode, countryCode },
+      });
+
+      this.productForm.dispatchEvent(changeEvent);
     }
 
     async fetchRegions(countryCode) {
       if (!countryCode) return [];
 
       try {
-        const response = await youcanjs.misc.getCountryRegions(countryCode, this.locale);
+        const response = await youcanjs.misc.getCountryRegions(countryCode);
 
         if (response && response.states.length) {
           return response.states.map((region) => ({
@@ -152,16 +154,45 @@ if (!customElements.get("yc-linked-fields")) {
         }
         return [];
       } catch (error) {
-        console.error("Error fetching regions:", error);
-        return [];
+        return this.handleAPIError(error, "Error fetching regions:");
       }
     }
+  }
 
-    async fetchCities(countryCode, regionCode) {
-      if (!countryCode || !regionCode) return [];
+  customElements.define("yc-region-field", RegionField);
+}
+
+if (!customElements.get("yc-city-field")) {
+  class CityField extends window.LocationFieldBase {
+    connectedCallback() {
+      this.productForm.addEventListener("region-field:change", async (e) => {
+        await this.listCities(e.detail.regionCode, e.detail.countryCode);
+      });
+    }
+
+    async listCities(regionCode, countryCode) {
+      const cities = await this.fetchCities(regionCode, countryCode);
+
+      this.populateField(cities, "city", { "country-code": countryCode });
+    }
+
+    populateField(cities, fieldName, extraAttributes, callback) {
+      return super.populateField(cities, fieldName, extraAttributes, callback);
+    }
+
+    onChange(regionCode, countryCode) {
+      const changeEvent = new CustomEvent("region-field:change", {
+        detail: { regionCode, countryCode },
+      });
+
+      this.productForm.dispatchEvent(changeEvent);
+    }
+
+    async fetchCities(regionCode, countryCode) {
+      if (!regionCode) return [];
 
       try {
-        const response = await youcanjs.misc.getCountryCities(countryCode, regionCode, this.locale);
+        const response = await youcanjs.misc.getCountryCities(countryCode, regionCode);
 
         if (response && response.cities.length) {
           return response.cities.map((city) => ({
@@ -171,11 +202,10 @@ if (!customElements.get("yc-linked-fields")) {
         }
         return [];
       } catch (error) {
-        console.error("Error fetching cities:", error);
-        return [];
+        return this.handleAPIError(error, "Error fetching cities:");
       }
     }
   }
 
-  customElements.define("yc-linked-fields", LinkedFields);
+  customElements.define("yc-city-field", CityField);
 }

@@ -13,21 +13,27 @@ if (!customElements.get("yc-combobox")) {
     }
 
     connectedCallback() {
-      this.setup(this.itemsContent);
+      this.setUp(this.itemsContent);
       this.attachListeners();
       this.search && this.enableSearch();
     }
 
-    setup(items, callback = null) {
+    getDataAttributesString(element) {
+      return Array.from(element.attributes)
+        .filter((attr) => attr.name.startsWith("data-"))
+        .map((attr) => `${attr.name}="${attr.value}"`)
+        .join(" ");
+    }
+
+    setUp(items, callback = null) {
       if (items.length === 0) return;
 
       items.forEach((item) => {
-        const { value, [`data-${this.getAttribute("name")}`]: dataCustomAttribute } = item.attributes;
+        const { value } = item.attributes;
         const label = item.textContent.trim();
         const checked = item.hasAttribute("checked");
         const disabled = item.hasAttribute("disabled");
         const required = item.hasAttribute("required");
-        const dataName = item.hasAttribute(`data-${this.getAttribute("name")}`);
 
         if (checked) this.placeholder.textContent = label;
 
@@ -35,8 +41,7 @@ if (!customElements.get("yc-combobox")) {
           <label role="option">
             <span>${label}</span>
             <input type="radio" name="${this.getAttribute("name")}" value="${value?.value}" 
-              ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""}  
-              ${dataName ? `data-${this.getAttribute("name")}=${dataCustomAttribute?.value}` : ""} hidden>
+              ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} ${this.getDataAttributesString(item)} hidden>
           </label>`;
       });
 
@@ -100,7 +105,7 @@ if (!customElements.get("yc-combobox")) {
     onSearch(no_results_message) {
       this.search.addEventListener("input", (e) => {
         const query = e.target.value.toLowerCase();
-        const options = e.target.parentElement.querySelectorAll('label');
+        const options = e.target.parentElement.querySelectorAll("label");
         let hasMatch = false;
 
         options.forEach((opt) => {
