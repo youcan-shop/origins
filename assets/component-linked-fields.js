@@ -28,8 +28,8 @@ if (!customElements.get("yc-linked-fields")) {
       const content = selector?.querySelector("yc-combobox-content");
       const isRequired = content.hasAttribute("required");
       const oldOptions = content.querySelectorAll("label");
-      const customerLocal = new Intl.Locale(window.Dotshop?.customer_locale);
-      const customerCountryCode = customerLocal?.region;
+      const customerLocale = new Intl.Locale(window.Dotshop?.customer_locale);
+      const customerCountryCode = customerLocale?.region;
 
       if (!selector || !content) {
         console.error(`Selector or content not found for ${name}`);
