@@ -163,6 +163,10 @@
 {% endif %}
 
 <script>
+  const FORM = {
+    errors:  '{{ form.errors | first }}',
+  };
+
   window.errorStrings = {
     insufficient_inventory: '{{ 'error_messages.insufficient_inventory' | t }}',
     rating_is_required: '{{ 'error_messages.rating_is_required' | t }}',
