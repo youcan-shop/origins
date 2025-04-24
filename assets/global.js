@@ -13,8 +13,8 @@ const PUB_SUB_EVENTS = {
 const toast = new Toast();
 
 // Handle global errors
-if (window.errorStrings.global) {
-  toast.show(window.errorStrings.global, "error");
+if (window.errorStrings.checkout) {
+  toast.show(window.errorStrings.checkout, "error");
 }
 
 // Utilities
