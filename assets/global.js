@@ -12,6 +12,11 @@ const PUB_SUB_EVENTS = {
 // Toast
 const toast = new Toast();
 
+// Handle global errors
+if (window.errorStrings.checkout) {
+  toast.show(window.errorStrings.checkout, "error");
+}
+
 // Utilities
 function debounce(func, wait) {
   let time;
