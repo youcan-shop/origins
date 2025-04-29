@@ -1,6 +1,7 @@
 // Constants
 const CURRENCY_SYMBOL = Dotshop.currency;
-const CUSTOMER_LOCALE = Dotshop.customer_locale;
+const CUSTOMER_LOCALE = Dotshop.customer_locale || "en-US";
+const CUSTOMER_COUNTRY_CODE = new Intl.Locale(CUSTOMER_LOCALE).region;
 const ON_CHANGE_DEBOUNCE_TIMER = 300;
 
 const PUB_SUB_EVENTS = {
