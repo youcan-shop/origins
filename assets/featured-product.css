@@ -240,6 +240,9 @@
   grid-template-columns:repeat(2, 1fr);
   grid-column:1/-1;
 }
+.single-product yc-product-info .buy-button .buy-area .express-checkout .fields > *:nth-last-child(2):nth-child(odd){
+  grid-column:1/-1;
+}
 .single-product yc-product-info .buy-button .buy-area .express-checkout .fields .field{
   display:grid;
   grid-gap:var(--gap-sm);
@@ -345,6 +348,9 @@
   }
   .single-product yc-product-info .buy-button .buy-area .express-checkout .fields{
     border-block-start:none;
+    grid-template-columns:1fr;
+  }
+  .single-product yc-product-info .buy-button .buy-area .express-checkout .fields yc-linked-fields{
     grid-template-columns:1fr;
   }
   .single-product:not([data-prevent-sticky]) yc-product-info .buy-button .buy-area .express-checkout{

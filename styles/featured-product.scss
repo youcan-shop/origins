@@ -275,6 +275,10 @@
               grid-column: 1 / -1;
             }
 
+            & > *:nth-last-child(2):nth-child(odd) {
+              grid-column: 1 / -1;
+            }
+
             .field {
               display: grid;
               gap: var(--gap-sm);
@@ -407,6 +411,10 @@
           .fields {
             border-block-start: none;
             grid-template-columns: 1fr;
+
+            yc-linked-fields {
+              grid-template-columns: 1fr;
+            }
           }
         }
       }
