@@ -1,10 +1,8 @@
-{{ 'component-linked-fields.js' | asset_url | script_tag_deferred }}
-
 {% comment %}
-  Renders a ...
+  Renders a list of linked fields, typically "country", "region", and "city" (optional)
 
   Accepts:
-  - fields: {Array} Fields
+  - fields: {Array} list of fields
 
   Usage:
   {% render 'yc-linked-fields', fields: [...] %}
