@@ -12,14 +12,13 @@ if (!customElements.get("yc-combobox")) {
     }
 
     connectedCallback() {
-      this.setup();
-      this.attachListeners();
-      this.search && this.enableSearch();
-    }
-
-    setup() {
       const items = this.content.querySelectorAll("yc-combobox-item");
 
+      this.setup(items);
+      this.attachListeners();
+    }
+
+    setup(items, callback) {
       items.forEach((item) => {
         const { value } = item.attributes;
         const label = item.textContent.trim();
@@ -36,10 +35,12 @@ if (!customElements.get("yc-combobox")) {
               ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} hidden>
           </label>`;
       });
+
+      this.onSelect(callback);
+      this.enableSearch();
     }
 
     attachListeners() {
-      this.onSelect();
       this.onTrigger();
       this.onClickOutSide();
     }
@@ -64,13 +65,14 @@ if (!customElements.get("yc-combobox")) {
       this.content.dataset.visible = visible;
     }
 
-    onSelect() {
+    onSelect(callback) {
       const options = this.content.querySelectorAll("label");
 
       options.forEach((opt) =>
-        opt.addEventListener("change", () => {
+        opt.addEventListener("change", (e) => {
           this.placeholder.textContent = opt.textContent.trim();
           this.toggleState(false);
+          callback.call(this, e);
         }),
       );
     }
