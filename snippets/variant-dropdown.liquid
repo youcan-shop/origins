@@ -14,7 +14,7 @@
 <yc-variant name="dropdown">
   <yc-combobox name="{{ name }}">
     <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
-      <yc-combobox-value>{{ placeholder | default: 'Select' }}</yc-combobox-value>
+      <yc-combobox-value>{{ placeholder | default: 'general.select' | t }}</yc-combobox-value>
     </yc-combobox-trigger>
     <yc-combobox-content role="listbox">
       {% for option in options %}
