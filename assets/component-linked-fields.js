@@ -40,11 +40,13 @@ class LinkedFields extends HTMLElement {
         region: index === 0,
         city: index === 0,
       };
+      const label = typeof opt === "string" ? opt : opt.name;
+      const value = typeof opt === "string" ? opt : opt.code;
 
       content.insertAdjacentHTML(
         "beforeend",
-        `<yc-combobox-item value="${typeof opt === "string" ? opt : opt.code}" ${isDefault[type] ? "checked" : ""}>
-            ${typeof opt === "string" ? opt : opt.name}
+        `<yc-combobox-item value="${label}" data-value="${value}" ${isDefault[type] ? "checked" : ""}>
+            ${label}
         </yc-combobox-item>`,
       );
     });
@@ -53,7 +55,7 @@ class LinkedFields extends HTMLElement {
   }
 
   async onChange(e, type) {
-    const value = e.target.value;
+    const value = e.target.dataset.value;
 
     if (type === "country") this.countryCode = value;
     if (type === "region") this.regionCode = value;
