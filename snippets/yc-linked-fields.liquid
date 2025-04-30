@@ -25,7 +25,7 @@
             <yc-combobox-value>{{ field.placeholder | default: 'Select' }}</yc-combobox-value>
           </yc-combobox-trigger>
           <yc-combobox-content role="listbox">
-            <yc-combobox-search placeholder="Search.." no-results="No country found."></yc-combobox-search>
+            <yc-combobox-search placeholder="{{ 'general.search' | t }}" no-results="{{ 'general.no-results' | t }}"></yc-combobox-search>
           </yc-combobox-content>
         </yc-combobox>
       </div>

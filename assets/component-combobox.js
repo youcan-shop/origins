@@ -46,8 +46,8 @@ if (!customElements.get("yc-combobox")) {
     }
 
     enableSearch() {
-      const placeholder = this.search.getAttribute("placeholder");
-      const noResultsMsg = this.search.getAttribute("no-results");
+      const placeholder = this.search.getAttribute("placeholder") || window.combobox.search;
+      const noResultsMsg = this.search.getAttribute("no-results") || window.combobox.no_results;
       const searchInput = document.createElement("input");
       searchInput.type = "search";
       searchInput.name = "search";
