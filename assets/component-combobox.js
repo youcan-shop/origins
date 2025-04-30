@@ -37,7 +37,7 @@ if (!customElements.get("yc-combobox")) {
       });
 
       this.onSelect(callback);
-      this.enableSearch();
+      this.search && this.enableSearch();
     }
 
     attachListeners() {
@@ -72,7 +72,7 @@ if (!customElements.get("yc-combobox")) {
         opt.addEventListener("change", (e) => {
           this.placeholder.textContent = opt.textContent.trim();
           this.toggleState(false);
-          callback.call(this, e);
+          callback && callback.call(this, e);
         }),
       );
     }
