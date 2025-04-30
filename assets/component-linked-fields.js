@@ -22,17 +22,16 @@ class LinkedFields extends HTMLElement {
 
   async fetchOptions() {
     for (const type of LinkedFields.TYPES) {
-      this[type] && (await this.onFetch(type));
+      this[type] && (await this.fetchLocationByType(type));
     }
   }
 
-  setupOptions(type, options) {
+  setUpOptions(type, options) {
     const combobox = this[type];
     const content = combobox.querySelector("yc-combobox-content");
-    const search = combobox.querySelector("input[type='search'");
+    const search = combobox.querySelector("input[type='search']");
 
-    content.innerHTML = "";
-    content.appendChild(search);
+    content.replaceChildren(search);
 
     options.forEach((opt, index) => {
       const isDefault = {
@@ -60,11 +59,11 @@ class LinkedFields extends HTMLElement {
     if (type === "country") this.countryCode = value;
     if (type === "region") this.regionCode = value;
     for (const next of { country: LinkedFields.TYPES.slice(1), region: LinkedFields.TYPES.slice(2) }[type] || []) {
-      this[next] && (await this.onFetch(next));
+      this[next] && (await this.fetchLocationByType(next));
     }
   }
 
-  async onFetch(type) {
+  async fetchLocationByType(type) {
     const fetchMap = {
       country: () => youcanjs.misc.getCountries(this.locale),
       region: () => youcanjs.misc.getCountryRegions(this.countryCode, this.locale),
@@ -74,19 +73,19 @@ class LinkedFields extends HTMLElement {
     this.setIsLoading(type, true);
 
     try {
-      const response = await fetchMap[type]?.();
+      const response = await fetchMap[type]?.call();
       if (!response) throw new Error(`Unknown fetch type: ${type}`);
 
       const map = {
-        country: () => this.setupOptions(type, response.countries),
+        country: () => this.setUpOptions(type, response.countries),
         region: () => {
           this.regionCode = response.states[0].code;
-          this.setupOptions(type, response.states);
+          this.setUpOptions(type, response.states);
         },
-        city: () => this.setupOptions(type, response.cities),
+        city: () => this.setUpOptions(type, response.cities),
       };
 
-      map[type]?.();
+      map[type]?.call();
     } catch (error) {
       console.error(error);
     } finally {
