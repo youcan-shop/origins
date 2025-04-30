@@ -22,7 +22,7 @@ class LinkedFields extends HTMLElement {
 
   async fetchOptions() {
     for (const type of LinkedFields.TYPES) {
-      await this.onFetch(type);
+      this[type] && (await this.onFetch(type));
     }
   }
 
@@ -58,7 +58,7 @@ class LinkedFields extends HTMLElement {
     if (type === "country") this.countryCode = value;
     if (type === "region") this.regionCode = value;
     for (const next of { country: LinkedFields.TYPES.slice(1), region: LinkedFields.TYPES.slice(2) }[type] || []) {
-      await this.onFetch(next);
+      this[next] && (await this.onFetch(next));
     }
   }
 
