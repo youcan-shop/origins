@@ -268,6 +268,13 @@
               background-color: color-mix(in srgb, currentColor 5%, transparent);
             }
 
+            yc-linked-fields {
+              display: grid;
+              gap: var(--gap-lg);
+              grid-template-columns: repeat(2, 1fr);
+              grid-column: 1 / -1;
+            }
+
             .field {
               display: grid;
               gap: var(--gap-sm);
@@ -297,7 +304,7 @@
                 display: none;
               }
 
-              &:has(input:required, textarea:required) > label::after {
+              &:has(input:required, textarea:required, yc-combobox[required]) > label::after {
                 content: " *";
                 color: var(--color-error-500);
               }

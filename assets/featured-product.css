@@ -233,6 +233,13 @@
   color:color-mix(in srgb, currentColor 80%, transparent);
   background-color:color-mix(in srgb, currentColor 5%, transparent);
 }
+.single-product yc-product-info .buy-button .buy-area .express-checkout .fields yc-linked-fields{
+  display:grid;
+  grid-gap:var(--gap-lg);
+  gap:var(--gap-lg);
+  grid-template-columns:repeat(2, 1fr);
+  grid-column:1/-1;
+}
 .single-product yc-product-info .buy-button .buy-area .express-checkout .fields .field{
   display:grid;
   grid-gap:var(--gap-sm);
@@ -258,7 +265,7 @@
 .single-product yc-product-info .buy-button .buy-area .express-checkout .fields .field:has(input[type=hidden]){
   display:none;
 }
-.single-product yc-product-info .buy-button .buy-area .express-checkout .fields .field:has(input:required, textarea:required) > label::after{
+.single-product yc-product-info .buy-button .buy-area .express-checkout .fields .field:has(input:required, textarea:required, yc-combobox[required]) > label::after{
   content:" *";
   color:var(--color-error-500);
 }

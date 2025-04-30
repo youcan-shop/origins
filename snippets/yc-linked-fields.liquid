@@ -17,7 +17,12 @@
     {% if linked_fields contains field.name %}
       <div class="field" data-field>
         <label>{{ field.display_name }}</label>
-        <yc-combobox name="{{ field.name }}">
+        <yc-combobox
+          name="{{ field.name }}"
+          {% if field.required %}
+            required
+          {% endif %}
+        >
           <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
             <yc-combobox-value>{{ field.placeholder | default: 'Select' }}</yc-combobox-value>
           </yc-combobox-trigger>
