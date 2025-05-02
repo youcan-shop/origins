@@ -50,7 +50,6 @@ if (!customElements.get("yc-combobox")) {
       const noResultsMsg = this.search.getAttribute("no-results") || window.combobox.no_results;
       const searchInput = document.createElement("input");
       searchInput.type = "search";
-      searchInput.name = "search";
       searchInput.placeholder = placeholder;
 
       this.search.replaceWith(searchInput);
