@@ -1,0 +1,34 @@
+{% comment %}
+  Renders a list of linked fields, typically "country", "region", and "city" (optional)
+
+  Accepts:
+  - fields: {Array} list of fields
+
+  Usage:
+  {% render 'yc-linked-fields', fields: [...] %}
+{% endcomment %}
+
+{% assign linked_fields = 'country,region,city' %}
+
+<yc-linked-fields>
+  {% for field in fields %}
+    {% if linked_fields contains field.name %}
+      <div class="field" data-field>
+        <label>{{ field.display_name }}</label>
+        <yc-combobox
+          name="{{ field.name }}"
+          {% if field.required %}
+            required
+          {% endif %}
+        >
+          <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
+            <yc-combobox-value>{{ field.placeholder | default: 'general.select' | t }}</yc-combobox-value>
+          </yc-combobox-trigger>
+          <yc-combobox-content role="listbox">
+            <yc-combobox-search placeholder="{{ 'general.search' | t }}" no-results="{{ 'general.no-results' | t }}"></yc-combobox-search>
+          </yc-combobox-content>
+        </yc-combobox>
+      </div>
+    {% endif %}
+  {% endfor %}
+</yc-linked-fields>

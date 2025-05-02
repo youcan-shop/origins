@@ -156,6 +156,11 @@
 {{ 'youcan-js.min.js' | asset_url | script_tag_deferred }}
 {{ 'cart.js' | asset_url | script_tag_deferred }}
 
+{% if checkout.linked_fields %}
+  <script src="https://unpkg.com/@youcan/js@1.0.4/dist/index.umd.js" defer></script>
+  {{ 'component-linked-fields.js' | asset_url | script_tag_deferred }}
+{% endif %}
+
 {% if template.name != 'cart' and template.name != 'thankyou' and template.name != 'page' %}
   {{ 'product-card.css' | asset_url | stylesheet_tag }}
   {{ 'product-quick-view.css' | asset_url | stylesheet_tag }}
@@ -167,7 +172,12 @@
     checkout: '{{ form.errors | first }}',
     insufficient_inventory: '{{ 'error_messages.insufficient_inventory' | t }}',
     rating_is_required: '{{ 'error_messages.rating_is_required' | t }}',
-    large_file: '{{ 'error_messages.large_file' | t }}'
+    large_file: '{{ 'error_messages.large_file' | t }}',
+  }
+
+  window.combobox = {
+    search: '{{ 'general.search' | t }}',
+    no_results: '{{ 'general.no-results' | t }}',
   }
 
   window.successStrings = {

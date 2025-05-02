@@ -12,14 +12,13 @@ if (!customElements.get("yc-combobox")) {
     }
 
     connectedCallback() {
-      this.setup();
-      this.attachListeners();
-      this.search && this.enableSearch();
-    }
-
-    setup() {
       const items = this.content.querySelectorAll("yc-combobox-item");
 
+      this.setup(items);
+      this.attachListeners();
+    }
+
+    setup(items, callback) {
       items.forEach((item) => {
         const { value } = item.attributes;
         const label = item.textContent.trim();
@@ -32,24 +31,25 @@ if (!customElements.get("yc-combobox")) {
         item.outerHTML = `
           <label role="option">
             <span>${label}</span>
-            <input type="radio" name="${this.getAttribute("name")}" value="${value?.value}" 
+            <input type="radio" name="${this.getAttribute("name")}" value="${value?.value}" data-value="${item.attributes["data-value"]?.value ?? ""}"
               ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} hidden>
           </label>`;
       });
+
+      this.onSelect(callback);
+      this.search && this.enableSearch();
     }
 
     attachListeners() {
-      this.onSelect();
       this.onTrigger();
       this.onClickOutSide();
     }
 
     enableSearch() {
-      const placeholder = this.search.getAttribute("placeholder");
-      const noResultsMsg = this.search.getAttribute("no-results");
+      const placeholder = this.search.getAttribute("placeholder") || window.combobox.search;
+      const noResultsMsg = this.search.getAttribute("no-results") || window.combobox.no_results;
       const searchInput = document.createElement("input");
       searchInput.type = "search";
-      searchInput.name = "search";
       searchInput.placeholder = placeholder;
 
       this.search.replaceWith(searchInput);
@@ -64,13 +64,14 @@ if (!customElements.get("yc-combobox")) {
       this.content.dataset.visible = visible;
     }
 
-    onSelect() {
+    onSelect(callback) {
       const options = this.content.querySelectorAll("label");
 
       options.forEach((opt) =>
-        opt.addEventListener("change", () => {
+        opt.addEventListener("change", (e) => {
           this.placeholder.textContent = opt.textContent.trim();
           this.toggleState(false);
+          callback && callback.call(this, e);
         }),
       );
     }

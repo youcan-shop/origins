@@ -103,7 +103,8 @@ button,
 
   &:disabled,
   &[data-disabled],
-  &[data-loading] {
+  &[data-loading],
+  &[aria-disabled="true"] {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
