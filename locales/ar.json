@@ -154,7 +154,7 @@
           "placeholder": "اكتب نصك هنا.."
         },
         "upload_image": {
-          "label": "إضافة صور",
+          "label": "أضف صور",
           "placeholder": "الحد الأقصى لحجم الملف 2 ميجا بايت"
         }
       },
@@ -194,7 +194,7 @@
   },
   "metadata": {
     "page_titles": {
-      "collections": "المجموعات",
+      "collections": "التصنيفات",
       "cart": "سلة التسوق",
       "thank-you": "شكراً لك على طلبك!"
     }
