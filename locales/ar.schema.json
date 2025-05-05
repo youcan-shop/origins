@@ -20,7 +20,7 @@
       "columns": "عدد الأعمدة على سطح المكتب"
     },
     "collection": {
-      "label": "المجموعة"
+      "label": "التصنيف"
     },
     "style": {
       "style": "النمط"
@@ -40,11 +40,11 @@
     "view": {
       "view_style": "نمط العرض",
       "grid": "شبكة",
-      "slides": "شرائح"
+      "slides": "سلايدر"
     },
     "blocks": {
       "product": "منتج",
-      "collection": "مجموعة",
+      "collection": "تصنيف",
       "content": "المحتوى",
       "image": "الصورة",
       "title": "العنوان",
@@ -96,7 +96,7 @@
       "compact": "مضغوط"
     },
     "collection_cards": {
-      "label": "بطاقات المجموعات"
+      "label": "بطاقات التصنيفات"
     },
     "multi_column_cards": {
       "label": "بطاقات متعددة الأعمدة"
@@ -130,10 +130,10 @@
   },
   "sections": {
     "all_collections": {
-      "label": "جميع المجموعات"
+      "label": "جميع التصنيفات"
     },
     "announcement_bar": {
-      "label": "شريط الإعلانات",
+      "label": "شريط الإعلان",
       "show_bar": "إظهار الشريط",
       "above_header": "فوق القائمة الرئيسية",
       "below_header": "تحت القائمة الرئيسية",
@@ -147,7 +147,7 @@
       "show_coupon": "إظهار القسيمة"
     },
     "collections": {
-      "label": "المجموعات",
+      "label": "التصنيفات",
       "default_title": "مجموعات مميزة",
       "default_description": "مجموعات تستحق الاستكشاف"
     },
@@ -247,16 +247,16 @@
       "show_write_review": "عرض زر 'كتابة تقييم'"
     },
     "product_testimonials": {
-      "label": "شهادات المنتج",
+      "label": "المراجعات",
       "title_default": "عنواني",
       "description_default": "عنواني الفرعي"
     },
     "products_by_collection": {
-      "label": "المنتجات حسب المجموعة",
-      "title_default": "المنتجات حسب المجموعة",
-      "description_default": "اعرض المنتجات من مجموعة من اختيارك",
+      "label": "المنتجات حسب التصنيف",
+      "title_default": "المنتجات حسب التصنيف",
+      "description_default": "اعرض المنتجات من تصنيف من اختيارك",
       "max_products": "الحد الأقصى للمنتجات المعروضة",
-      "show_link_to_collection": "عرض رابط إلى المجموعة"
+      "show_link_to_collection": "عرض رابط إلى التصنيف"
     },
     "products": {
       "label": "المنتجات",
@@ -280,7 +280,7 @@
       "label": "البحث"
     },
     "single_collection": {
-      "label": "المجموعة"
+      "label": "التصنيف"
     },
     "product_information": {
       "label": "معلومات المنتج",
@@ -322,7 +322,7 @@
       }
     },
     "slideshow": {
-      "label": "عرض الشرائح",
+      "label": "سلايدر",
       "height": "الارتفاع",
       "autoplay": "تشغيل تلقائي",
       "show_arrows": "عرض الأسهم",
@@ -338,9 +338,9 @@
       "arrows_background": "خلفية الأسهم",
       "blocks": {
         "slide": {
-          "label": "شريحة",
+          "label": "سلايد",
           "heading": "العنوان",
-          "heading_default": "شريحة صورة",
+          "heading_default": "سلايد",
           "subheading": "العنوان الفرعي",
           "subheading_default": "الصورة تساوي ألف كلمة",
           "button_link": "رابط الزر"
