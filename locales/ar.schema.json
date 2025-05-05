@@ -338,9 +338,9 @@
       "arrows_background": "خلفية الأسهم",
       "blocks": {
         "slide": {
-          "label": "صورة",
+          "label": "سلايد",
           "heading": "العنوان",
-          "heading_default": "صورة",
+          "heading_default": "سلايد",
           "subheading": "العنوان الفرعي",
           "subheading_default": "الصورة تساوي ألف كلمة",
           "button_link": "رابط الزر"
