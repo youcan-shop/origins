@@ -318,6 +318,9 @@
           "label": "Accordion",
           "title_placeholder": "Title",
           "content_placeholder": "Content"
+        },
+        "buy_button": {
+          "label": "Buy Button"
         }
       }
     },

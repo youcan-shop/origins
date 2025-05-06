@@ -318,6 +318,9 @@
           "label": "Accordéon",
           "title_placeholder": "Titre",
           "content_placeholder": "Contenu"
+        },
+        "buy_button": {
+          "label": "Bouton d'achat"
         }
       }
     },
