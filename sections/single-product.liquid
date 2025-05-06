@@ -144,12 +144,13 @@
             %}
           {% when 'accordion' %}
             {% render 'product-accordion', title: block.settings.title, content: block.settings.content %}
+          {% when 'buy_button' %}
+            {% if product.options.size > 0 %}
+              {% render 'product-variants' %}
+            {% endif %}
+            {% render 'product-buy-button', is_sticky: true, product: product %}
         {% endcase %}
       {% endfor %}
-      {% if product.options.size > 0 %}
-        {% render 'product-variants' %}
-      {% endif %}
-      {% render 'product-buy-button', is_sticky: true, product: product %}
     </yc-product-info>
   </yc-product>
 </yc-section>
@@ -339,6 +340,12 @@
           "placeholder": "t:sections.product_information.blocks.accordion.content_placeholder"
         }
       ]
+    },
+    {
+      "type": "buy_button",
+      "label": "t:sections.product_information.blocks.buy_button.label",
+      "limit": 1,
+      "settings": []
     }
   ]
 }

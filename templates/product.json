@@ -29,9 +29,13 @@
         "block_qut3kan5h7l93z": {
           "type": "description",
           "settings": {}
+        },
+        "buy_button": {
+          "type": "buy_button",
+          "settings": {}
         }
       },
-      "order": ["block_qqo6eupl67ele8n", "block_qrmxd50mz7j3pq", "block_qsg9af1hb2ejs2", "block_qtdgqf4t8f6j3a", "block_qut3kan5h7l93z"]
+      "order": ["block_qqo6eupl67ele8n", "block_qrmxd50mz7j3pq", "block_qsg9af1hb2ejs2", "block_qtdgqf4t8f6j3a", "block_qut3kan5h7l93z", "buy_button"]
     },
     "product-reviews": {
       "type": "product-reviews"
