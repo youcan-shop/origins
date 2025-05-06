@@ -152,6 +152,12 @@
             {% render 'product-buy-button', product: product %}
         {% endcase %}
       {% endfor %}
+      {% unless section.blocks contains 'buy_button' %}
+        {% if product.options.size > 0 %}
+          {% render 'product-variants' %}
+        {% endif %}
+        {% render 'product-buy-button', product: product %}
+      {% endunless %}
     </yc-product-info>
   </yc-product>
 </yc-section>
