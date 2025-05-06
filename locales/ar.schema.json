@@ -318,6 +318,9 @@
           "label": "أكورديون",
           "title_placeholder": "العنوان",
           "content_placeholder": "المحتوى"
+        },
+        "buy_button": {
+          "label": "زر الشراء"
         }
       }
     },
