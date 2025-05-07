@@ -329,6 +329,7 @@
       "height": "Height",
       "autoplay": "Autoplay",
       "show_arrows": "Show arrows",
+      "show_pagination": "Show pagination dots",
       "duration": "Change slides every",
       "type": "Type",
       "box": "Box",
@@ -339,6 +340,8 @@
       "arrow_position": "Arrow position",
       "arrows_color": "Arrows color",
       "arrows_background": "Arrows background",
+      "pagination": "Pagination",
+      "pagination_position": "Pagination position",
       "blocks": {
         "slide": {
           "label": "Slide",

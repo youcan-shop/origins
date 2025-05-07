@@ -329,6 +329,7 @@
       "height": "Hauteur",
       "autoplay": "Lecture automatique",
       "show_arrows": "Afficher les flèches",
+      "show_pagination": "Afficher les points de pagination",
       "duration": "Changer de diapositive toutes les",
       "type": "Type",
       "box": "Boîte",
@@ -339,6 +340,8 @@
       "arrow_position": "Position des flèches",
       "arrows_color": "Couleur des flèches",
       "arrows_background": "Arrière-plan des flèches",
+      "pagination": "Pagination",
+      "pagination_position": "Position de la pagination",
       "blocks": {
         "slide": {
           "label": "Diapositive",

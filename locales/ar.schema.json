@@ -329,6 +329,7 @@
       "height": "الارتفاع",
       "autoplay": "تشغيل تلقائي",
       "show_arrows": "عرض الأسهم",
+      "show_pagination": "إظهار نقاط التصفح",
       "duration": "تغيير الشرائح كل",
       "type": "النوع",
       "box": "صندوق",
@@ -339,6 +340,8 @@
       "arrow_position": "موضع السهم",
       "arrows_color": "لون الأسهم",
       "arrows_background": "خلفية الأسهم",
+      "pagination": "التصفح",
+      "pagination_position": "موضع التصفح",
       "blocks": {
         "slide": {
           "label": "سلايد",

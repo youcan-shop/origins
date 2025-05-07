@@ -62,7 +62,9 @@
         </div>
       </yc-slider-arrows>
     {% endif %}
-    <yc-slider-pagination data-style="dots" data-position="center"> </yc-slider-pagination>
+    {% if section.blocks.size > 1 and slideshow.show_pagination %}
+      <yc-slider-pagination data-style="dots" data-position="{{ slideshow.pagination_position }}"></yc-slider-pagination>
+    {% endif %}
   </yc-slider>
 </yc-section>
 
@@ -103,6 +105,12 @@
       "id": "show_arrows",
       "label": "t:sections.slideshow.show_arrows",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "t:sections.slideshow.show_pagination",
+      "default": false
     },
     {
       "type": "range",
@@ -207,6 +215,30 @@
       "id": "arrows_background",
       "label": "t:sections.slideshow.arrows_background",
       "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.slideshow.pagination"
+    },
+    {
+      "type": "select",
+      "id": "pagination_position",
+      "label": "t:sections.slideshow.pagination_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.alignment.left"
+        },
+        {
+          "value": "center",
+          "label": "t:common.alignment.center"
+        },
+        {
+          "value": "right",
+          "label": "t:common.alignment.right"
+        }
+      ],
+      "default": "center"
     },
     {
       "type": "header",
