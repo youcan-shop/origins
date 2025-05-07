@@ -80,10 +80,17 @@ if (!customElements.get("yc-slider")) {
 
       for (let i = 0; i < this.TOTAL; i++) {
         const dot = document.createElement("span");
+        const animation = {
+          fadeIn: [{ opacity: "0" }, { opacity: i === this.index ? "1" : "0.5" }],
+          timing: { duration: 350 },
+        };
+
+        dot.animate(animation.fadeIn, animation.timing);
 
         if (i === this.index) {
           dot.setAttribute("aria-current", "true");
         }
+
         fragment.append(dot);
       }
 
