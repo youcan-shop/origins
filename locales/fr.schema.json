@@ -339,9 +339,14 @@
       "arrows": "Flèches",
       "arrow_position": "Position des flèches",
       "arrows_color": "Couleur des flèches",
-      "arrows_background": "Arrière-plan des flèches",
+      "arrows_background": "Arrière-plan des flèches et indicateurs",
       "pagination": "Pagination",
-      "pagination_position": "Position de la pagination",
+      "pagination_position": "Position de l'indicateur de page",
+      "pagination_style": {
+        "label": "Style de l'indicateur de page",
+        "lines": "Lignes",
+        "dots": "Points"
+      },
       "blocks": {
         "slide": {
           "label": "Diapositive",

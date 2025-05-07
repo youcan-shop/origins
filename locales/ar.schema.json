@@ -337,11 +337,16 @@
       "content_alignment": "محاذاة المحتوى",
       "content_color": "لون المحتوى",
       "arrows": "الأسهم",
-      "arrow_position": "موضع السهم",
+      "arrow_position": "موضع الأسهم",
       "arrows_color": "لون الأسهم",
-      "arrows_background": "خلفية الأسهم",
+      "arrows_background": "خلفية الأسهم والمؤشرات",
       "pagination": "التصفح",
-      "pagination_position": "موضع التصفح",
+      "pagination_position": "موضع مؤشر الصفحة",
+      "pagination_style": {
+        "label": "نمط مؤشر الصفحة",
+        "lines": "خطوط",
+        "dots": "نقاط"
+      },
       "blocks": {
         "slide": {
           "label": "سلايد",

@@ -339,9 +339,14 @@
       "arrows": "Arrows",
       "arrow_position": "Arrow position",
       "arrows_color": "Arrows color",
-      "arrows_background": "Arrows background",
+      "arrows_background": "Arrows & Indicators background",
       "pagination": "Pagination",
-      "pagination_position": "Pagination position",
+      "pagination_position": "Page indicator position",
+      "pagination_style": {
+        "label": "Page indicator style",
+        "lines": "Lines",
+        "dots": "Dots"
+      },
       "blocks": {
         "slide": {
           "label": "Slide",
