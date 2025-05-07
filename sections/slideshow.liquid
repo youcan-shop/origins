@@ -13,6 +13,7 @@
   "
 >
   <yc-slider
+    show-pagination
     {% if slideshow.autoplay %}
       autoplay
     {% endif %}
@@ -61,6 +62,7 @@
         </div>
       </yc-slider-arrows>
     {% endif %}
+    <yc-slider-pagination data-style="dots" data-position="center"> </yc-slider-pagination>
   </yc-slider>
 </yc-section>
 

@@ -1,6 +1,6 @@
 if (!customElements.get("yc-slider")) {
   class Slider extends HTMLElement {
-    static observedAttributes = ["autoplay", "interval", "responsive", "per-move"];
+    static observedAttributes = ["autoplay", "interval", "responsive", "per-move", "show-pagination"];
 
     constructor() {
       super();
@@ -10,6 +10,7 @@ if (!customElements.get("yc-slider")) {
       this.leftArrow = this.querySelector("[data-arrow='left']");
       this.rightArrow = this.querySelector("[data-arrow='right']");
       this.unDraggableLinks = this.querySelectorAll("a[draggable='false']");
+      this.sliderPagination = this.querySelector("yc-slider-pagination");
 
       this.index = 0;
       this.startX = 0;
@@ -52,6 +53,8 @@ if (!customElements.get("yc-slider")) {
 
       this.updateFooterVisibility();
 
+      this.hasAttribute("show-pagination") && this.mountPagination();
+
       this.hasAttribute("autoplay") && this.autoPlay();
 
       this.hasAttribute("responsive") && this.breakpoints().listener();
@@ -69,6 +72,33 @@ if (!customElements.get("yc-slider")) {
         this.addEventListener("mouseleave", () => {
           this.autoPlay();
         });
+      }
+    }
+
+    mountPagination() {
+      const fragment = new DocumentFragment();
+
+      for (let i = 0; i < this.TOTAL; i++) {
+        const dot = document.createElement("span");
+
+        if (i === this.index) {
+          dot.setAttribute("aria-current", "true");
+        }
+        fragment.append(dot);
+      }
+
+      this.sliderPagination?.replaceChildren(fragment);
+    }
+
+    setCurrentPaginationDot(currentPageIndex) {
+      if (!this.sliderPagination) return;
+
+      const prevActiveDot = this.sliderPagination.querySelector("[aria-current]");
+      const newActiveDot = this.sliderPagination.children[currentPageIndex];
+
+      if (prevActiveDot !== newActiveDot) {
+        prevActiveDot?.removeAttribute("aria-current");
+        newActiveDot?.setAttribute("aria-current", "true");
       }
     }
 
@@ -231,6 +261,8 @@ if (!customElements.get("yc-slider")) {
       if (this.index !== previousIndex) {
         this.reset();
       }
+
+      this.hasAttribute("show-pagination") && this.setCurrentPaginationDot(this.index);
     }
   }
 

@@ -171,33 +171,86 @@ yc-slider {
     }
   }
 
-  &[data-type$="full"] yc-slider-arrows {
-    position: absolute;
-    inset-block-end: 1.5em;
+  &[data-type$="full"] {
+    --pagination-box-size: 32px;
+    --inset: 0px;
 
-    &[data-position$="center"] {
-      translate: -50% 0;
-      inset-inline-start: 50%;
+    &:has(yc-slider-arrows[data-position$="center"] ~ yc-slider-pagination[data-position$="center"]),
+    &:has(yc-slider-arrows[data-position$="left"] ~ yc-slider-pagination[data-position$="left"]),
+    &:has(yc-slider-arrows[data-position$="right"] ~ yc-slider-pagination[data-position$="right"]) {
+      --inset: var(--pagination-box-size);
+    }
 
-      &:dir(rtl) {
-        translate: 50% 0;
+    yc-slider-arrows {
+      position: absolute;
+      inset-block-end: calc(1.5em + var(--inset));
+
+      &[data-position$="center"] {
+        translate: -50% 0;
+        inset-inline-start: 50%;
+
+        &:dir(rtl) {
+          translate: 50% 0;
+        }
+      }
+
+      &[data-position$="left"] {
+        inset-inline-start: 10%;
+      }
+
+      &[data-position$="right"] {
+        inset-inline-end: 10%;
+      }
+
+      button {
+        border: none;
+
+        box-shadow:
+          inset rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.2) 0px 1px 3px -1px;
       }
     }
 
-    &[data-position$="left"] {
-      inset-inline-start: 10%;
-    }
+    yc-slider-pagination {
+      --pagination-dot-size: 6px;
 
-    &[data-position$="right"] {
-      inset-inline-end: 10%;
-    }
+      height: var(--pagination-box-size);
+      position: absolute;
+      inset-block-end: 1.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
 
-    button {
-      border: none;
+      & > span {
+        display: block;
+        width: var(--pagination-dot-size);
+        height: var(--pagination-dot-size);
+        background-color: var(--section-arrows-background);
+        opacity: 0.5;
+        border-radius: var(--pagination-dot-size);
 
-      box-shadow:
-        inset rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
-        rgba(0, 0, 0, 0.2) 0px 1px 3px -1px;
+        &[aria-current] {
+          opacity: 1;
+        }
+      }
+
+      &[data-position$="center"] {
+        translate: -50% 0;
+        inset-inline-start: 50%;
+
+        &:dir(rtl) {
+          translate: 50% 0;
+        }
+      }
+
+      &[data-position$="left"] {
+        inset-inline-start: 10%;
+      }
+
+      &[data-position$="right"] {
+        inset-inline-end: 10%;
+      }
     }
   }
 
