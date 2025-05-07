@@ -179,6 +179,10 @@ yc-slider {
     &:has(yc-slider-arrows[data-position$="left"] ~ yc-slider-pagination[data-position$="left"]),
     &:has(yc-slider-arrows[data-position$="right"] ~ yc-slider-pagination[data-position$="right"]) {
       --inset: var(--pagination-box-size);
+
+      yc-slider-pagination {
+        align-items: flex-end;
+      }
     }
 
     yc-slider-arrows {
@@ -219,8 +223,8 @@ yc-slider {
       inset-block-end: 1.5em;
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 4px;
+      align-items: flex-end;
+      gap: 6px;
 
       & > span {
         display: block;
@@ -232,6 +236,21 @@ yc-slider {
 
         &[aria-current] {
           opacity: 1;
+        }
+      }
+
+      &[data-style$="dots"] {
+        align-items: center;
+      }
+
+      &[data-style$="lines"] {
+        gap: 4px;
+
+        & > span {
+          --pagination-dot-size: 2px;
+
+          width: 16px;
+          border-radius: 0px;
         }
       }
 

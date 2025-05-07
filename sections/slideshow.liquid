@@ -13,7 +13,9 @@
   "
 >
   <yc-slider
-    show-pagination
+    {% if slideshow.show_pagination %}
+      show-pagination
+    {% endif %}
     {% if slideshow.autoplay %}
       autoplay
     {% endif %}
@@ -63,7 +65,7 @@
       </yc-slider-arrows>
     {% endif %}
     {% if section.blocks.size > 1 and slideshow.show_pagination %}
-      <yc-slider-pagination data-style="dots" data-position="{{ slideshow.pagination_position }}"></yc-slider-pagination>
+      <yc-slider-pagination data-style="{{ slideshow.pagination_style }}" data-position="{{ slideshow.pagination_position }}"></yc-slider-pagination>
     {% endif %}
   </yc-slider>
 </yc-section>
@@ -182,7 +184,7 @@
     },
     {
       "type": "header",
-      "content": "t:sections.slideshow.arrows"
+      "content": "Controls"
     },
     {
       "type": "select",
@@ -205,22 +207,6 @@
       "default": "center"
     },
     {
-      "type": "color",
-      "id": "arrows_foreground",
-      "label": "t:sections.slideshow.arrows_color",
-      "default": "#121212"
-    },
-    {
-      "type": "color",
-      "id": "arrows_background",
-      "label": "t:sections.slideshow.arrows_background",
-      "default": "#ffffff"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.slideshow.pagination"
-    },
-    {
       "type": "select",
       "id": "pagination_position",
       "label": "t:sections.slideshow.pagination_position",
@@ -239,6 +225,34 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "pagination_style",
+      "label": "t:sections.slideshow.pagination_style.label",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:sections.slideshow.pagination_style.dots"
+        },
+        {
+          "value": "lines",
+          "label": "t:sections.slideshow.pagination_style.lines"
+        }
+      ],
+      "default": "lines"
+    },
+    {
+      "type": "color",
+      "id": "arrows_foreground",
+      "label": "t:sections.slideshow.arrows_color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "arrows_background",
+      "label": "t:sections.slideshow.arrows_background",
+      "default": "#ffffff"
     },
     {
       "type": "header",
