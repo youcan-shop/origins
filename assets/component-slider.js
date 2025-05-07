@@ -1,6 +1,6 @@
 if (!customElements.get("yc-slider")) {
   class Slider extends HTMLElement {
-    static observedAttributes = ["autoplay", "interval", "responsive", "per-move", "show-pagination"];
+    static observedAttributes = ["autoplay", "interval", "responsive", "per-move", "show-indicators"];
 
     constructor() {
       super();
@@ -53,7 +53,7 @@ if (!customElements.get("yc-slider")) {
 
       this.updateFooterVisibility();
 
-      this.hasAttribute("show-pagination") && this.mountPagination();
+      this.hasAttribute("show-indicators") && this.moutPageIndicators();
 
       this.hasAttribute("autoplay") && this.autoPlay();
 
@@ -72,40 +72,6 @@ if (!customElements.get("yc-slider")) {
         this.addEventListener("mouseleave", () => {
           this.autoPlay();
         });
-      }
-    }
-
-    mountPagination() {
-      const fragment = new DocumentFragment();
-
-      for (let i = 0; i < this.TOTAL; i++) {
-        const dot = document.createElement("span");
-        const animation = {
-          fadeIn: [{ opacity: "0" }, { opacity: i === this.index ? "1" : "0.5" }],
-          timing: { duration: 350 },
-        };
-
-        dot.animate(animation.fadeIn, animation.timing);
-
-        if (i === this.index) {
-          dot.setAttribute("aria-current", "true");
-        }
-
-        fragment.append(dot);
-      }
-
-      this.sliderPagination?.replaceChildren(fragment);
-    }
-
-    setCurrentPaginationDot(currentPageIndex) {
-      if (!this.sliderPagination) return;
-
-      const prevActiveDot = this.sliderPagination.querySelector("[aria-current]");
-      const newActiveDot = this.sliderPagination.children[currentPageIndex];
-
-      if (prevActiveDot !== newActiveDot) {
-        prevActiveDot?.removeAttribute("aria-current");
-        newActiveDot?.setAttribute("aria-current", "true");
       }
     }
 
@@ -269,7 +235,43 @@ if (!customElements.get("yc-slider")) {
         this.reset();
       }
 
-      this.hasAttribute("show-pagination") && this.setCurrentPaginationDot(this.index);
+      this.hasAttribute("show-indicators") && this.setActivePageIndicator(this.index);
+    }
+
+    moutPageIndicators() {
+      if (!this.sliderPagination) return;
+
+      const fragment = new DocumentFragment();
+
+      for (let i = 0; i < this.TOTAL; i++) {
+        const dot = document.createElement("span");
+        const animation = {
+          fadeIn: [{ opacity: "0" }, { opacity: i === this.index ? "1" : "0.5" }],
+          timing: { duration: 350 },
+        };
+
+        dot.animate(animation.fadeIn, animation.timing);
+
+        if (i === this.index) {
+          dot.setAttribute("aria-current", "true");
+        }
+
+        fragment.append(dot);
+      }
+
+      this.sliderPagination.replaceChildren(fragment);
+    }
+
+    setActivePageIndicator(currentPageIndex) {
+      if (!this.sliderPagination) return;
+
+      const prevActiveDot = this.sliderPagination.querySelector("[aria-current]");
+      const newActiveDot = this.sliderPagination.children[currentPageIndex];
+
+      if (prevActiveDot !== newActiveDot) {
+        prevActiveDot?.removeAttribute("aria-current");
+        newActiveDot?.setAttribute("aria-current", "true");
+      }
     }
   }
 

@@ -329,7 +329,7 @@
       "height": "Hauteur",
       "autoplay": "Lecture automatique",
       "show_arrows": "Afficher les flèches",
-      "show_pagination": "Afficher les points de pagination",
+      "show_indicators": "Afficher les points de pagination",
       "duration": "Changer de diapositive toutes les",
       "type": "Type",
       "box": "Boîte",

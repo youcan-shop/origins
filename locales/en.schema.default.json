@@ -329,7 +329,7 @@
       "height": "Height",
       "autoplay": "Autoplay",
       "show_arrows": "Show arrows",
-      "show_pagination": "Show pagination dots",
+      "show_indicators": "Show pagination dots",
       "duration": "Change slides every",
       "type": "Type",
       "box": "Box",

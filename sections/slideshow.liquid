@@ -13,8 +13,8 @@
   "
 >
   <yc-slider
-    {% if slideshow.show_pagination %}
-      show-pagination
+    {% if slideshow.show_indicators %}
+      show-indicators
     {% endif %}
     {% if slideshow.autoplay %}
       autoplay
@@ -64,7 +64,7 @@
         </div>
       </yc-slider-arrows>
     {% endif %}
-    {% if section.blocks.size > 1 and slideshow.show_pagination %}
+    {% if section.blocks.size > 1 and slideshow.show_indicators %}
       <yc-slider-pagination data-style="{{ slideshow.pagination_style }}" data-position="{{ slideshow.pagination_position }}"></yc-slider-pagination>
     {% endif %}
   </yc-slider>
@@ -110,8 +110,8 @@
     },
     {
       "type": "checkbox",
-      "id": "show_pagination",
-      "label": "t:sections.slideshow.show_pagination",
+      "id": "show_indicators",
+      "label": "t:sections.slideshow.show_indicators",
       "default": false
     },
     {
