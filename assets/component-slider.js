@@ -53,7 +53,7 @@ if (!customElements.get("yc-slider")) {
 
       this.updateFooterVisibility();
 
-      this.hasAttribute("indicators") && this.moutPageIndicators();
+      this.hasAttribute("indicators") && this.mountPageIndicators();
 
       this.hasAttribute("autoplay") && this.autoPlay();
 
@@ -238,7 +238,7 @@ if (!customElements.get("yc-slider")) {
       this.hasAttribute("indicators") && this.setActivePageIndicator(this.index);
     }
 
-    moutPageIndicators() {
+    mountPageIndicators() {
       if (!this.sliderPagination) return;
 
       const fragment = new DocumentFragment();
