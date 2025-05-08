@@ -224,7 +224,7 @@ yc-slider {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      gap: 6px;
+      gap: var(--gap-sm);
 
       & > span {
         display: block;
@@ -244,7 +244,7 @@ yc-slider {
       }
 
       &[data-style$="lines"] {
-        gap: 4px;
+        gap: var(--gap-xs);
 
         & > span {
           --pagination-dot-size: 2px;

@@ -185,7 +185,7 @@ yc-slider[data-type$=full] yc-slider-pagination{
   display:flex;
   justify-content:center;
   align-items:flex-end;
-  gap:6px;
+  gap:var(--gap-sm);
 }
 yc-slider[data-type$=full] yc-slider-pagination > span{
   display:block;
@@ -202,7 +202,7 @@ yc-slider[data-type$=full] yc-slider-pagination[data-style$=dots]{
   align-items:center;
 }
 yc-slider[data-type$=full] yc-slider-pagination[data-style$=lines]{
-  gap:4px;
+  gap:var(--gap-xs);
 }
 yc-slider[data-type$=full] yc-slider-pagination[data-style$=lines] > span{
   --pagination-dot-size:2px;
