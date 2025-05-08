@@ -1,6 +1,6 @@
 if (!customElements.get("yc-slider")) {
   class Slider extends HTMLElement {
-    static observedAttributes = ["autoplay", "interval", "responsive", "per-move", "show-indicators"];
+    static observedAttributes = ["autoplay", "interval", "responsive", "per-move", "indicators"];
 
     constructor() {
       super();
@@ -53,7 +53,7 @@ if (!customElements.get("yc-slider")) {
 
       this.updateFooterVisibility();
 
-      this.hasAttribute("show-indicators") && this.moutPageIndicators();
+      this.hasAttribute("indicators") && this.moutPageIndicators();
 
       this.hasAttribute("autoplay") && this.autoPlay();
 
@@ -235,7 +235,7 @@ if (!customElements.get("yc-slider")) {
         this.reset();
       }
 
-      this.hasAttribute("show-indicators") && this.setActivePageIndicator(this.index);
+      this.hasAttribute("indicators") && this.setActivePageIndicator(this.index);
     }
 
     moutPageIndicators() {
