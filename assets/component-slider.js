@@ -1,6 +1,6 @@
 if (!customElements.get("yc-slider")) {
   class Slider extends HTMLElement {
-    static observedAttributes = ["autoplay", "interval", "responsive", "per-move"];
+    static observedAttributes = ["autoplay", "interval", "responsive", "per-move", "indicators"];
 
     constructor() {
       super();
@@ -10,6 +10,7 @@ if (!customElements.get("yc-slider")) {
       this.leftArrow = this.querySelector("[data-arrow='left']");
       this.rightArrow = this.querySelector("[data-arrow='right']");
       this.unDraggableLinks = this.querySelectorAll("a[draggable='false']");
+      this.sliderPagination = this.querySelector("yc-slider-pagination");
 
       this.index = 0;
       this.startX = 0;
@@ -51,6 +52,8 @@ if (!customElements.get("yc-slider")) {
       this.swipe();
 
       this.updateFooterVisibility();
+
+      this.hasAttribute("indicators") && this.mountPageIndicators();
 
       this.hasAttribute("autoplay") && this.autoPlay();
 
@@ -230,6 +233,44 @@ if (!customElements.get("yc-slider")) {
 
       if (this.index !== previousIndex) {
         this.reset();
+      }
+
+      this.hasAttribute("indicators") && this.setActivePageIndicator(this.index);
+    }
+
+    mountPageIndicators() {
+      if (!this.sliderPagination) return;
+
+      const fragment = new DocumentFragment();
+
+      for (let i = 0; i < this.TOTAL; i++) {
+        const indicator = document.createElement("span");
+        const animation = {
+          fadeIn: [{ opacity: "0" }, { opacity: i === this.index ? "1" : "0.5" }],
+          timing: { duration: 350 },
+        };
+
+        indicator.animate(animation.fadeIn, animation.timing);
+
+        if (i === this.index) {
+          indicator.setAttribute("aria-current", "true");
+        }
+
+        fragment.append(indicator);
+      }
+
+      this.sliderPagination.replaceChildren(fragment);
+    }
+
+    setActivePageIndicator(currentPageIndex) {
+      if (!this.sliderPagination) return;
+
+      const prevActiveIndicator = this.sliderPagination.querySelector("[aria-current]");
+      const nextActiveIndicator = this.sliderPagination.children[currentPageIndex];
+
+      if (prevActiveIndicator !== nextActiveIndicator) {
+        prevActiveIndicator?.removeAttribute("aria-current");
+        nextActiveIndicator?.setAttribute("aria-current", "true");
       }
     }
   }

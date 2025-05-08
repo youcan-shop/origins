@@ -13,6 +13,9 @@
   "
 >
   <yc-slider
+    {% if slideshow.show_indicators %}
+      indicators
+    {% endif %}
     {% if slideshow.autoplay %}
       autoplay
     {% endif %}
@@ -61,6 +64,9 @@
         </div>
       </yc-slider-arrows>
     {% endif %}
+    {% if section.blocks.size > 1 and slideshow.show_indicators %}
+      <yc-slider-pagination data-style="{{ slideshow.pagination_style }}" data-position="{{ slideshow.pagination_position }}"></yc-slider-pagination>
+    {% endif %}
   </yc-slider>
 </yc-section>
 
@@ -101,6 +107,12 @@
       "id": "show_arrows",
       "label": "t:sections.slideshow.show_arrows",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_indicators",
+      "label": "t:sections.slideshow.show_indicators",
+      "default": false
     },
     {
       "type": "range",
@@ -172,7 +184,7 @@
     },
     {
       "type": "header",
-      "content": "t:sections.slideshow.arrows"
+      "content": "t:sections.slideshow.controls"
     },
     {
       "type": "select",
@@ -193,6 +205,42 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "pagination_position",
+      "label": "t:sections.slideshow.pagination_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.alignment.left"
+        },
+        {
+          "value": "center",
+          "label": "t:common.alignment.center"
+        },
+        {
+          "value": "right",
+          "label": "t:common.alignment.right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "pagination_style",
+      "label": "t:sections.slideshow.pagination_style.label",
+      "options": [
+        {
+          "value": "dots",
+          "label": "t:sections.slideshow.pagination_style.dots"
+        },
+        {
+          "value": "lines",
+          "label": "t:sections.slideshow.pagination_style.lines"
+        }
+      ],
+      "default": "lines"
     },
     {
       "type": "color",
