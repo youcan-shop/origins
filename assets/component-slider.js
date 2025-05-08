@@ -244,19 +244,19 @@ if (!customElements.get("yc-slider")) {
       const fragment = new DocumentFragment();
 
       for (let i = 0; i < this.TOTAL; i++) {
-        const dot = document.createElement("span");
+        const indicator = document.createElement("span");
         const animation = {
           fadeIn: [{ opacity: "0" }, { opacity: i === this.index ? "1" : "0.5" }],
           timing: { duration: 350 },
         };
 
-        dot.animate(animation.fadeIn, animation.timing);
+        indicator.animate(animation.fadeIn, animation.timing);
 
         if (i === this.index) {
-          dot.setAttribute("aria-current", "true");
+          indicator.setAttribute("aria-current", "true");
         }
 
-        fragment.append(dot);
+        fragment.append(indicator);
       }
 
       this.sliderPagination.replaceChildren(fragment);
