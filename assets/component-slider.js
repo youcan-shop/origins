@@ -265,12 +265,12 @@ if (!customElements.get("yc-slider")) {
     setActivePageIndicator(currentPageIndex) {
       if (!this.sliderPagination) return;
 
-      const prevActiveDot = this.sliderPagination.querySelector("[aria-current]");
-      const newActiveDot = this.sliderPagination.children[currentPageIndex];
+      const prevActiveIndicator = this.sliderPagination.querySelector("[aria-current]");
+      const nextActiveIndicator = this.sliderPagination.children[currentPageIndex];
 
-      if (prevActiveDot !== newActiveDot) {
-        prevActiveDot?.removeAttribute("aria-current");
-        newActiveDot?.setAttribute("aria-current", "true");
+      if (prevActiveIndicator !== nextActiveIndicator) {
+        prevActiveIndicator?.removeAttribute("aria-current");
+        nextActiveIndicator?.setAttribute("aria-current", "true");
       }
     }
   }
