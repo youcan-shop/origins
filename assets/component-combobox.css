@@ -15,10 +15,12 @@ yc-combobox yc-combobox-trigger.yc-btn.icon{
           user-select:none;
   font-size:var(--text-sm);
   padding:8px 12px;
+  display:grid;
+  grid-template-columns:auto auto;
   justify-content:space-between;
 }
 yc-combobox yc-combobox-trigger.yc-btn.icon yc-combobox-value{
-  width:90%;
+  width:100%;
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
