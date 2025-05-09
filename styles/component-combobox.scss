@@ -14,10 +14,12 @@ yc-combobox {
     user-select: none;
     font-size: var(--text-sm);
     padding: 8px 12px;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: space-between;
 
     yc-combobox-value {
-      width: 90%;
+      width: 100%;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -84,6 +86,11 @@ yc-combobox {
     }
 
     label {
+      display: grid;
+      gap: var(--gap-lg);
+      grid-template-columns: auto auto;
+      align-items: center;
+      justify-content: space-between;
       padding: 8px 12px;
       position: relative;
       margin-inline: 4px;
@@ -93,10 +100,8 @@ yc-combobox {
 
       span {
         overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
+        white-space: nowrap;
         text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
       }
 
       &:first-child {
