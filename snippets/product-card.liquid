@@ -19,7 +19,20 @@
         loading="lazy"
         height="100%"
         width="100%"
-        src="{{ product.thumbnail }}"
+        srcset="
+          {{ product.preview_image.small }} 480w,
+          {{ product.preview_image.medium }} 800w,
+          {{ product.preview_image.large }} 1200w,
+          {{ product.preview_image.original }} 1600w
+        "
+        sizes="
+          (max-width: 640px) 100vw,
+          (max-width: 768px) 80vw,
+          (max-width: 1024px) 60vw,
+          (max-width: 1280px) 50vw,
+          40vw
+        "
+        src="{{ product.preview_image.original }}"
         alt="{{ product.name }}"
       >
     {% else %}
