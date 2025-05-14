@@ -20,17 +20,15 @@
         height="100%"
         width="100%"
         srcset="
-          {{ product.preview_image.small }} 480w,
-          {{ product.preview_image.medium }} 800w,
-          {{ product.preview_image.large }} 1200w,
-          {{ product.preview_image.original }} 1600w
+          {{ product.preview_image.medium }} 480w,
+          {{ product.preview_image.large }} 800w,
+          {{ product.preview_image.original }} 1200w
         "
         sizes="
-          (max-width: 640px) 100vw,
-          (max-width: 768px) 80vw,
-          (max-width: 1024px) 60vw,
-          (max-width: 1280px) 50vw,
-          40vw
+          (max-width: 640px) 50vw,
+          (max-width: 768px) 33vw,
+          (max-width: 1024px) 25vw,
+          33vw
         "
         src="{{ product.preview_image.original }}"
         alt="{{ product.name }}"
