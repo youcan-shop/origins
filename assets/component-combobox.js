@@ -20,11 +20,12 @@ if (!customElements.get("yc-combobox")) {
 
     setup(items, callback) {
       items.forEach((item) => {
-        const { value } = item.attributes;
+        const { value, en, fr, ar } = item.attributes;
         const label = item.textContent.trim();
         const checked = item.hasAttribute("checked");
         const disabled = item.hasAttribute("disabled");
         const required = item.hasAttribute("required");
+        const translation = Boolean(en && en.value) ? [`data-en="${en.value}"`, `data-fr="${fr.value}"`, `data-ar="${ar.value}"`].join(" ") : "";
 
         if (checked) this.placeholder.textContent = label;
 
@@ -32,7 +33,7 @@ if (!customElements.get("yc-combobox")) {
           <label role="option" title="${label}">
             <span>${label}</span>
             <input type="radio" name="${this.getAttribute("name")}" value="${value?.value}" data-value="${item.attributes["data-value"]?.value ?? ""}"
-              ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} hidden>
+              ${translation} ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} hidden >
           </label>`;
       });
 
@@ -98,7 +99,9 @@ if (!customElements.get("yc-combobox")) {
         let hasMatch = false;
 
         options.forEach((opt) => {
-          const isMatch = opt.textContent.toLowerCase().includes(query);
+          const { en, fr, ar } = opt.querySelector("input").dataset;
+
+          const isMatch = !en ? opt.textContent.toLowerCase().includes(query) : [en, fr, ar].some((trans) => trans.toLowerCase().includes(query));
           opt.hidden = !isMatch;
           hasMatch ||= isMatch;
         });

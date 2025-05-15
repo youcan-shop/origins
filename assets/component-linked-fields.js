@@ -39,12 +39,14 @@ class LinkedFields extends HTMLElement {
         region: index === 0,
         city: index === 0,
       };
+      const { en, fr, ar } = opt.nameTrans ?? {};
       const label = typeof opt === "string" ? opt : opt.name;
       const value = typeof opt === "string" ? opt : opt.code;
+      const translation = opt.nameTrans ? [`en=${en}`, `fr=${fr}`, `ar=${ar}`].join(" ") : "";
 
       content.insertAdjacentHTML(
         "beforeend",
-        `<yc-combobox-item value="${label}" data-value="${value}" ${isDefault[type] ? "checked" : ""}>
+        `<yc-combobox-item value="${label}" data-value="${value}" ${translation} ${isDefault[type] ? "checked" : ""}>
             ${label}
         </yc-combobox-item>`,
       );
