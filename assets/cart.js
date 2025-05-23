@@ -504,21 +504,17 @@ class CartSummary extends HTMLElement {
     this.removeCouponButton.addEventListener("click", this.handleRemoveCoupon.bind(this));
 
     subscribe(PUB_SUB_EVENTS.cartUpdate, (payload) => {
-      const { sub_total, discountedPrice, coupon } = payload.cartData;
-
-      const total = sub_total - discountedPrice;
+      const { sub_total, discountedPrice, coupon, discounted_sub_total } = payload.cartData;
 
       this.updateCoupon(coupon, discountedPrice);
-      this.updateSummary(sub_total, total);
+      this.updateSummary(sub_total, discounted_sub_total);
     });
 
     subscribe(PUB_SUB_EVENTS.couponUpdate, (payload) => {
-      const { sub_total, discountedPrice, coupon } = payload.cartData;
-
-      const total = sub_total - discountedPrice;
+      const { sub_total, discountedPrice, coupon, discounted_sub_total } = payload.cartData;
 
       this.updateCoupon(coupon, discountedPrice);
-      this.updateSummary(sub_total, total);
+      this.updateSummary(sub_total, discounted_sub_total);
     });
   }
 

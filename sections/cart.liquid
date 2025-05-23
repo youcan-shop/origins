@@ -83,7 +83,7 @@
             <div class="total-box">
               <div class="total">
                 <span>{{ 'cart.page.summary.total' | t }}</span>
-                <span data-cart-total>{{ cart.sub_total | minus: cart.coupon.deducted_amount | default: 0 | money }}</span>
+                <span data-cart-total>{{ cart.discounted_sub_total | default: 0 | money }}</span>
               </div>
               <a href="{{ cart.cart_submit_url }}" class="yc-btn primary">
                 {{- 'cart.page.summary.checkout_button' | t -}}
