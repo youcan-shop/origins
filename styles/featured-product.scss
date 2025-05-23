@@ -269,14 +269,11 @@
             }
 
             yc-linked-fields {
-              display: grid;
-              gap: var(--gap-lg);
-              grid-template-columns: repeat(2, 1fr);
-              grid-column: 1 / -1;
-            }
+              display: contents;
 
-            & > *:nth-last-child(2):nth-child(odd) {
-              grid-column: 1 / -1;
+            .field:last-child:nth-child(odd) {
+              grid-column: unset !important;
+            }
             }
 
             .field {
