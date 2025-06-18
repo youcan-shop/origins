@@ -59,6 +59,10 @@
     "buttons": {
       "button_text": "Texte du bouton",
       "button_background": "Arrière-plan du bouton"
+    },
+    "screens": {
+      "desktop": "🖥️ Bureau",
+      "mobile": "📱 Mobile",
     }
   },
   "settings_schema": {
@@ -354,7 +358,9 @@
           "heading_default": "Diapositive d'image",
           "subheading": "Sous-titre",
           "subheading_default": "Une image vaut mille mots",
-          "button_link": "Lien du bouton"
+          "button_link": "Lien du bouton",
+          "desktop_image": "🖥️ Image du bureau",
+          "mobile_image": "📱 Image mobile"
         }
       }
     },

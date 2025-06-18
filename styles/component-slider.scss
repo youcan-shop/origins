@@ -10,6 +10,10 @@ yc-slider {
     display: flex;
     height: var(--slider-height);
 
+    @include breakpoints.breakpoint("md") {
+      height: var(--slider-mobile-height, var(--slider-height));
+    }
+
     .slider-box {
       touch-action: pan-y;
       user-select: none;
@@ -33,12 +37,14 @@ yc-slider {
           max-width: min-content;
           min-width: calc(100% / var(--slider-per-page) - (var(--slider-gap) * 1px) + (var(--slider-gap) / var(--slider-per-page) * 1px));
 
-          & > :where(img, div) {
+          & > :where(img, div),
+          & > picture img {
             height: 100%;
             object-fit: cover;
           }
 
-          & > :where(img) {
+          & > :where(img),
+          & > picture img {
             pointer-events: none;
           }
 
@@ -166,7 +172,8 @@ yc-slider {
     .slider-area .slider-box {
       border-radius: var(--button-border-radius);
     }
-    yc-slider-item > :where(img, div, yc-slider-content) {
+    yc-slider-item > :where(img, div, yc-slider-content),
+    yc-slider-item > picture img {
       border-radius: var(--button-border-radius);
     }
   }
