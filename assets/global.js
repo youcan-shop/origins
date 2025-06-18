@@ -3,6 +3,7 @@ const CURRENCY_SYMBOL = Dotshop.currency;
 const CUSTOMER_LOCALE = Dotshop.customer_locale || "en-US";
 const CUSTOMER_COUNTRY_CODE = new Intl.Locale(CUSTOMER_LOCALE).region;
 const ON_CHANGE_DEBOUNCE_TIMER = 300;
+const STORE_LANGUAGE = document.documentElement.lang || "en";
 
 const PUB_SUB_EVENTS = {
   cartUpdate: "cart/update",
@@ -16,6 +17,48 @@ const toast = new Toast();
 // Handle global errors
 if (window.errorStrings.checkout) {
   toast.show(window.errorStrings.checkout, "error");
+}
+
+// Custom validation messages
+const TRANSLATED_MESSAGES = {
+  en: {
+    required: "Please fill out this field.",
+    email: "Please enter a valid email address.",
+    short: (min) => `Please enter at least ${min} characters.`,
+  },
+  fr: {
+    required: "Veuillez remplir ce champ.",
+    email: "Veuillez entrer une adresse e-mail valide.",
+    short: (min) => `Veuillez entrer au moins ${min} caractères.`,
+  },
+  ar: {
+    required: "يرجى ملء هذه الخانة.",
+    email: "يرجى إدخال عنوان بريد إلكتروني صالح.",
+    short: (min) => `يرجى إدخال ما لا يقل عن ${min} حرفًا.`,
+  },
+};
+
+function setCustomMessage(input) {
+  input.setCustomValidity("");
+
+  const { validity, type, minLength } = input;
+  const messages = TRANSLATED_MESSAGES[STORE_LANGUAGE];
+
+  if (validity.valueMissing) {
+    input.setCustomValidity(messages.required);
+  } else if (type === "email" && validity.typeMismatch) {
+    input.setCustomValidity(messages.email);
+  } else if (validity.tooShort) {
+    input.setCustomValidity(messages.short(minLength));
+  }
+}
+
+for (const input of document.querySelectorAll("input[required], input[type='email'], textarea[required]")) {
+  for (const event of ["invalid", "input"]) {
+    input.addEventListener(event, () => {
+      setCustomMessage(input);
+    });
+  }
 }
 
 // Utilities
