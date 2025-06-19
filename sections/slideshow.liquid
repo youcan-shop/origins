@@ -31,7 +31,8 @@
       --slider-gap: 0;
       --slider-speed: 600;
       --slider-per-page: 1;
-      --slider-height: {{ slideshow.height }}px;
+      --slider-height: {{ slideshow.desktop_height }}px;
+      --slider-mobile-height: {{ slideshow.mobile_height }}px;
 
       --section-content-color: {{ slideshow.content_color.hex }};
       --section-button-background: {{ slideshow.button_background.hex }};
@@ -77,26 +78,6 @@
   "max_blocks": 4,
   "settings": [
     {
-      "type": "select",
-      "id": "height",
-      "label": "t:sections.slideshow.height",
-      "options": [
-        {
-          "value": "420",
-          "label": "t:common.sizes.small"
-        },
-        {
-          "value": "560",
-          "label": "t:common.sizes.medium"
-        },
-        {
-          "value": "720",
-          "label": "t:common.sizes.large"
-        }
-      ],
-      "default": "560"
-    },
-    {
       "type": "checkbox",
       "id": "autoplay",
       "label": "t:sections.slideshow.autoplay",
@@ -139,6 +120,50 @@
         }
       ],
       "default": "full"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.slideshow.height"
+    },
+    {
+      "type": "select",
+      "id": "desktop_height",
+      "label": "t:common.screens.desktop",
+      "options": [
+        {
+          "value": "420",
+          "label": "t:common.sizes.small"
+        },
+        {
+          "value": "560",
+          "label": "t:common.sizes.medium"
+        },
+        {
+          "value": "720",
+          "label": "t:common.sizes.large"
+        }
+      ],
+      "default": "560"
+    },
+    {
+      "type": "select",
+      "id": "mobile_height",
+      "label": "t:common.screens.mobile",
+      "options": [
+        {
+          "value": "420",
+          "label": "t:common.sizes.small"
+        },
+        {
+          "value": "560",
+          "label": "t:common.sizes.medium"
+        },
+        {
+          "value": "720",
+          "label": "t:common.sizes.large"
+        }
+      ],
+      "default": "560"
     },
     {
       "type": "header",
@@ -285,9 +310,14 @@
       "label": "t:sections.slideshow.blocks.slide.label",
       "settings": [
         {
-          "id": "image",
+          "id": "desktop_image",
           "type": "image_picker",
-          "label": "t:common.blocks.image"
+          "label": "t:sections.slideshow.blocks.slide.desktop_image"
+        },
+        {
+          "id": "mobile_image",
+          "type": "image_picker",
+          "label": "t:sections.slideshow.blocks.slide.mobile_image"
         },
         {
           "id": "heading",

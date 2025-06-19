@@ -59,6 +59,10 @@
     "buttons": {
       "button_text": "Button text",
       "button_background": "Button background"
+    },
+    "screens": {
+      "desktop": "🖥️ Desktop",
+      "mobile": "📱 Mobile"
     }
   },
   "settings_schema": {
@@ -354,7 +358,9 @@
           "heading_default": "Image Slide",
           "subheading": "Subheading",
           "subheading_default": "An image is worth a thousand words",
-          "button_link": "Button link"
+          "button_link": "Button link",
+          "desktop_image": "🖥️ Desktop image",
+          "mobile_image": "📱 Mobile image"
         }
       }
     },

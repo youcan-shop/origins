@@ -11,8 +11,21 @@
 {% assign slideshow_settings = section.settings %}
 
 <yc-slider-item role="group" aria-roledescription="slide">
-  {% if slide.image.src %}
-    <img src="{{ slide.image.src }}" alt="{{ "slide " | append: forloop.index }}" height="100%" width="100%">
+  {% if slide.desktop_image.src or slide.mobile_image.src %}
+    <picture>
+      {% if slide.mobile_image.src %}
+        <source srcset="{{ slide.mobile_image.src }}" media="(max-width: 768px)">
+      {% endif %}
+      {% if slide.desktop_image.src %}
+        <source srcset="{{ slide.desktop_image.src }}" media="(min-width: 769px)">
+      {% endif %}
+      <img
+        src="{{ slide.mobile_image.src |  default: slide.desktop_image.src }}"
+        alt="{{ "slide " | append: forloop.index }}"
+        height="100%"
+        width="100%"
+      >
+    </picture>
   {% endif %}
   {% if slide.heading or slide.subheading or slide.button_text %}
     <yc-slider-content data-alignment="{{ slideshow_settings.content_alignment }}">
