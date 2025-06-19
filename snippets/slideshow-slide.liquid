@@ -13,7 +13,12 @@
 <yc-slider-item role="group" aria-roledescription="slide">
   {% if slide.desktop_image.src or slide.mobile_image.src %}
     <picture>
-      <source srcset="{{ slide.desktop_image.src }}" media="(min-width: 768px)">
+      {% if slide.mobile_image.src %}
+        <source srcset="{{ slide.mobile_image.src }}" media="(max-width: 768px)">
+      {% endif %}
+      {% if slide.desktop_image.src %}
+        <source srcset="{{ slide.desktop_image.src }}" media="(min-width: 769px)">
+      {% endif %}
       <img
         src="{{ slide.mobile_image.src |  default: slide.desktop_image.src }}"
         alt="{{ "slide " | append: forloop.index }}"
