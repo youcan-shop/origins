@@ -62,7 +62,7 @@
     },
     "screens": {
       "desktop": "🖥️ Bureau",
-      "mobile": "📱 Mobile",
+      "mobile": "📱 Mobile"
     }
   },
   "settings_schema": {
