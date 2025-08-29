@@ -36,7 +36,9 @@
     {% render 'testimonial-skeleton', count: section.settings.columns %}
     <div class="empty-section" data-empty hidden>
       {% assign title = 'testimonials.empty.title' | t %}
-      {% render 'yc-empty', icon: 'testimonials', heading: title %}
+      {% assign description = 'testimonials.empty.description' | t %}
+
+      {% render 'yc-empty', icon: 'testimonials', heading: title, subheading: description %}
     </div>
   </yc-testimonials>
 </yc-section>
