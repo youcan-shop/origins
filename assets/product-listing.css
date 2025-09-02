@@ -25,6 +25,7 @@
 }
 .product-listing .filter-area .title:has(.eyebrow){
   flex-direction:column;
+  align-items:flex-start;
   gap:0;
 }
 .product-listing .filter-area .title:has(.eyebrow) .eyebrow{

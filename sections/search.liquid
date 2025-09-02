@@ -45,8 +45,8 @@
           {% render 'yc-pagination', next_page_url: next_page, previous_page_url: previous_page, current: current, last: last, terms: terms %}
         {% else %}
           <div class="empty-page">
-            {% assign title = 'single-collection.empty.title' | t %}
-            {% assign description = 'single-collection.empty.description' | t %}
+            {% assign title = 'search.empty.title' | t %}
+            {% assign description = 'search.empty.description' | t %}
 
             {% render 'yc-empty', icon: 'products', heading: title, subheading: description %}
           </div>

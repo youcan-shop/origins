@@ -96,7 +96,9 @@
     <div class="empty">
       <div class="empty-page">
         {% assign placeholder_title = 'cart.empty.title' | t %}
-        {% render 'yc-empty', icon: 'cart', heading: placeholder_title %}
+        {% assign placeholder_description = 'cart.empty.description' | t %}
+
+        {% render 'yc-empty', icon: 'cart', heading: placeholder_title, subheading: placeholder_description %}
       </div>
     </div>
   </div>
