@@ -15,7 +15,7 @@
 <yc-linked-fields>
   {% for field in fields %}
     {% if linked_fields contains field.name %}
-      <div class="field" data-field>
+      <div class="field" data-field style="{% if field contains field.hidden %} display: none;{% endif %}">
         <label>{{ field.display_name }}</label>
         <yc-combobox
           name="{{ field.name }}"
