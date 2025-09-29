@@ -11,7 +11,7 @@
 {% assign slideshow_settings = section.settings %}
 
 <yc-slider-item role="group" aria-roledescription="slide">
-  {% if slide.desktop_image.src or slide.mobile_image.src %}
+  {% if slide.desktop_image.src and slide.mobile_image.src %}
     <picture>
       {% if slide.mobile_image.src %}
         <source srcset="{{ slide.mobile_image.src }}" media="(max-width: 768px)">
