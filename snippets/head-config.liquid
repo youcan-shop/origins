@@ -162,6 +162,21 @@
   {{ 'component-product-form.js' | asset_url | script_tag_deferred }}
 {% endif %}
 
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "{{ store.name }}"
+    "sameAs": [
+      "{{ store.brand.social_links.facebook }}",
+      "{{ store.brand.social_links.twitter }}",
+      "{{ store.brand.social_links.instagram }}",
+      "{{ store.brand.social_links.tiktok }}"
+    ],
+    "url": "{{ request.url }}"
+  }
+</script>
+
 <script>
   window.errorStrings = {
     checkout: '{{ form.errors | first }}',
