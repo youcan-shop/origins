@@ -20,7 +20,7 @@
         <source srcset="{{ slide.desktop_image.src }}" media="(min-width: 769px)">
       {% endif %}
       <img
-        src="{{ slide.mobile_image.src |  default: slide.desktop_image.src }}"
+        src="{{  slide.desktop_image.src | default: slide.mobile_image.src }}"
         alt="{{ "slide " | append: forloop.index }}"
         height="100%"
         width="100%"
