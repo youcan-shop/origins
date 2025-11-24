@@ -14,7 +14,7 @@
 
 <div class="product-card" data-style="{{ settings.product_card_style }}" {{ youcan_attributes }}>
   <a href="{{ product.url }}" class="img-link" aria-label="{{ product.name }}" draggable="false">
-    {% if product.thumbnail %}
+    {% if product.preview_image.original %}
       <img
         loading="lazy"
         height="100%"
