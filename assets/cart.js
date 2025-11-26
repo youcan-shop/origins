@@ -286,9 +286,7 @@ class CartItems extends BaseCartItem {
   }
 
   appendCartItem(fragment, cartItem) {
-    const li = document.createElement("li");
-    li.appendChild(cartItem);
-    fragment.append(li);
+    fragment.append(cartItem);
   }
 
   getCartItemElements(cartItem) {
@@ -490,9 +488,11 @@ class CartSummary extends HTMLElement {
     this.discount = this.querySelector("[data-discount]");
     this.removeCouponButton = this.querySelector("[data-remove-coupon]");
 
-    const [couponInput, couponButton] = this.couponForm.querySelectorAll("[data-coupon]");
-    this.couponInput = couponInput;
-    this.couponButton = couponButton;
+    if (this.couponForm) {
+      const [couponInput, couponButton] = this.couponForm.querySelectorAll("[data-coupon]");
+      this.couponInput = couponInput;
+      this.couponButton = couponButton;
+    }
   }
 
   connectedCallback() {
@@ -500,8 +500,8 @@ class CartSummary extends HTMLElement {
   }
 
   _render() {
-    this.couponForm.addEventListener("submit", this.handleApplyCoupon.bind(this));
-    this.removeCouponButton.addEventListener("click", this.handleRemoveCoupon.bind(this));
+    this.couponForm?.addEventListener("submit", this.handleApplyCoupon.bind(this));
+    this.removeCouponButton?.addEventListener("click", this.handleRemoveCoupon.bind(this));
 
     subscribe(PUB_SUB_EVENTS.cartUpdate, (payload) => {
       const { sub_total, discountedPrice, coupon, discounted_sub_total } = payload.cartData;
