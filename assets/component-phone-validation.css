@@ -2,7 +2,6 @@ yc-phone-validation [data-phone-input-wrapper]{
   display:flex;
   align-items:stretch;
   width:100%;
-  gap:var(--gap-md);
 }
 yc-phone-validation yc-combobox{
   width:90px;
@@ -10,6 +9,9 @@ yc-phone-validation yc-combobox{
 }
 yc-phone-validation yc-combobox yc-combobox-trigger{
   height:100%;
+  border-inline-end:none !important;
+  border-end-end-radius:0 !important;
+  border-start-end-radius:0 !important;
 }
 yc-phone-validation yc-combobox yc-combobox-content{
   width:350px;
@@ -18,6 +20,10 @@ yc-phone-validation yc-combobox yc-combobox-content{
   yc-phone-validation yc-combobox yc-combobox-content{
     width:calc(100vw - var(--gap-3xl));
   }
+}
+yc-phone-validation [data-phone-number]{
+  border-start-start-radius:0 !important;
+  border-end-start-radius:0 !important;
 }
 yc-phone-validation [data-phone-error]{
   font-size:var(--text-sm);
