@@ -7,6 +7,7 @@ if (!customElements.get("yc-phone-validation")) {
       super();
 
       this.phoneCombobox = this.querySelector("[data-combobox-country-code]");
+      this.phoneDisplayedCountryCode = this.phoneCombobox.querySelector("yc-combobox-value");
       this.phoneNumber = this.querySelector("[data-phone-number]");
       this.phoneHiddenInput = this.querySelector("[data-phone-hidden-input]");
       this.phoneErrorElement = this.querySelector("[data-phone-error]");
@@ -14,7 +15,7 @@ if (!customElements.get("yc-phone-validation")) {
 
     async connectedCallback() {
       if (!this.validateElements()) return;
-
+      
       await this.buildCountryCodeOptions();
       this.attachListeners();
     }
@@ -50,20 +51,29 @@ if (!customElements.get("yc-phone-validation")) {
           );
         });
 
-        this.phoneCombobox.setup(content.querySelectorAll("yc-combobox-item"));
+        this.phoneCombobox.setup(content.querySelectorAll("yc-combobox-item"), this.displaySelectedCountryCode.bind(this));
+
+        this.displaySelectedCountryCode();
       } catch (e) {
         console.error("Failed to populate countries", e);
       }
     }
 
+    displaySelectedCountryCode() {
+      const selectedOption = this.phoneCombobox.querySelector('input[type="radio"]:checked');
+
+      if (selectedOption) {
+        this.phoneDisplayedCountryCode.innerHTML = `<bdo dir="ltr">+${selectedOption.value}</bdo>`;
+      }
+    }
+
     getFullPhoneNumber() {
-      const selectedInput = this.phoneCombobox.querySelector('input[type="radio"]:checked');
-      const countryCode = selectedInput ? selectedInput.value : "";
+      const countryCode = this.phoneDisplayedCountryCode.textContent;
       const nationalNumber = this.phoneNumber.value.trim();
 
       if (!nationalNumber || !countryCode) return "";
 
-      return `+${countryCode}${nationalNumber}`;
+      return `${countryCode}${nationalNumber}`;
     }
 
     toggleError(show) {
@@ -104,17 +114,13 @@ if (!customElements.get("yc-phone-validation")) {
         if (parsed) {
           this.phoneNumber.value = parsed.nationalNumber;
           
-          const matchingInput = Array.from(this.phoneCombobox.querySelectorAll('input[type="radio"]'))
+          const matchingOption = Array.from(this.phoneCombobox.querySelectorAll('input[type="radio"]'))
             .find(input => input.value === parsed.countryCallingCode);
 
-          if (matchingInput) {
-            matchingInput.checked = true;
+          if (matchingOption) {
+            matchingOption.checked = true;
             
-            const label = matchingInput.closest("label");
-            if (label) {
-                const placeholder = this.phoneCombobox.querySelector("yc-combobox-value");
-                if (placeholder) placeholder.textContent = label.textContent.trim();
-            }
+            this.displaySelectedCountryCode();
           }
         }
       } catch (e) {

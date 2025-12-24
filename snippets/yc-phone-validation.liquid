@@ -1,6 +1,7 @@
 {{ 'component-phone-validation.css' | asset_url | stylesheet_tag }}
 
 {{ 'component-phone-validation.js' | asset_url | script_tag_deferred }}
+{{ 'https://unpkg.com/libphonenumber-js@1.12.27/bundle/libphonenumber-min.js' | script_tag_deferred }}
 
 {% comment %}
   Renders phone number input with country code selection and validation
