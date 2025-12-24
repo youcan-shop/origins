@@ -261,7 +261,7 @@
   max-height:150px;
   color:currentColor;
 }
-.single-product yc-product-info .buy-button .buy-area .express-checkout .fields .field:has(input[type=hidden]){
+.single-product yc-product-info .buy-button .buy-area .express-checkout .fields .field:has(input[type=hidden]):not([data-phone-validation]){
   display:none;
 }
 .single-product yc-product-info .buy-button .buy-area .express-checkout .fields .field:has(input:required, textarea:required, yc-combobox[required]) > label::after{

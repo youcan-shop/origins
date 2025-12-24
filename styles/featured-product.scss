@@ -301,7 +301,7 @@
                 color: currentColor;
               }
 
-              &:has(input[type="hidden"]) {
+              &:has(input[type="hidden"]):not([data-phone-validation]) {
                 display: none;
               }
 

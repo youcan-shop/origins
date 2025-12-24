@@ -1,0 +1,39 @@
+yc-phone-validation [data-phone-input-wrapper]{
+  display:flex;
+  align-items:stretch;
+  width:100%;
+}
+yc-phone-validation [data-phone-input-wrapper] yc-combobox{
+  width:110px;
+  flex-shrink:0;
+}
+yc-phone-validation [data-phone-input-wrapper] yc-combobox yc-combobox-trigger{
+  height:100%;
+  border-inline-end:none !important;
+  border-end-end-radius:0 !important;
+  border-start-end-radius:0 !important;
+}
+yc-phone-validation [data-phone-input-wrapper] yc-combobox yc-combobox-content{
+  width:350px;
+}
+@media (max-width: 768px){
+  yc-phone-validation [data-phone-input-wrapper] yc-combobox yc-combobox-content{
+    width:calc(100vw - var(--gap-3xl));
+  }
+}
+yc-phone-validation [data-phone-input-wrapper] yc-combobox yc-combobox-content label > span{
+  display:flex;
+  align-items:center;
+  gap:var(--gap-xs);
+}
+yc-phone-validation [data-phone-input-wrapper] [data-phone-number]{
+  border-start-start-radius:0 !important;
+  border-end-start-radius:0 !important;
+}
+yc-phone-validation:has([data-phone-error][style*="display: block"]) [data-phone-number]{
+  border-color:var(--color-error-500) !important;
+}
+yc-phone-validation [data-phone-error]{
+  font-size:var(--text-sm);
+  color:var(--color-error-500);
+}
