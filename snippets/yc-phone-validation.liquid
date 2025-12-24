@@ -1,7 +1,9 @@
 {{ 'component-phone-validation.css' | asset_url | stylesheet_tag }}
 
+{{ 'component-phone-validation.js' | asset_url | script_tag_deferred }}
+
 {% comment %}
-  Renders a
+  Renders phone number input with country code selection and validation
 
   Accepts:
   - field: {Object} field object
@@ -40,5 +42,3 @@
     </div>
   </div>
 </yc-phone-validation>
-
-{{ 'component-phone-validation.js' | asset_url | script_tag_deferred }}
