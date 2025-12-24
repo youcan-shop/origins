@@ -1,7 +1,7 @@
 {% assign fields = checkout.fields %}
 {% assign linked_fields = 'country,region,city' %}
 {% assign has_linked_fields = checkout.linked_fields %}
-{% assign has_phone_validation = true %}
+{% assign has_phone_validation = checkout.phone_validation %}
 
 {% for field in fields %}
   {% if field.type == 'select' or has_linked_fields or has_phone_validation %}
