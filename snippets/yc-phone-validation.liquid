@@ -15,7 +15,7 @@
     <label>{{ field.display_name }}</label>
     <input type="hidden" name="{{ field.name }}" data-phone-hidden-input>
     <div data-phone-input-wrapper>
-      <yc-combobox data-phone-select-country-code>
+      <yc-combobox data-combobox-country-code>
         <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
           <yc-combobox-value>{{ field.placeholder | default: 'general.select' | t }}</yc-combobox-value>
         </yc-combobox-trigger>
@@ -40,3 +40,5 @@
     </div>
   </div>
 </yc-phone-validation>
+
+{{ 'component-phone-validation.js' | asset_url | script_tag_deferred }}
