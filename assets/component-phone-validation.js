@@ -34,25 +34,21 @@ if (!customElements.get("yc-phone-validation")) {
         if (!countries || !countries.length) return;
 
         const content = this.phoneCombobox.querySelector("yc-combobox-content");
-        const isRtl = document.documentElement.dir === "rtl";
 
         countries.forEach((country) => {
-          const label = isRtl
-            ? `${country.name} (${country.phone}+)`
-            : `${country.name} (+${country.phone})`;
-            
           const isSelected = country.code === PhoneValidation.CUSTOMER_COUNTRY_CODE;
-          
+
           content.insertAdjacentHTML(
             "beforeend",
             `<yc-combobox-item value="${country.phone}" data-value="${country.code}" ${isSelected ? "checked" : ""}>
-              ${label}
+              <span class="fi fi-${country.code.toLowerCase()}"></span>
+              <span>${country.name} <bdo dir="ltr">(+${country.phone})</bdo></span>
             </yc-combobox-item>`
           );
         });
 
         this.phoneCombobox.setup(content.querySelectorAll("yc-combobox-item"), this.displaySelectedCountryCode.bind(this));
-
+        
         this.displaySelectedCountryCode();
       } catch (e) {
         console.error("Failed to populate countries", e);
@@ -63,12 +59,17 @@ if (!customElements.get("yc-phone-validation")) {
       const selectedOption = this.phoneCombobox.querySelector('input[type="radio"]:checked');
 
       if (selectedOption) {
-        this.phoneDisplayedCountryCode.innerHTML = `<bdo dir="ltr">+${selectedOption.value}</bdo>`;
+        const countryCode = selectedOption.dataset.value.toLowerCase();
+
+        this.phoneDisplayedCountryCode.innerHTML = `
+          <span class="fi fi-${countryCode}"></span>
+          <bdo dir="ltr">+${selectedOption.value}</bdo>
+        `;
       }
     }
 
     getFullPhoneNumber() {
-      const countryCode = this.phoneDisplayedCountryCode.textContent;
+      const countryCode = this.phoneDisplayedCountryCode.querySelector("bdo").textContent;
       const nationalNumber = this.phoneNumber.value.trim();
 
       if (!nationalNumber || !countryCode) return "";

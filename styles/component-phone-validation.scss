@@ -8,7 +8,7 @@ yc-phone-validation {
   }
 
   yc-combobox {
-    width: 90px;
+    width: 110px;
     flex-shrink: 0;
 
     yc-combobox-trigger {
@@ -23,6 +23,12 @@ yc-phone-validation {
 
       @include breakpoints.breakpoint("md") {
         width: calc(100vw - var(--gap-3xl));
+      }
+
+      label > span {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-xs);
       }
     }
   }

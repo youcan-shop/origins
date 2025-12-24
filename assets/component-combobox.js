@@ -22,16 +22,17 @@ if (!customElements.get("yc-combobox")) {
       items.forEach((item) => {
         const { value, en, fr, ar } = item.attributes;
         const label = item.textContent.trim();
+        const content = item.innerHTML.trim();
         const checked = item.hasAttribute("checked");
         const disabled = item.hasAttribute("disabled");
         const required = item.hasAttribute("required");
         const translation = Boolean(en && en.value) ? [`data-en="${en.value}"`, `data-fr="${fr.value}"`, `data-ar="${ar.value}"`].join(" ") : "";
 
-        if (checked) this.placeholder.textContent = label;
+        if (checked) this.placeholder.innerHTML = content;
 
         item.outerHTML = `
           <label role="option" title="${label}">
-            <span>${label}</span>
+            <span>${content}</span>
             <input type="radio" name="${this.getAttribute("name")}" value="${value?.value}" data-value="${item.attributes["data-value"]?.value ?? ""}"
               ${translation} ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} ${required ? "required" : ""} hidden >
           </label>`;
