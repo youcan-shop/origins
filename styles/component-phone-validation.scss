@@ -1,0 +1,11 @@
+yc-phone-validation {
+  [data-phone-input-wrapper] {
+    display: flex;
+    width: 100%;
+    gap: var(--gap-md);
+  }
+
+  yc-combobox {
+    width: 120px;
+  }
+}

@@ -1,0 +1,8 @@
+yc-phone-validation [data-phone-input-wrapper]{
+  display:flex;
+  width:100%;
+  gap:var(--gap-md);
+}
+yc-phone-validation yc-combobox{
+  width:120px;
+}

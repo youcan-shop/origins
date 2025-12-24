@@ -1,0 +1,42 @@
+{{ 'component-phone-validation.css' | asset_url | stylesheet_tag }}
+
+{% comment %}
+  Renders a
+
+  Accepts:
+  - field: {Object} field object
+
+  Usage:
+  {% render 'yc-phone-validation', field: {...} %}
+{% endcomment %}
+
+<yc-phone-validation>
+  <div class="field" data-field data-phone-validation>
+    <label>{{ field.display_name }}</label>
+    <input type="hidden" name="{{ field.name }}" data-phone-hidden-input>
+    <div data-phone-input-wrapper>
+      <yc-combobox data-phone-select-country-code>
+        <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
+          <yc-combobox-value>{{ field.placeholder | default: 'general.select' | t }}</yc-combobox-value>
+        </yc-combobox-trigger>
+        <yc-combobox-content role="listbox">
+          <yc-combobox-search placeholder="{{ 'general.search' | t }}" no-results="{{ 'general.no-results' | t }}"></yc-combobox-search>
+        </yc-combobox-content>
+      </yc-combobox>
+      <input
+        type="{{ field.type }}"
+        inputmode="tel"
+        name="phone_number"
+        placeholder="{{ field.placeholder }}"
+        autocomplete="tel-national"
+        data-phone-number
+        {% if field.required %}
+          required
+        {% endif %}
+      >
+    </div>
+    <div style="display: none;" data-phone-error>
+      {{ 'error_messages.invalid_phone_number' | t }}
+    </div>
+  </div>
+</yc-phone-validation>
