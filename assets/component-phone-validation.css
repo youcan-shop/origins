@@ -1,8 +1,25 @@
 yc-phone-validation [data-phone-input-wrapper]{
   display:flex;
+  align-items:stretch;
   width:100%;
   gap:var(--gap-md);
 }
 yc-phone-validation yc-combobox{
-  width:120px;
+  width:90px;
+  flex-shrink:0;
+}
+yc-phone-validation yc-combobox yc-combobox-trigger{
+  height:100%;
+}
+yc-phone-validation yc-combobox yc-combobox-content{
+  width:350px;
+}
+@media (max-width: 768px){
+  yc-phone-validation yc-combobox yc-combobox-content{
+    width:calc(100vw - var(--gap-3xl));
+  }
+}
+yc-phone-validation [data-phone-error]{
+  font-size:var(--text-sm);
+  color:var(--color-error-500);
 }

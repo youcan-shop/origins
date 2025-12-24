@@ -1,11 +1,32 @@
+@use "mixins/breakpoints";
+
 yc-phone-validation {
   [data-phone-input-wrapper] {
     display: flex;
+    align-items: stretch;
     width: 100%;
     gap: var(--gap-md);
   }
 
   yc-combobox {
-    width: 120px;
+    width: 90px;
+    flex-shrink: 0;
+
+    yc-combobox-trigger {
+      height: 100%;
+    } 
+
+    yc-combobox-content {
+      width: 350px;
+
+      @include breakpoints.breakpoint("md") {
+        width: calc(100vw - var(--gap-3xl));
+      }
+    }
+  }
+
+  [data-phone-error] {
+    font-size: var(--text-sm);
+    color: var(--color-error-500);
   }
 }
