@@ -1,5 +1,10 @@
-{% for field in checkout.fields %}
-  {% if field.type == 'select' or checkout.linked_fields %}
+{% assign fields = checkout.fields %}
+{% assign linked_fields = 'country,region,city' %}
+{% assign has_linked_fields = checkout.linked_fields %}
+{% assign has_phone_validation = checkout.phone_validation %}
+
+{% for field in fields %}
+  {% if field.type == 'select' or has_linked_fields or has_phone_validation %}
     {{ 'component-combobox.css' | asset_url | stylesheet_tag }}
     {{ 'component-combobox.js' | asset_url | script_tag_deferred }}
     {% break %}
@@ -17,9 +22,6 @@
   Usage:
   {% render 'yc-express-checkout', variant_id: '045-dj8-30k-ws7', available: true, is_sticky: false %}
 {% endcomment %}
-
-{% assign linked_fields = 'country,region,city' %}
-{% assign has_linked_fields = checkout.linked_fields %}
 
 <form data-order-form>
   <yc-product-form
@@ -40,7 +42,7 @@
           {{ 'product.buy_button.express_checkout.title' | t }}
         </div>
         <div class="fields" data-title="{{ 'product.buy_button.express_checkout.subtitle' | t }}">
-          {% for field in checkout.fields %}
+          {% for field in fields %}
             {% assign field_name = field.name %}
 
             {% if field.custom %}
@@ -48,61 +50,65 @@
             {% endif %}
 
             {% unless has_linked_fields and linked_fields contains field.name %}
-              <div class="field" data-field>
-                <label>{{ field.display_name }}</label>
-                {% case field.type %}
-                  {% when 'text', 'number', 'hidden' %}
-                    <input
-                      {% if field.name == 'phone' or field.type == 'number' %}
-                        inputmode="tel"
-                      {% endif %}
-                      {% if field.name == 'email' %}
-                        inputmode="email"
-                      {% endif %}
-                      type="{{ field.type }}"
-                      name="{{ field_name }}"
-                      value="{{ field.default_value }}"
-                      placeholder="{{ field.placeholder }}"
-                      {% if field.required %}
-                        required
-                      {% endif %}
-                    >
-                  {% when 'textarea' %}
-                    <textarea
-                      name="{{ field_name }}"
-                      placeholder="{{ field.placeholder }}"
-                      {% if field.required %}
-                        required
-                      {% endif -%}
-                    ></textarea>
-                  {% when 'select' %}
-                    <yc-combobox name="{{ field_name }}">
-                      <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
-                        <yc-combobox-value>{{ field.placeholder | default: 'general.select' | t }}</yc-combobox-value>
-                      </yc-combobox-trigger>
-                      <yc-combobox-content role="listbox">
-                        {% for option in field.options %}
-                          <yc-combobox-item
-                            value="{{ option }}"
-                            {% if field.required %}
-                              required
-                            {% endif %}
-                            {% if option == field.default_value %}
-                              checked
-                            {% endif %}
-                          >
-                            {{- option -}}
-                          </yc-combobox-item>
-                        {% endfor %}
-                      </yc-combobox-content>
-                    </yc-combobox>
-                {% endcase %}
-              </div>
+              {% if field.name == 'phone' and has_phone_validation %}
+                {% render 'yc-phone-validation', field: field %}
+              {% else %}
+                <div class="field" data-field>
+                  <label>{{ field.display_name }}</label>
+                  {% case field.type %}
+                    {% when 'text', 'number', 'hidden' %}
+                      <input
+                        {% if field.name == 'phone' or field.type == 'number' %}
+                          inputmode="tel"
+                        {% endif %}
+                        {% if field.name == 'email' %}
+                          inputmode="email"
+                        {% endif %}
+                        type="{{ field.type }}"
+                        name="{{ field_name }}"
+                        value="{{ field.default_value }}"
+                        placeholder="{{ field.placeholder }}"
+                        {% if field.required %}
+                          required
+                        {% endif %}
+                      >
+                    {% when 'textarea' %}
+                      <textarea
+                        name="{{ field_name }}"
+                        placeholder="{{ field.placeholder }}"
+                        {% if field.required %}
+                          required
+                        {% endif -%}
+                      ></textarea>
+                    {% when 'select' %}
+                      <yc-combobox name="{{ field_name }}">
+                        <yc-combobox-trigger class="yc-btn icon" role="button" tabindex="0" aria-haspopup="listbox">
+                          <yc-combobox-value>{{ field.placeholder | default: 'general.select' | t }}</yc-combobox-value>
+                        </yc-combobox-trigger>
+                        <yc-combobox-content role="listbox">
+                          {% for option in field.options %}
+                            <yc-combobox-item
+                              value="{{ option }}"
+                              {% if field.required %}
+                                required
+                              {% endif %}
+                              {% if option == field.default_value %}
+                                checked
+                              {% endif %}
+                            >
+                              {{- option -}}
+                            </yc-combobox-item>
+                          {% endfor %}
+                        </yc-combobox-content>
+                      </yc-combobox>
+                  {% endcase %}
+                </div>
+              {% endif %}
             {% endunless %}
           {% endfor %}
 
           {% if has_linked_fields %}
-            {% render 'yc-linked-fields', fields: checkout.fields %}
+            {% render 'yc-linked-fields', fields: fields %}
           {% endif %}
         </div>
       </div>
@@ -136,3 +142,14 @@
     {% endif %}
   </yc-product-form>
 </form>
+
+{% if has_linked_fields or has_phone_validation %}
+  {% javascript %}
+    window.storeMarketCountries = new Promise((resolve) => {
+      document.addEventListener('DOMContentLoaded', async () => {
+        const data = await youcanjs.misc.getStoreMarketCountries();
+        resolve(data);
+      });
+    });
+  {% endjavascript %}
+{% endif %}
