@@ -1,5 +1,5 @@
 {
-  "name": "origin",
+  "name": "origins",
   "type": "module",
   "version": "1.0.15",
   "description": "A mobile-first, lightweight, and minimal theme",
@@ -19,7 +19,7 @@
     "yc": "youcan theme:dev -p",
     "dev": "npm-run-all --parallel sass watch:postcss yc",
     "zip": "node ./tooling/zip.js",
-    "release": "bumpp --execute 'pnpm run zip'"
+    "release": "bumpp --execute 'pnpm run zip' --commit --tag --push"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
