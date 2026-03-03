@@ -2,6 +2,18 @@
 
 {% assign cart_size = cart.count %}
 
+{% javascript %}
+  document.addEventListener('DOMContentLoaded', async function () {
+    const checkoutButton = document.querySelector('#checkout-button');
+
+    checkoutButton?.addEventListener('click', async function () {
+      const cart = await youcanjs.cart.fetch();
+
+      window.Dotshop.pixels.publish('initiate-checkout', cart);
+    });
+  });
+{% endjavascript %}
+
 <yc-section
   style="
     --section-space-top: {{ section.settings.space_top }}px;
@@ -85,7 +97,7 @@
                 <span>{{ 'cart.page.summary.total' | t }}</span>
                 <span data-cart-total>{{ cart.discounted_sub_total | default: 0 | money }}</span>
               </div>
-              <a href="{{ cart.cart_submit_url }}" class="yc-btn primary">
+              <a href="{{ cart.cart_submit_url }}" class="yc-btn primary" id="checkout-button">
                 {{- 'cart.page.summary.checkout_button' | t -}}
               </a>
             </div>
