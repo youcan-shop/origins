@@ -18,10 +18,6 @@
       const latestCart = updatedCart ?? cart;
 
       window.Dotshop.pixels.publish('initiate-checkout', latestCart);
-
-      setTimeout(() => {
-        window.location.href = '{{ cart.cart_submit_url }}';
-      }, 300);
     });
   });
 {% endjavascript %}
@@ -109,9 +105,9 @@
                 <span>{{ 'cart.page.summary.total' | t }}</span>
                 <span data-cart-total>{{ cart.discounted_sub_total | default: 0 | money }}</span>
               </div>
-              <button type="button" class="yc-btn primary" id="checkout-button">
+              <a href="{{ cart.cart_submit_url }}" class="yc-btn primary" id="checkout-button">
                 {{- 'cart.page.summary.checkout_button' | t -}}
-              </button>
+              </a>
             </div>
           </div>
         </div>
