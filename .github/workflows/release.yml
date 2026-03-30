@@ -43,7 +43,7 @@ jobs:
 
       - name: Get zip file name
         id: zip
-        run: echo "filename=${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}.zip" >> $GITHUB_OUTPUT
+        run: echo "filename=${{ steps.package.outputs.name }}_v${{ steps.package.outputs.version }}.zip" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
