@@ -1,128 +1,128 @@
 if (!customElements.get("yc-linked-fields")) {
-class LinkedFields extends HTMLElement {
-  static TYPES = ["country", "region", "city"];
+  class LinkedFields extends HTMLElement {
+    static TYPES = ["country", "region", "city"];
 
-  constructor() {
-    super();
-    this.locale = document.documentElement.lang || "en";
-    this.countryCode = null;
-    this.regionCode = null;
+    constructor() {
+      super();
+      this.locale = document.documentElement.lang || "en";
+      this.countryCode = null;
+      this.regionCode = null;
 
-    for (const name of LinkedFields.TYPES) {
-      this[name] = this.querySelector(`yc-combobox[name='${name}']`);
+      for (const name of LinkedFields.TYPES) {
+        this[name] = this.querySelector(`yc-combobox[name='${name}']`);
+      }
     }
-  }
 
-  connectedCallback() {
-    this._render();
-  }
-
-  _render() {
-    this.fetchOptions();
-  }
-
-  async fetchOptions() {
-    for (const type of LinkedFields.TYPES) {
-      this[type] && (await this.fetchLocationByType(type));
+    connectedCallback() {
+      this._render();
     }
-  }
 
-  setUpOptions(type, options) {
-    const combobox = this[type];
-    const content = combobox.querySelector("yc-combobox-content");
-    const search = combobox.querySelector("input[type='search']");
-
-    content.replaceChildren(search);
-
-    options.forEach((opt, index) => {
-      const isDefault = {
-        country: opt.code == this.countryCode,
-        region: index === 0,
-        city: index === 0,
-      };
-      const translatedName = opt.nameTrans;
-      const { en, fr, ar } = translatedName ?? {};
-      const label = typeof opt === "string" ? opt : opt.name;
-      const value = typeof opt === "string" ? opt : opt.code;
-      const translation = translatedName ? [`en="${en}"`, `fr="${fr}"`, `ar="${ar}"`].join(" ") : "";
-
-      content.insertAdjacentHTML(
-        "beforeend",
-        `<yc-combobox-item value="${label}" data-value="${value}" ${translation} ${isDefault[type] ? "checked" : ""}>
-            ${label}
-        </yc-combobox-item>`,
-      );
-    });
-
-    combobox.setup(content.querySelectorAll("yc-combobox-item"), (e) => this.onChange(e, type));
-  }
-
-  async onChange(e, type) {
-    const value = e.target.dataset.value;
-
-    if (type === "country") this.countryCode = value;
-    if (type === "region") this.regionCode = value;
-    for (const next of { country: LinkedFields.TYPES.slice(1), region: LinkedFields.TYPES.slice(2) }[type] || []) {
-      this[next] && (await this.fetchLocationByType(next));
+    _render() {
+      this.fetchOptions();
     }
-  }
 
-  async fetchLocationByType(type) {
-    const fetchMap = {
-      country: () => window.storeMarketCountries,
-      region: () => {
-        const key = `${this.countryCode}_${this.locale}`;
+    async fetchOptions() {
+      for (const type of LinkedFields.TYPES) {
+        this[type] && (await this.fetchLocationByType(type));
+      }
+    }
 
-        if (!window.storeRegions[key]) {
-          window.storeRegions[key] = youcanjs.misc.getCountryRegions(this.countryCode, this.locale);
-        }
+    setUpOptions(type, options) {
+      const combobox = this[type];
+      const content = combobox.querySelector("yc-combobox-content");
+      const search = combobox.querySelector("input[type='search']");
 
-        return window.storeRegions[key];
-      },
-      city: () => {
-        const key = `${this.countryCode}_${this.regionCode}_${this.locale}`;
+      content.replaceChildren(search);
 
-        if (!window.storeCities[key]) {
-          window.storeCities[key] = youcanjs.misc.getCountryCities(this.countryCode, this.regionCode, this.locale);
-        }
-        
-        return window.storeCities[key];
-      },
-    };
+      options.forEach((opt, index) => {
+        const isDefault = {
+          country: opt.code == this.countryCode,
+          region: index === 0,
+          city: index === 0,
+        };
+        const translatedName = opt.nameTrans;
+        const { en, fr, ar } = translatedName ?? {};
+        const label = typeof opt === "string" ? opt : opt.name;
+        const value = typeof opt === "string" ? opt : opt.code;
+        const translation = translatedName ? [`en="${en}"`, `fr="${fr}"`, `ar="${ar}"`].join(" ") : "";
 
-    this.setIsLoading(type, true);
+        content.insertAdjacentHTML(
+          "beforeend",
+          `<yc-combobox-item value="${label}" data-value="${value}" ${translation} ${isDefault[type] ? "checked" : ""}>
+              ${label}
+          </yc-combobox-item>`,
+        );
+      });
 
-    try {
-      const response = await fetchMap[type]?.call();
-      if (!response) throw new Error(`Unknown fetch type: ${type}`);
+      combobox.setup(content.querySelectorAll("yc-combobox-item"), (e) => this.onChange(e, type));
+    }
 
-      const map = {
-        country: () => {
-          const customerCountryExists = response.countries.some(country => country.code === CUSTOMER_COUNTRY_CODE);
-          this.countryCode = customerCountryExists ? CUSTOMER_COUNTRY_CODE : response.countries[0].code;
+    async onChange(e, type) {
+      const value = e.target.dataset.value;
 
-          this.setUpOptions(type, response.countries);
-        },
+      if (type === "country") this.countryCode = value;
+      if (type === "region") this.regionCode = value;
+      for (const next of { country: LinkedFields.TYPES.slice(1), region: LinkedFields.TYPES.slice(2) }[type] || []) {
+        this[next] && (await this.fetchLocationByType(next));
+      }
+    }
+
+    async fetchLocationByType(type) {
+      const fetchMap = {
+        country: () => window.storeMarketCountries,
         region: () => {
-          this.regionCode = response.states[0].code;
-          this.setUpOptions(type, response.states);
+          const key = `${this.countryCode}_${this.locale}`;
+
+          if (!window.storeRegions[key]) {
+            window.storeRegions[key] = youcanjs.misc.getCountryRegions(this.countryCode, this.locale);
+          }
+
+          return window.storeRegions[key];
         },
-        city: () => this.setUpOptions(type, response.cities),
+        city: () => {
+          const key = `${this.countryCode}_${this.regionCode}_${this.locale}`;
+
+          if (!window.storeCities[key]) {
+            window.storeCities[key] = youcanjs.misc.getCountryCities(this.countryCode, this.regionCode, this.locale);
+          }
+          
+          return window.storeCities[key];
+        },
       };
 
-      map[type]?.call();
-    } catch (error) {
-      console.error(error);
-    } finally {
-      this.setIsLoading(type, false);
+      this.setIsLoading(type, true);
+
+      try {
+        const response = await fetchMap[type]?.call();
+        if (!response) throw new Error(`Unknown fetch type: ${type}`);
+
+        const map = {
+          country: () => {
+            const customerCountryExists = response.countries.some(country => country.code === CUSTOMER_COUNTRY_CODE);
+            this.countryCode = customerCountryExists ? CUSTOMER_COUNTRY_CODE : response.countries[0].code;
+
+            this.setUpOptions(type, response.countries);
+          },
+          region: () => {
+            this.regionCode = response.states[0].code;
+            this.setUpOptions(type, response.states);
+          },
+          city: () => this.setUpOptions(type, response.cities),
+        };
+
+        map[type]?.call();
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.setIsLoading(type, false);
+      }
+    }
+
+    setIsLoading(type, is_loading) {
+      const trigger = this[type].querySelector("yc-combobox-trigger");
+      trigger.setAttribute("aria-disabled", is_loading);
     }
   }
-
-  setIsLoading(type, is_loading) {
-    const trigger = this[type].querySelector("yc-combobox-trigger");
-    trigger.setAttribute("aria-disabled", is_loading);
-  }
-}
 
   customElements.define("yc-linked-fields", LinkedFields);
 }
