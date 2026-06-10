@@ -1,21 +1,21 @@
 {% comment %}
-  Renders the cart drawer item template (header)
+  Renders the cart drawer bundle item template (header)
 
   Usage:
-  {% render 'cart-drawer-item' %}
+  {% render 'cart-drawer-bundle-item' %}
 {% endcomment %}
 
 <div class="item">
   <div class="image" data-cart-item="image">
     <img
-      loading="lazy"
-      height="100%"
-      width="100%"
       src="{{ product.image }}"
       alt="{{ product.name }}"
-      {% if product.image contains '/store-front/images/product-default' %}
+      height="100%"
+      width="100%"
+      loading="lazy"
+      {% unless product.image %}
         hidden
-      {% endif %}
+      {% endunless %}
     >
     <div
       class="card-placeholder"
@@ -47,7 +47,25 @@
         {% endfor %}
       </p>
       <div class="price">
-        <span class="original" data-cart-item="price">{{ product.price | default: 0 | money }}</span>
+        <div class="original" data-cart-item="price">
+          <span
+            class="yc-badge free"
+            data-status="success"
+            {% if product.price %}
+              hidden
+            {% endif %}
+          >
+            {% render 'yc-icon', name: 'gift' %}
+            {{ 'order.free' | t }}
+          </span>
+          <span
+            {% unless product.price %}
+              hidden
+            {% endunless %}
+          >
+            {{ product.price | default: 0 | money }}
+          </span>
+        </div>
         <span
           class="compare-at"
           data-cart-item="compare-price"
@@ -58,23 +76,6 @@
           {{ product.compare_at_price | default: 0 | money }}
         </span>
       </div>
-    </div>
-    <div class="actions">
-      {% render 'yc-quantity-control', product: product, button_size: 'sm', inventory: product.inventory %}
-      <yc-cart-remove-button
-        item="{{ product.id }}"
-        product-variant="{{ product.product_variant_id }}"
-        data-cart-item="delete-button"
-      >
-        <button
-          class="icon"
-          data-delete
-          data-size="sm"
-          aria-label="Delete"
-        >
-          {% render 'yc-icon', name: 'trash' %}
-        </button>
-      </yc-cart-remove-button>
     </div>
   </div>
 </div>

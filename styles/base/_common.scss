@@ -276,6 +276,100 @@ yc-section {
   }
 }
 
+// Badge
+.yc-badge {
+  --badge-color: currentColor;
+
+  padding: 0.25em 0.5em;
+  color: var(--badge-color);
+  background-color: color-mix(in srgb, var(--badge-color) 8%, transparent);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &[data-status$="success"] {
+    --badge-color: var(--color-success-500);
+  }
+  &[data-status$="error"] {
+    --badge-color: var(--color-error-500);
+  }
+  &[data-status$="default"] {
+    --badge-color: var(--color-gray-500);
+  }
+}
+
+// Checkbox
+.yc-checkbox {
+  --checkbox-size: 16px;
+
+  position: relative;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  padding: 2px;
+  transition: all 0.1s ease-out;
+  border: 1.5px solid color-mix(in srgb, currentColor 10%, transparent);
+  border-radius: calc(var(--media-gallery-border-radius) * 0.5);
+  background-color: var(--section-bg-color);
+  color: var(--section-text-color);
+  cursor: pointer;
+  appearance: none;
+
+  /* Dead Area */
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--checkbox-size) + 4px);
+    height: calc(var(--checkbox-size) + 4px);
+    inset-inline-start: -4px;
+    inset-block-start: -4px;
+  }
+
+  /* Check Icon */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: calc(var(--checkbox-size) / 5);
+    height: calc(var(--checkbox-size) / 4);
+    transform: translate(-50%, -60%) rotate(45deg);
+    border-right: 1.5px solid transparent;
+    inset-block-start: 50%;
+    border-block-end: 1.5px solid transparent;
+  }
+
+  /* Checked */
+  &:checked,
+  &:indeterminate {
+    border-color: currentColor;
+    background-color: currentColor;
+
+    &::before {
+      height: calc(var(--checkbox-size) / 2);
+      border-color: var(--section-bg-color);
+    }
+
+    &:indeterminate::before {
+      width: 80%;
+      height: 0;
+      transform: translate(-50%, -50%) rotate(0deg);
+      border-inline-end: none;
+    }
+  }
+
+  /* Disabled */
+  &:disabled {
+    border-color: transparent;
+    background-color: color-mix(in srgb, var(--section-text-color) 30%, transparent);
+    pointer-events: none;
+
+    &:checked::before {
+      border-color: var(--section-bg-color);
+    }
+  }
+}
+
 .items-grid {
   /*
     Usage:

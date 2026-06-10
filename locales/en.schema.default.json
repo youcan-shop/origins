@@ -194,6 +194,9 @@
           "label": "Accordion",
           "title_placeholder": "Title",
           "content_placeholder": "Content"
+        },
+        "bundles": {
+          "label": "Bundles"
         }
       }
     },

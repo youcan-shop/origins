@@ -1,22 +1,22 @@
 {% comment %}
-  Renders the cart item template (cart page)
+  Renders the cart bundle item template (cart page)
 
   Usage:
-  {% render 'cart-item' %}
+  {% render 'cart-bundle-item' %}
 {% endcomment %}
 
 <div class="item">
   <div class="info">
     <div class="image" data-cart-item="image">
       <img
-        loading="lazy"
-        height="100%"
-        width="100%"
         src="{{ product.image }}"
         alt="{{ product.name }}"
-        {% if product.image contains '/store-front/images/product-default' %}
+        height="100%"
+        width="100%"
+        loading="lazy"
+        {% unless product.image %}
           hidden
-        {% endif %}
+        {% endunless %}
       >
       <div
         class="card-placeholder"
@@ -49,7 +49,25 @@
       {% if product.variants %}
       {% endif %}
       <div class="price">
-        <span class="original" data-cart-item="price">{{ product.price | default: 0 | money }}</span>
+        <div class="original" data-cart-item="price">
+          <span
+            class="yc-badge free"
+            data-status="success"
+            {% if product.price %}
+              hidden
+            {% endif %}
+          >
+            {% render 'yc-icon', name: 'gift' %}
+            {{ 'order.free' | t }}
+          </span>
+          <span
+            {% unless product.price %}
+              hidden
+            {% endunless %}
+          >
+            {{ product.price | default: 0 | money }}
+          </span>
+        </div>
         <span
           class="compare-at"
           data-cart-item="compare-price"

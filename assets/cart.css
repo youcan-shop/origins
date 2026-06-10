@@ -19,12 +19,7 @@ yc-section .cart .summary{
 yc-section .cart .content{
   grid-area:1/1/2/9;
 }
-yc-section .cart .content .list{
-  border-radius:var(--cart-border-radius);
-  padding-inline:1.5em;
-  border:var(--cart-border);
-}
-yc-section .cart .content .list .item{
+yc-section .cart .content .item{
   display:grid;
   grid-template-columns:2fr 1fr;
   justify-content:space-between;
@@ -33,35 +28,35 @@ yc-section .cart .content .list .item{
   padding-block:1.5em;
   border-block-end:var(--cart-border);
 }
-yc-section .cart .content .list .item .info{
+yc-section .cart .content .item .info{
   display:flex;
   gap:var(--gap-xl);
 }
-yc-section .cart .content .list .item .info .image{
+yc-section .cart .content .item .info .image{
   height:100px;
   width:100px;
   min-width:100px;
   border-radius:var(--cart-border-radius);
   overflow:hidden;
 }
-yc-section .cart .content .list .item .info .image img{
+yc-section .cart .content .item .info .image img{
   -o-object-fit:cover;
      object-fit:cover;
 }
-yc-section .cart .content .list .item .info .image .card-placeholder{
+yc-section .cart .content .item .info .image .card-placeholder{
   width:100%;
   height:100%;
   background-color:rgba(var(--section-text-color), 0.05);
 }
-yc-section .cart .content .list .item .info .image .card-placeholder svg{
+yc-section .cart .content .item .info .image .card-placeholder svg{
   color:rgba(var(--section-text-color), 0.3);
 }
-yc-section .cart .content .list .item .info .heading{
+yc-section .cart .content .item .info .heading{
   display:flex;
   flex-direction:column;
   gap:var(--gap-sm);
 }
-yc-section .cart .content .list .item .info .heading [data-cart-item=title]{
+yc-section .cart .content .item .info .heading [data-cart-item=title]{
   font-size:var(--text-md);
   color:currentColor;
   display:-webkit-box;
@@ -70,30 +65,70 @@ yc-section .cart .content .list .item .info .heading [data-cart-item=title]{
   -webkit-box-orient:vertical;
   overflow:hidden;
 }
-yc-section .cart .content .list .item .info .heading .variant{
+yc-section .cart .content .item .info .heading .variant{
   font-size:var(--text-xs);
   color:color-mix(in srgb, currentColor 80%, transparent);
 }
-yc-section .cart .content .list .item .info .heading > [data-cart-item=price]{
+yc-section .cart .content .item .info .heading > [data-cart-item=price]{
   font-size:var(--text-md);
   color:color-mix(in srgb, currentColor 80%, transparent);
 }
-yc-section .cart .content .list .item .controls{
+yc-section .cart .content .item .info .heading .price{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+yc-section .cart .content .item .info .heading .price .compare-at{
+  opacity:0.5;
+  -webkit-text-decoration:line-through;
+  text-decoration:line-through;
+}
+yc-section .cart .content .item .controls{
   width:300px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:var(--gap-xl);
 }
-yc-section .cart .content .list .item .controls > [data-cart-item=subtotal]{
+yc-section .cart .content .item .controls > [data-cart-item=subtotal]{
   flex:1;
   text-align:center;
   display:inline-block;
   font-size:var(--text-md);
   font-weight:550;
 }
+yc-section .cart .content .list{
+  border-radius:var(--cart-border-radius);
+  padding-inline:1.5em;
+  border:var(--cart-border);
+}
 yc-section .cart .content .list > *:last-child .item{
   border-block-end:none;
+}
+yc-section .cart .content .bundle-group{
+  display:flex;
+  flex-direction:column;
+  border:var(--cart-border);
+  border-radius:var(--cart-border-radius);
+  padding:16px 16px 0 16px;
+  margin-block-end:24px;
+  background-color:color-mix(in srgb, currentColor 2%, transparent);
+}
+yc-section .cart .content .bundle-group:first-child{
+  margin-block-start:24px;
+}
+yc-section .cart .content .bundle-group .top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+yc-section .cart .content .bundle-group .top .title{
+  font-size:var(--text-md);
+  color:color-mix(in srgb, currentColor 80%, transparent);
+}
+yc-section .cart .content .bundle-group .items .item .controls{
+  display:none !important;
 }
 yc-section .cart .summary{
   grid-area:1/9/2/13;
@@ -209,17 +244,17 @@ yc-section .cart[data-is-empty] .empty{
 }
 
 @media (max-width: 1280px){
-  yc-section .cart .list .item{
+  yc-section .cart yc-cart-items .item{
     grid-template-columns:1fr !important;
   }
-  yc-section .cart .list .item .controls{
+  yc-section .cart yc-cart-items .item .controls{
     width:100% !important;
     justify-content:flex-start !important;
   }
-  yc-section .cart .list .item .controls [data-cart-item=subtotal]{
+  yc-section .cart yc-cart-items .item .controls [data-cart-item=subtotal]{
     flex:none !important;
   }
-  yc-section .cart .list .item .controls yc-cart-remove-button{
+  yc-section .cart yc-cart-items .item .controls yc-cart-remove-button{
     margin-inline-start:auto;
   }
 }
@@ -268,15 +303,15 @@ yc-section .cart[data-is-empty] .empty{
   }
 }
 @media (max-width: 768px){
-  yc-section .cart .list .item{
+  yc-section .cart yc-cart-items .item{
     flex-direction:column;
     align-items:flex-start !important;
   }
-  yc-section .cart .list .item .controls{
+  yc-section .cart yc-cart-items .item .controls{
     width:100%;
     gap:var(--gap-xl) !important;
   }
-  yc-section .cart .list .item .controls yc-cart-remove-button{
+  yc-section .cart yc-cart-items .item .controls yc-cart-remove-button{
     margin-inline-start:auto;
   }
   yc-section .cart .summary .box .subtotal .total-box{

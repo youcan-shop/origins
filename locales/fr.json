@@ -202,5 +202,10 @@
   },
   "accessibility": {
     "skip_to_content": "Aller au contenu"
+  },
+  "bundle": {
+    "add": "Ajouter le pack",
+    "save": "Économisez",
+    "free_gifts": "Cadeaux gratuits"
   }
 }

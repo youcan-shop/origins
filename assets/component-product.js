@@ -12,13 +12,35 @@ if (!customElements.get("yc-product")) {
       this.productForm = this.querySelector("yc-product-form");
       this.productMedia = this.querySelector("yc-product-media");
       this.productVariants = window.productsVariants[this.getAttribute("product-id")];
+      this.bundles = this.querySelectorAll("[data-bundle] input[type='checkbox']");
     }
 
     connectedCallback() {
+      this.bundles.forEach((bundle) => bundle.addEventListener("change", () => this.onBundleChanged(bundle)));
+
       if (!this.productVariants) return;
 
       this.disableUnavailableOptions();
       this.variants.forEach((variant) => variant.addEventListener("change", () => this.onVariantChanged()));
+    }
+
+    onBundleChanged(changed) {
+      this.bundles.forEach((bundle) => {
+        if (bundle !== changed) bundle.checked = false;
+      });
+
+      const isChecked = changed.checked;
+      const bundleId = isChecked ? changed.value : null;
+
+      if (bundleId) {
+        this.productForm.setAttribute("bundle-id", bundleId);
+      } else {
+        this.productForm.removeAttribute("bundle-id");
+      }
+    }
+
+    get selectedBundle() {
+      return [...this.bundles].find((bundle) => bundle.checked) ?? null;
     }
 
     get selectedOptions() {

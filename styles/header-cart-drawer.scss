@@ -141,6 +141,17 @@
           font-size: var(--text-xs);
           color: color-mix(in srgb, currentColor 80%, transparent);
         }
+
+        .price {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          .compare-at {
+            opacity: 0.5;
+            text-decoration: line-through;
+          }
+        }
       }
     }
 
@@ -149,6 +160,42 @@
       justify-content: space-between;
       align-items: center;
       margin-block-start: auto;
+    }
+  }
+
+  .bundle-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &:not(:first-child) {
+      margin-block-start: 24px;
+      padding-block-start: 24px;
+      border-block-start: var(--drawer-border);
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      .title {
+        font-size: var(--text-md);
+        color: color-mix(in srgb, currentColor 80%, transparent);
+      }
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .item {
+        &:has(.free[hidden]) {
+          order: -1;
+        }
+      }
     }
   }
 }

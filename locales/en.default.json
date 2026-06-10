@@ -202,5 +202,10 @@
   },
   "accessibility": {
     "skip_to_content": "Skip to content"
+  },
+  "bundle": {
+    "add": "Add bundle",
+    "save": "Save",
+    "free_gifts": "Free gifts"
   }
 }

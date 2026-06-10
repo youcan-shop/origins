@@ -194,6 +194,9 @@
           "label": "Accordéon",
           "title_placeholder": "Titre",
           "content_placeholder": "Contenu"
+        },
+        "bundles": {
+          "label": "Packs"
         }
       }
     },

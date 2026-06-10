@@ -123,6 +123,52 @@ yc-section {
           font-size: var(--text-xs);
           color: color-mix(in srgb, currentColor 80%, transparent);
         }
+
+        .item-free {
+          height: fit-content;
+        }
+      }
+    }
+
+    .bundles {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .bundle {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 12px;
+        background-color: color-mix(in srgb, currentColor 2%, transparent);
+        border-radius: var(--order-border-radius);
+        border: var(--order-border);
+
+        .top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+
+          .heading {
+            font-size: var(--text-md);
+          }
+
+          .price {
+            display: flex;
+            font-size: var(--text-md);
+            gap: 4px;
+
+            .compare-at {
+              opacity: 0.5;
+              text-decoration: line-through;
+            }
+          }
+        }
+
+        .items {
+          padding: 0;
+        }
       }
     }
 

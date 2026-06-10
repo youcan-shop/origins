@@ -1,0 +1,155 @@
+[data-bundle=single],
+[data-bundle=multi],
+[data-bundle=buyxgety]{
+  display:flex;
+  gap:24px;
+  flex-direction:column;
+  border:1px solid color-mix(in srgb, currentColor 10%, transparent);
+  border-radius:var(--media-gallery-border-radius);
+  padding:24px;
+  cursor:pointer;
+}
+[data-bundle=single]:has(input:checked),
+[data-bundle=multi]:has(input:checked),
+[data-bundle=buyxgety]:has(input:checked){
+  background-color:color-mix(in srgb, currentColor 5%, transparent);
+}
+[data-bundle=single] .head,
+[data-bundle=multi] .head,
+[data-bundle=buyxgety] .head{
+  display:flex;
+  gap:12px;
+  align-items:baseline;
+}
+[data-bundle=single] .head .detail,
+[data-bundle=multi] .head .detail,
+[data-bundle=buyxgety] .head .detail{
+  display:grid;
+  flex:1;
+  grid-gap:var(--gap-md);
+  gap:var(--gap-md);
+}
+[data-bundle=single] .head .detail .box,
+[data-bundle=multi] .head .detail .box,
+[data-bundle=buyxgety] .head .detail .box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+[data-bundle=single] .head .detail .box .title,
+[data-bundle=multi] .head .detail .box .title,
+[data-bundle=buyxgety] .head .detail .box .title{
+  flex:1;
+  font-size:var(--text-lg);
+}
+[data-bundle=single] .head .detail .box .price,
+[data-bundle=multi] .head .detail .box .price,
+[data-bundle=buyxgety] .head .detail .box .price{
+  display:flex;
+  gap:4px;
+  font-size:var(--text-lg);
+}
+[data-bundle=single] .head .detail .box .price .compare-at,
+[data-bundle=multi] .head .detail .box .price .compare-at,
+[data-bundle=buyxgety] .head .detail .box .price .compare-at{
+  opacity:0.5;
+  -webkit-text-decoration:line-through;
+  text-decoration:line-through;
+}
+[data-bundle=single] .head .detail .box .save,
+[data-bundle=multi] .head .detail .box .save,
+[data-bundle=buyxgety] .head .detail .box .save{
+  font-size:var(--text-sm);
+}
+[data-bundle=single] .item,
+[data-bundle=multi] .item,
+[data-bundle=buyxgety] .item{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+}
+[data-bundle=single] .item:not(:has(.variants)),
+[data-bundle=multi] .item:not(:has(.variants)),
+[data-bundle=buyxgety] .item:not(:has(.variants)){
+  align-items:center;
+}
+[data-bundle=single] .item .media,
+[data-bundle=multi] .item .media,
+[data-bundle=buyxgety] .item .media{
+  width:65px;
+  height:auto;
+  overflow:hidden;
+  aspect-ratio:1/1;
+  border-radius:var(--media-gallery-border-radius);
+}
+[data-bundle=single] .item .media > img,
+[data-bundle=multi] .item .media > img,
+[data-bundle=buyxgety] .item .media > img{
+  -o-object-fit:cover;
+     object-fit:cover;
+}
+[data-bundle=single] .item .info,
+[data-bundle=multi] .item .info,
+[data-bundle=buyxgety] .item .info{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  gap:var(--gap-md);
+  font-size:var(--text-md);
+}
+[data-bundle=single] .item .info .price,
+[data-bundle=multi] .item .info .price,
+[data-bundle=buyxgety] .item .info .price{
+  display:flex;
+  gap:4px;
+  align-items:center;
+}
+[data-bundle=single] .item .info .price .compare-at,
+[data-bundle=multi] .item .info .price .compare-at,
+[data-bundle=buyxgety] .item .info .price .compare-at{
+  opacity:0.5;
+  -webkit-text-decoration:line-through;
+  text-decoration:line-through;
+}
+[data-bundle=single] .item .info .group,
+[data-bundle=multi] .item .info .group,
+[data-bundle=buyxgety] .item .info .group{
+  display:flex;
+  gap:var(--gap-md);
+}
+[data-bundle=single] .item .info .group .index,
+[data-bundle=multi] .item .info .group .index,
+[data-bundle=buyxgety] .item .info .group .index{
+  width:22px;
+  opacity:0.8;
+}
+[data-bundle=single] .item .info .variants,
+[data-bundle=multi] .item .info .variants,
+[data-bundle=buyxgety] .item .info .variants{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--gap-md);
+}
+[data-bundle=single] .item .info .variants span,
+[data-bundle=multi] .item .info .variants span,
+[data-bundle=buyxgety] .item .info .variants span{
+  padding:2px 6px;
+  background-color:var(--section-bg-color);
+  color:var(--section-text-color);
+  border:1px solid color-mix(in srgb, currentColor 10%, transparent);
+}
+[data-bundle=single] .list,
+[data-bundle=multi] .list,
+[data-bundle=buyxgety] .list{
+  display:flex;
+  gap:var(--gap-md);
+  flex-direction:column;
+}
+[data-bundle=single] .gift,
+[data-bundle=multi] .gift,
+[data-bundle=buyxgety] .gift{
+  display:flex;
+  align-items:center;
+  gap:var(--gap-md);
+  font-size:var(--text-md);
+}

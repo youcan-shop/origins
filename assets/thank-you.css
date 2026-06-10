@@ -106,6 +106,46 @@ yc-section .order .items .item .item-subtotal{
   font-size:var(--text-xs);
   color:color-mix(in srgb, currentColor 80%, transparent);
 }
+yc-section .order .items .item .item-free{
+  height:-moz-fit-content;
+  height:fit-content;
+}
+yc-section .order .bundles{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+yc-section .order .bundles .bundle{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  padding:12px;
+  background-color:color-mix(in srgb, currentColor 2%, transparent);
+  border-radius:var(--order-border-radius);
+  border:var(--order-border);
+}
+yc-section .order .bundles .bundle .top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+yc-section .order .bundles .bundle .top .heading{
+  font-size:var(--text-md);
+}
+yc-section .order .bundles .bundle .top .price{
+  display:flex;
+  font-size:var(--text-md);
+  gap:4px;
+}
+yc-section .order .bundles .bundle .top .price .compare-at{
+  opacity:0.5;
+  -webkit-text-decoration:line-through;
+  text-decoration:line-through;
+}
+yc-section .order .bundles .bundle .items{
+  padding:0;
+}
 yc-section .order .summary,
 yc-section .order .subtotal{
   font-size:var(--text-md);
