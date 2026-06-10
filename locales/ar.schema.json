@@ -195,6 +195,9 @@
           "title_placeholder": "العنوان",
           "content_placeholder": "المحتوى"
         },
+        "variants": {
+          "label": "المتغيرات"
+        },
         "bundles": {
           "label": "الحزم"
         }

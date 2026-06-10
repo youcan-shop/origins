@@ -37,6 +37,10 @@
         "bundles": {
           "type": "bundles",
           "settings": {}
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {}
         }
       },
       "order": [
@@ -45,6 +49,7 @@
         "block_qsg9af1hb2ejs2",
         "block_qtdgqf4t8f6j3a",
         "block_qut3kan5h7l93z",
+        "variants",
         "bundles",
         "buy_button"
       ]
