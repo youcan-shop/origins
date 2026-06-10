@@ -37,6 +37,11 @@ if (!customElements.get("yc-product")) {
       } else {
         this.productForm.removeAttribute("bundle-id");
       }
+
+      const buyButton = this.productForm.querySelector("[data-buy-button]");
+      if (buyButton) buyButton.disabled = false;
+
+      this.disableUnavailableOptions();
     }
 
     get selectedBundle() {
@@ -147,6 +152,12 @@ if (!customElements.get("yc-product")) {
 
         if (isUnavailable) input.checked = false;
       });
+
+      if (this.selectedBundle) {
+        this.productForm.removeAttribute("not-available");
+        this.productForm.querySelector("[data-buy-button]").disabled = false;
+        return;
+      }
 
       this.productForm.toggleAttribute(
         "not-available",
