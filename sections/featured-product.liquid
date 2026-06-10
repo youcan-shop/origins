@@ -145,6 +145,10 @@
             %}
           {% when 'accordion' %}
             {% render 'product-accordion', title: block.settings.title, content: block.settings.content %}
+          {% when 'bundles' %}
+            {% if product.is_bundle %}
+              {% render 'yc-bundles' %}
+            {% endif %}
           {% when 'buy_button' %}
             {% if product.options.size > 0 %}
               {% render 'product-variants' %}
@@ -359,6 +363,12 @@
     {
       "type": "buy_button",
       "label": "t:sections.product_information.blocks.buy_button.label",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "bundles",
+      "label": "t:sections.featured_product.blocks.bundles.label",
       "limit": 1,
       "settings": []
     }

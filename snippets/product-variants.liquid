@@ -12,7 +12,7 @@
   {% render 'product-variants' %}
 {% endcomment %}
 
-<yc-variants>
+<yc-variants {{ block.youcan_attributes }}>
   {% for variant in product.options %}
     {% assign default = '' %}
     {% assign name_id = 100 | rand: 2000 %}

@@ -144,16 +144,15 @@
             %}
           {% when 'accordion' %}
             {% render 'product-accordion', title: block.settings.title, content: block.settings.content %}
+          {% when 'bundles' %}
+            {% if product.is_bundle %}
+              {% render 'yc-bundles' %}
+            {% endif %}
           {% when 'buy_button' %}
             {% if product.options.size > 0 %}
               {% render 'product-variants' %}
             {% endif %}
             {% render 'product-buy-button', is_sticky: true, product: product %}
-
-          {% when 'bundles' %}
-            {% if product.is_bundle %}
-              {% render 'yc-bundles' %}
-            {% endif %}
         {% endcase %}
       {% endfor %}
       {% unless section.blocks contains 'buy_button' %}
@@ -374,7 +373,7 @@
     },
     {
       "type": "bundles",
-      "label": "t:sections.product_information.blocks.bundles.label",
+      "label": "t:sections.featured_product.blocks.bundles.label",
       "limit": 1,
       "settings": []
     }
