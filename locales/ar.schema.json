@@ -124,6 +124,11 @@
       "badge_background_color": "لون خلفية الشارة",
       "position_on_card": "الموقع على البطاقة"
     },
+    "product": {
+      "label": "المنتج",
+      "variants": "المتغيرات",
+      "preselect": "حدد مسبقا المتغير الأول المتاح"
+    },
     "checkout": {
       "label": "الدفع",
       "types": "الأنواع",

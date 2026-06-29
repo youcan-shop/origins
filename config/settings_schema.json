@@ -503,6 +503,21 @@
     ]
   },
   {
+    "label": "t:settings_schema.product.label",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.product.variants"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_preselect_first_available_variant",
+        "label": "t:settings_schema.product.preselect",
+        "default": true
+      }
+    ]
+  },
+  {
     "label": "t:settings_schema.checkout.label",
     "settings": [
       {

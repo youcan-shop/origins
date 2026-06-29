@@ -20,7 +20,7 @@
       {% for option in options %}
         <yc-combobox-item
           value="{{ option }}"
-          {% if option == default_value %}
+          {% if option == default_value and settings.enable_preselect_first_available_variant %}
             checked
           {% endif %}
         >

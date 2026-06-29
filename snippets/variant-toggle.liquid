@@ -18,7 +18,7 @@
         type="radio"
         name="{{ name }}"
         value="{{ option }}"
-        {% if option == default_value %}
+        {% if option == default_value and settings.enable_preselect_first_available_variant %}
           checked
         {% endif %}
       >

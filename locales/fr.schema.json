@@ -124,6 +124,11 @@
       "badge_background_color": "Couleur d'arrière-plan du badge",
       "position_on_card": "Position sur la carte"
     },
+    "product": {
+      "label": "Produit",
+      "variants": "Variantes",
+      "preselect": "Présélectionnez la première variante disponible"
+    },
     "checkout": {
       "label": "Paiement",
       "types": "Types",
