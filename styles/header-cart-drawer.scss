@@ -168,12 +168,6 @@
     flex-direction: column;
     gap: 16px;
 
-    &:not(:first-child) {
-      margin-block-start: 24px;
-      padding-block-start: 24px;
-      border-block-start: var(--drawer-border);
-    }
-
     .top {
       display: flex;
       align-items: center;

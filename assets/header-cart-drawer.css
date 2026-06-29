@@ -142,11 +142,6 @@
   flex-direction:column;
   gap:16px;
 }
-.cart-drawer .bundle-group:not(:first-child){
-  margin-block-start:24px;
-  padding-block-start:24px;
-  border-block-start:var(--drawer-border);
-}
 .cart-drawer .bundle-group .top{
   display:flex;
   align-items:center;

@@ -242,7 +242,8 @@ class BaseCartItem extends HTMLElement {
   }
 
   updateItemQuantity(quantityElement, quantity) {
-    quantityElement.querySelector("[data-current-quantity]").textContent = quantity;
+    const currentQuantity = quantityElement.querySelector("[data-current-quantity]");
+    if (currentQuantity) currentQuantity.textContent = quantity;
   }
 
   updateItemPrice(priceElement, price) {

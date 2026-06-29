@@ -60,10 +60,9 @@ if (!customElements.get("yc-product-form")) {
 
     async addToCart(productVariantId, bundleId, attachedImage, quantity) {
       try {
-        const newCart = await youcanjs.cart.addItem({
-          quantity,
-          ...(bundleId ? { bundleId, isBundle: true } : { productVariantId, attachedImage }),
-        });
+        const newCart = await youcanjs.cart.addItem(
+          bundleId ? { bundleId, isBundle: true, quantity: 1 } : { quantity, productVariantId, attachedImage },
+        );
 
         publish(PUB_SUB_EVENTS.cartUpdate, {
           source: this.getAttribute("source") ?? "product-form",
@@ -96,9 +95,8 @@ if (!customElements.get("yc-product-form")) {
 
       try {
         const response = await youcanjs.checkout.placeExpressCheckoutOrder({
-          quantity,
           fields,
-          ...(bundleId ? { bundleId, isBundle: true } : { productVariantId, attachedImage }),
+          ...(bundleId ? { bundleId, isBundle: true, quantity: 1 } : { quantity, productVariantId, attachedImage }),
         });
 
         response
@@ -149,7 +147,7 @@ if (!customElements.get("yc-product-form")) {
       return this.getAttribute("variant-id");
     }
 
-     get bundleId() {
+    get bundleId() {
       return this.getAttribute("bundle-id");
     }
 
