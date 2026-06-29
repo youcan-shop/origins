@@ -85,7 +85,9 @@
         <span class="label">{{ 'order.total' | t }}</span>
         <span class="value">{{ order.total | default: 0 | money }}</span>
       </div>
-      <a href="/" class="yc-btn primary">{{ 'order.action' | t }}</a>
+      {% if section.settings.show_continue_shopping %}
+        <a href="/" class="yc-btn primary">{{ 'order.action' | t }}</a>
+      {% endif %}
     </div>
   </div>
 </yc-section>
@@ -107,6 +109,12 @@
       "type": "color",
       "label": "t:common.colors.background_color",
       "default": "#FFFFFFFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_continue_shopping",
+      "label": "t:sections.thank_you.show_button",
+      "default": true
     },
     {
       "type": "header",
