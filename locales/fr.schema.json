@@ -199,7 +199,9 @@
           "label": "Variantes"
         },
         "bundles": {
-          "label": "Packs"
+          "label": "Packs",
+          "title": "Titre",
+          "title_default": "Choisissez un pack :"
         }
       }
     },

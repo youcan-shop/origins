@@ -36,7 +36,9 @@
         },
         "bundles": {
           "type": "bundles",
-          "settings": {}
+          "settings": {
+            "bundles_title": "Choose a bundle:"
+          }
         },
         "variants": {
           "type": "variants",

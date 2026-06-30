@@ -199,7 +199,9 @@
           "label": "Variants"
         },
         "bundles": {
-          "label": "Bundles"
+          "label": "Bundles",
+          "title": "Title",
+          "title_default": "Choose a bundle:"
         }
       }
     },

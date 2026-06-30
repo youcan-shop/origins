@@ -199,7 +199,9 @@
           "label": "المتغيرات"
         },
         "bundles": {
-          "label": "الحزم"
+          "label": "الحزم",
+          "title": "Title",
+          "title_default": "اختر حزمة:"
         }
       }
     },

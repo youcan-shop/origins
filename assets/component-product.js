@@ -32,7 +32,6 @@ if (!customElements.get("yc-product")) {
       const isChecked = changed.checked;
       const bundleId = isChecked ? changed.value : null;
 
-      this.querySelector("yc-variants")?.toggleAttribute("hidden", isChecked);
       this.querySelector("yc-quantity-control")?.toggleAttribute("hidden", isChecked);
 
       if (bundleId) {
