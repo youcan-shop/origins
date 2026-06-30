@@ -10,7 +10,7 @@
 
 {% assign default_variant = product.selected_or_first_available_variant %}
 
-<div class="buy-button">
+<div class="buy-button" {{ block.youcan_attributes }}>
   {% if settings.checkout_type == 'express' %}
     {% render 'yc-express-checkout', variant_id: default_variant.id, available: product.available, is_sticky: is_sticky %}
   {% else %}

@@ -9,7 +9,7 @@
   {% render 'product-price', price: 199, compare_at_price: 269 %}
 {% endcomment %}
 
-<div class="price">
+<div class="price" {{ block.youcan_attributes }}>
   <p class="current h2" data-product-item="price">
     {{ price | default: 0 | money }}
   </p>

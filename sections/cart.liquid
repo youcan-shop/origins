@@ -18,8 +18,32 @@
     data-cart
   >
     <template data-cart-item-template>
-      {% render 'cart-item' %}
+      {% render 'cart-bundle-item' %}
     </template>
+
+    <template data-cart="bundle-group">
+      <div class="bundle-group">
+        <div class="top">
+          <span class="title" data-bundle="title"></span>
+          <yc-cart-remove-button data-cart-item="delete-button">
+            <button
+              class="icon"
+              data-delete
+              data-size="sm"
+              aria-label="Delete"
+            >
+              {% render 'yc-icon', name: 'trash' %}
+            </button>
+          </yc-cart-remove-button>
+        </div>
+        <div class="items" data-bundle="group"></div>
+      </div>
+    </template>
+
+    <template data-cart="bundle-item">
+      {% render 'cart-bundle-item' %}
+    </template>
+
     <div class="content">
       <h1 class="title h4">{{ 'cart.page.title' | t }}</h1>
       <div class="list">
@@ -27,6 +51,41 @@
           {% for item in cart.items %}
             {% render 'cart-item', product: item %}
           {% endfor %}
+
+          {% if cart.bundles %}
+            {% assign types = 'single,multi,buyxgety' | split: ',' %}
+
+            {% for t in types %}
+              {% assign type = cart.bundles[t] %}
+
+              {% for bundle in type %}
+                <div class="bundle-group">
+                  <div class="top">
+                    <span class="title" data-bundle="title">{{ bundle.title }}</span>
+                    <yc-cart-remove-button
+                      item="{% for bundle_item in bundle.items %} {{ bundle_item.id }} {% unless forloop.index == bundle.items.size %} , {% endunless %} {% endfor %}"
+                      product-variant="{% for bundle_item in bundle.items %} {{ bundle_item.product_variant_id }} {% unless forloop.index == bundle.items.size %} , {% endunless %} {% endfor %}"
+                      data-cart-item="delete-button"
+                    >
+                      <button
+                        class="icon"
+                        data-delete
+                        data-size="sm"
+                        aria-label="Delete"
+                      >
+                        {% render 'yc-icon', name: 'trash' %}
+                      </button>
+                    </yc-cart-remove-button>
+                  </div>
+                  <div class="items" data-bundle="group">
+                    {% for bundle_item in bundle.items %}
+                      {% render 'cart-bundle-item', product: bundle_item %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
         </yc-cart-items>
       </div>
     </div>

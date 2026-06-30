@@ -39,10 +39,20 @@
           {% endfor %}
         </p>
       {% endif %}
-      <span class="quantity">x{{ product.quantity }}</span>
+      {% if product.price %}
+        <span class="quantity">x{{ product.quantity }}</span>
+      {% endif %}
     </div>
   </div>
-  <span class="item-subtotal">
-    {{ product.price | default: 0 | money }}
-  </span>
+
+  {% if product.price %}
+    <span class="item-subtotal">
+      {{ product.price | default: 0 | money }}
+    </span>
+  {% else %}
+    <span class="yc-badge item-free" data-status="success">
+      {% render 'yc-icon', name: 'gift' %}
+      {{ 'order.free' | t }}
+    </span>
+  {% endif %}
 </div>

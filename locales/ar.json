@@ -183,7 +183,7 @@
     "insufficient_inventory": "توجد [inventory] قطعة فقط في المخزون",
     "rating_is_required": "الرجاء تقييم المنتج",
     "large_file": "[file] أكبر من 2 ميجا بايت",
-    "invalid_phone_number":  "يرجى إدخال رقم هاتف صحيح"
+    "invalid_phone_number": "يرجى إدخال رقم هاتف صحيح"
   },
   "success_messages": {
     "review_submitted": "تم استلام التقييم، شكراً لمشاركتكم!"
@@ -202,5 +202,10 @@
   },
   "accessibility": {
     "skip_to_content": "تجاوز إلى المحتوى"
+  },
+  "bundle": {
+    "add": "أضف الحزمة",
+    "save": "وفّر",
+    "free_gifts": "هدايا مجانية"
   }
 }

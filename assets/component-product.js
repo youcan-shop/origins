@@ -12,13 +12,42 @@ if (!customElements.get("yc-product")) {
       this.productForm = this.querySelector("yc-product-form");
       this.productMedia = this.querySelector("yc-product-media");
       this.productVariants = window.productsVariants[this.getAttribute("product-id")];
+      this.bundles = this.querySelectorAll("[data-bundle] input[type='checkbox']");
     }
 
     connectedCallback() {
+      this.bundles.forEach((bundle) => bundle.addEventListener("change", () => this.onBundleChanged(bundle)));
+
       if (!this.productVariants) return;
 
       this.disableUnavailableOptions();
       this.variants.forEach((variant) => variant.addEventListener("change", () => this.onVariantChanged()));
+    }
+
+    onBundleChanged(changed) {
+      this.bundles.forEach((bundle) => {
+        if (bundle !== changed) bundle.checked = false;
+      });
+
+      const isChecked = changed.checked;
+      const bundleId = isChecked ? changed.value : null;
+
+      this.querySelector("yc-quantity-control")?.toggleAttribute("hidden", isChecked);
+
+      if (bundleId) {
+        this.productForm.setAttribute("bundle-id", bundleId);
+      } else {
+        this.productForm.removeAttribute("bundle-id");
+      }
+
+      const buyButton = this.productForm.querySelector("[data-buy-button]");
+      if (buyButton) buyButton.disabled = false;
+
+      this.disableUnavailableOptions();
+    }
+
+    get selectedBundle() {
+      return [...this.bundles].find((bundle) => bundle.checked) ?? null;
     }
 
     get selectedOptions() {
@@ -125,6 +154,12 @@ if (!customElements.get("yc-product")) {
 
         if (isUnavailable) input.checked = false;
       });
+
+      if (this.selectedBundle) {
+        this.productForm.removeAttribute("not-available");
+        this.productForm.querySelector("[data-buy-button]").disabled = false;
+        return;
+      }
 
       this.productForm.toggleAttribute(
         "not-available",

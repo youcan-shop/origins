@@ -9,7 +9,7 @@
   {% render 'product-rating', rating: 4.5, show_avg_rating: true %}
 {% endcomment %}
 
-<div class="rating" data-rating>
+<div class="rating" data-rating {{ block.youcan_attributes }}>
   <div class="stars">
     {% for star in (1..5) %}
       {% if star <= rating %}

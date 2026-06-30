@@ -33,9 +33,28 @@
         "buy_button": {
           "type": "buy_button",
           "settings": {}
+        },
+        "bundles": {
+          "type": "bundles",
+          "settings": {
+            "bundles_title": "Choose a bundle:"
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {}
         }
       },
-      "order": ["block_qqo6eupl67ele8n", "block_qrmxd50mz7j3pq", "block_qsg9af1hb2ejs2", "block_qtdgqf4t8f6j3a", "block_qut3kan5h7l93z", "buy_button"]
+      "order": [
+        "block_qqo6eupl67ele8n",
+        "block_qrmxd50mz7j3pq",
+        "block_qsg9af1hb2ejs2",
+        "block_qtdgqf4t8f6j3a",
+        "block_qut3kan5h7l93z",
+        "variants",
+        "bundles",
+        "buy_button"
+      ]
     },
     "product-reviews": {
       "type": "product-reviews"

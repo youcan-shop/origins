@@ -8,6 +8,6 @@
   {% render 'product-title', title: 'Apple MacBook Pro' %}
 {% endcomment %}
 
-<p class="h2">
+<p class="h2" {{ block.youcan_attributes }}>
   {{ title | default: 'Title' }}
 </p>

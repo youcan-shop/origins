@@ -194,6 +194,14 @@
           "label": "Accordion",
           "title_placeholder": "Title",
           "content_placeholder": "Content"
+        },
+        "variants": {
+          "label": "Variants"
+        },
+        "bundles": {
+          "label": "Bundles",
+          "title": "Title",
+          "title_default": "Choose a bundle:"
         }
       }
     },

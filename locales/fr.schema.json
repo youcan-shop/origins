@@ -194,6 +194,14 @@
           "label": "Accordéon",
           "title_placeholder": "Titre",
           "content_placeholder": "Contenu"
+        },
+        "variants": {
+          "label": "Variantes"
+        },
+        "bundles": {
+          "label": "Packs",
+          "title": "Titre",
+          "title_default": "Choisissez un pack :"
         }
       }
     },

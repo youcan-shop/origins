@@ -9,7 +9,7 @@
   {% render 'product-accordion', title: '...', content: '...' %}
 {% endcomment %}
 
-<details class="accordion">
+<details class="accordion" {{ block.youcan_attributes }}>
   <summary>
     <p class="title h5">{{ title | default: 'Accordion' }}</p>
     {% render 'yc-icon', name: 'chevron-down', size: 15 %}

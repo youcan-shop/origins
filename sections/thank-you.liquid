@@ -40,6 +40,34 @@
       {% for product in order.order_variants %}
         <li>{% render 'order-summary-item', product: product %}</li>
       {% endfor %}
+      {% if order.bundles %}
+        <li class="bundles">
+          {% assign types = 'single,multi,buyxgety' | split: ',' %}
+
+          {% for t in types %}
+            {% assign type = order.bundles[t] %}
+
+            {% for bundle in type %}
+              <div class="bundle">
+                <div class="top">
+                  <h4 class="heading">{{ bundle.title }}</h4>
+                  <div class="price">
+                    <span class="original">{{ bundle.total_price | money }}</span>
+                    {% if bundle.compare_price %}
+                      <span class="compare-at">{{ bundle.compare_price | money }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+                <ul class="items">
+                  {% for bundle_item in bundle.items %}
+                    <li>{% render 'order-summary-item', product: bundle_item %}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </li>
+      {% endif %}
     </ul>
     <div class="subtotal">
       <div class="summary-item">
