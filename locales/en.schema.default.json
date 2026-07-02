@@ -124,6 +124,11 @@
       "badge_background_color": "Badge background color",
       "position_on_card": "Position on card"
     },
+    "product": {
+      "label": "Product",
+      "variants": "Variants",
+      "preselect": "Preselect first available variant"
+    },
     "checkout": {
       "label": "Checkout",
       "types": "Types",
