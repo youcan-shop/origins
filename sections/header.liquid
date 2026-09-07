@@ -39,10 +39,25 @@
   <div class="links" data-block>
     <ul>
       {% for link in main-link-list.links %}
-        <li>
+        <li {% if link.links.size > 0 %}data-has-submenu="true"{% endif %}>
           <a class="yc-btn link" href="{{ link.url }}">
             {{ link.title }}
+            {% if link.links.size > 0 %}
+              {% render 'yc-icon', name: 'chevron-down', size: 16 %}
+            {% endif %}
           </a>
+          {% if link.links.size > 0 %}
+            <ul class="sub-links">
+              {% for sub_link in link.links %}
+                <li class="sub-link">
+                  <a href="{{ sub_link.url }}">
+                    <span>{{ sub_link.title }}</span>
+                    {% render 'yc-icon', name: 'caret-right', size: 16 %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </li>
       {% endfor %}
     </ul>

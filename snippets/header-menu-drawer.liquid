@@ -42,8 +42,20 @@
             <li>
               <a href="{{ link.url }}">
                 {{ link.title }}
-                {% render 'yc-icon' | name: 'caret-right' %}
+                {% render 'yc-icon', name: 'caret-right' %}
               </a>
+              {% if link.links.size > 0 %}
+                <ul class="sub-links">
+                  {% for sub_link in link.links %}
+                    <li class="sub-link">
+                      <a href="{{ sub_link.url }}">
+                        <span>{{ sub_link.title }}</span>
+                        {% render 'yc-icon', name: 'caret-right', size: 16 %}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>

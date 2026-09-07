@@ -95,6 +95,92 @@ yc-header {
         color: rgb(var(--header-text-color));
       }
     }
+
+    & > ul > li {
+      .sub-links {
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        min-width: 200px;
+        max-width: 260px;
+        padding: var(--gap-md);
+        column-gap: 0;
+        row-gap: var(--gap-2xs);
+        border-radius: var(--radius-md);
+        background-color: var(--header-bg-color);
+        box-shadow: var(--shadow-dark-sm);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-50%);
+        translate: 0 -8px;
+        transition: var(--transition-duration-normal);
+        inset-block-start: calc(100% + var(--gap-md));
+
+        /* Keeps the hover alive while moving from the link to the panel */
+        &::before {
+          content: "";
+          position: absolute;
+          height: var(--gap-md);
+          inset-block-end: 100%;
+          inset-inline: 0;
+        }
+
+        .sub-link a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: var(--gap-md);
+          width: 100%;
+          padding: var(--gap-md);
+          font-size: var(--text-sm);
+          border-radius: var(--radius-sm);
+          color: rgb(var(--header-text-color));
+          transition: var(--transition-duration-fast);
+
+          span {
+            min-width: 0;
+            overflow-wrap: break-word;
+          }
+
+          .icon {
+            opacity: 0.5;
+
+            &:dir(rtl) {
+              rotate: 180deg;
+            }
+          }
+
+          &:hover {
+            background-color: rgba(var(--header-text-color), 5%);
+          }
+        }
+      }
+
+      &[data-has-submenu="true"] {
+        position: relative;
+
+        & > a.link .icon {
+          transition: var(--transition-duration-normal);
+        }
+
+        &:hover,
+        &:focus-within {
+          & > a.link .icon {
+            rotate: 180deg;
+          }
+
+          .sub-links {
+            opacity: 1;
+            pointer-events: auto;
+            translate: 0 0;
+          }
+        }
+      }
+    }
   }
 
   .actions {
