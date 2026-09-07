@@ -120,7 +120,6 @@ yc-header {
         transition: var(--transition-duration-normal);
         inset-block-start: calc(100% + var(--gap-md));
 
-        /* Keeps the hover alive while moving from the link to the panel */
         &::before {
           content: "";
           position: absolute;
