@@ -29,9 +29,16 @@
     {% if section.settings.view_style == 'grid' %}
       <ul class="items-grid">
         {% for block in section.blocks %}
+          {%- assign index = forloop.index0 -%}
+          {%- assign block_product = block.settings.item -%}
+          {%- unless block_product -%}
+            {%- for latest in collections.all.products offset: index limit: 1 -%}
+              {%- assign block_product = latest -%}
+            {%- endfor -%}
+          {%- endunless -%}
           <li>
             {%- render 'product-card',
-              product: block.settings.item,
+              product: block_product,
               badge_text: block.settings.badge_text,
               youcan_attributes: block.youcan_attributes
             -%}
@@ -59,8 +66,15 @@
           <div class="slider-box" data-slider-box>
             <div class="slider-inner" data-slider>
               {% for block in section.blocks %}
+                {%- assign index = forloop.index0 -%}
+                {%- assign block_product = block.settings.item -%}
+                {%- unless block_product -%}
+                  {%- for latest in collections.all.products offset: index limit: 1 -%}
+                    {%- assign block_product = latest -%}
+                  {%- endfor -%}
+                {%- endunless -%}
                 <yc-slider-item role="group" aria-roledescription="slide">
-                  {%- render 'product-card', product: block.settings.item, badge_text: block.settings.badge_text -%}
+                  {%- render 'product-card', product: block_product, badge_text: block.settings.badge_text -%}
                 </yc-slider-item>
               {%- endfor -%}
             </div>
