@@ -26,15 +26,16 @@
   <div class="collections">
     <ul class="items-grid">
       {% for block in section.blocks %}
-        {%- assign index = forloop.index0 -%}
+        {%- assign block_index = forloop.index0 -%}
         {%- assign block_collection = block.settings.collection -%}
         {%- unless block_collection -%}
-          {%- for latest in collections offset: index limit: 1 -%}
+          {%- for latest in collections offset: block_index limit: 1 -%}
             {%- assign block_collection = latest -%}
           {%- endfor -%}
         {%- endunless -%}
+        {%- assign block_placeholder = block_index | modulo: 3 | plus: 1 | prepend: 'collection-' -%}
         <li>
-          {%- render 'collection-card', collection: block_collection, youcan_attributes: block.youcan_attributes -%}
+          {%- render 'collection-card', collection: block_collection, placeholder: block_placeholder, youcan_attributes: block.youcan_attributes -%}
         </li>
       {%- endfor -%}
     </ul>
