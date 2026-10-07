@@ -26,9 +26,6 @@
         width="100%"
       >
     </picture>
-  {% else %}
-    {%- assign slide_placeholder = forloop.index0 | modulo: 3 | plus: 1 | prepend: 'hero-' -%}
-    <picture>{{ slide_placeholder | placeholder_svg_tag }}</picture>
   {% endif %}
   {% if slide.heading or slide.subheading or slide.button_text %}
     <yc-slider-content data-alignment="{{ slideshow_settings.content_alignment }}">

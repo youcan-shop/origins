@@ -49,10 +49,9 @@
               {%- render 'product-card', product: item -%}
             </li>
           {%- else -%}
-            {%- for index in (1..number_of_products) -%}
-              {%- assign block_placeholder = index | minus: 1 | modulo: 5 | plus: 1 | prepend: 'product-' -%}
+            {%- for _ in (1..number_of_products) -%}
               <li>
-                {%- render 'product-card', product: null, placeholder_image: block_placeholder -%}
+                {%- render 'product-card', product: null -%}
               </li>
             {%- endfor -%}
           {%- endfor -%}
@@ -103,10 +102,9 @@
                     {%- render 'product-card', product: item -%}
                   </yc-slider-item>
                 {%- else -%}
-                  {%- for index in (1..number_of_products) -%}
-                    {%- assign block_placeholder = index | minus: 1 | modulo: 5 | plus: 1 | prepend: 'product-' -%}
+                  {%- for _ in (1..number_of_products) -%}
                     <yc-slider-item role="group" aria-roledescription="slide">
-                      {%- render 'product-card', product: null, placeholder_image: block_placeholder -%}
+                      {%- render 'product-card', product: null -%}
                     </yc-slider-item>
                   {%- endfor -%}
                 {%- endfor -%}

@@ -3,7 +3,6 @@
 
   Accepts:
   - product: {Object} Product information
-  - placeholder_image: {String} (optional) Placeholder illustration shown when there is no product
   - badge_text: {String} (optional) Product badge
   - youcan_attributes: {String} (optional) YouCan attributes (allow blocks to be highlighted in the theme editor)
 
@@ -34,8 +33,6 @@
         src="{{ product.preview_image.original }}"
         alt="{{ product.name }}"
       >
-    {% elsif product == nil %}
-      {{ placeholder_image | default: 'product-1' | placeholder_svg_tag }}
     {% else %}
       <div class="card-placeholder">
         {% render 'yc-placeholder', name: 'product' %}
