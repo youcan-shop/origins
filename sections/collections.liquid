@@ -35,7 +35,7 @@
         {%- endunless -%}
         {%- assign block_placeholder = block_index | modulo: 3 | plus: 1 | prepend: 'collection-' -%}
         <li>
-          {%- render 'collection-card', collection: block_collection, placeholder: block_placeholder, youcan_attributes: block.youcan_attributes -%}
+          {%- render 'collection-card', collection: block_collection, placeholder_image: block_placeholder, youcan_attributes: block.youcan_attributes -%}
         </li>
       {%- endfor -%}
     </ul>

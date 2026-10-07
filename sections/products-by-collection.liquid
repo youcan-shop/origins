@@ -44,10 +44,17 @@
             {%- endfor -%}
           {%- endpaginate %}
         {% else %}
-          {%- for _ in (1..number_of_products) -%}
+          {%- for item in collections.all.products limit: number_of_products -%}
             <li>
-              {%- render 'product-card', product: null -%}
+              {%- render 'product-card', product: item -%}
             </li>
+          {%- else -%}
+            {%- for index in (1..number_of_products) -%}
+              {%- assign block_placeholder = index | minus: 1 | modulo: 5 | plus: 1 | prepend: 'product-' -%}
+              <li>
+                {%- render 'product-card', product: null, placeholder_image: block_placeholder -%}
+              </li>
+            {%- endfor -%}
           {%- endfor -%}
         {% endif %}
         {% if section.settings.show_view_more == true %}
@@ -91,10 +98,17 @@
                   {%- endfor -%}
                 {%- endpaginate %}
               {% else %}
-                {%- for _ in (1..number_of_products) -%}
+                {%- for item in collections.all.products limit: number_of_products -%}
                   <yc-slider-item role="group" aria-roledescription="slide">
-                    {%- render 'product-card', product: null -%}
+                    {%- render 'product-card', product: item -%}
                   </yc-slider-item>
+                {%- else -%}
+                  {%- for index in (1..number_of_products) -%}
+                    {%- assign block_placeholder = index | minus: 1 | modulo: 5 | plus: 1 | prepend: 'product-' -%}
+                    <yc-slider-item role="group" aria-roledescription="slide">
+                      {%- render 'product-card', product: null, placeholder_image: block_placeholder -%}
+                    </yc-slider-item>
+                  {%- endfor -%}
                 {%- endfor -%}
               {% endif %}
             </div>

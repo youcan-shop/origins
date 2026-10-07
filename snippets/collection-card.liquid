@@ -3,7 +3,7 @@
 
   Accepts:
   - collection: {Object} Collection information
-  - placeholder: {String} (optional) Placeholder illustration shown when there is no collection
+  - placeholder_image: {String} (optional) Placeholder illustration shown when there is no collection
   - youcan_attributes: {String} (optional) YouCan attributes (allow blocks to be highlighted in the theme editor)
 
   Usage:
@@ -38,7 +38,7 @@
         loading="lazy"
       >
     {% elsif collection == nil %}
-      {{ placeholder | default: 'collection-1' | placeholder_svg_tag }}
+      {{ placeholder_image | default: 'collection-1' | placeholder_svg_tag }}
     {% else %}
       <div class="card-placeholder">
         {% render 'yc-placeholder', name: 'collection' %}

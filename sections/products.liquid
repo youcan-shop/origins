@@ -40,7 +40,7 @@
           <li>
             {%- render 'product-card',
               product: block_product,
-              placeholder: block_placeholder,
+              placeholder_image: block_placeholder,
               badge_text: block.settings.badge_text,
               youcan_attributes: block.youcan_attributes
             -%}
@@ -77,7 +77,7 @@
                 {%- endunless -%}
                 {%- assign block_placeholder = block_index | modulo: 5 | plus: 1 | prepend: 'product-' -%}
                 <yc-slider-item role="group" aria-roledescription="slide">
-                  {%- render 'product-card', product: block_product, placeholder: block_placeholder, badge_text: block.settings.badge_text -%}
+                  {%- render 'product-card', product: block_product, placeholder_image: block_placeholder, badge_text: block.settings.badge_text -%}
                 </yc-slider-item>
               {%- endfor -%}
             </div>
