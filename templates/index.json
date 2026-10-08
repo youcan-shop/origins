@@ -41,8 +41,9 @@
       "order": ["block_ivq4v3h4226mym", "block_iwvczf05m32mujk", "block_ixt4cxjee09wq24"]
     },
     "section_1fqn362ai98y51h": {
-      "type": "products",
+      "type": "products-by-collection",
       "settings": {
+        "collection": "all",
         "title": "Featured Products",
         "description": "Products that take the spotlight",
         "position": "center",
@@ -51,29 +52,9 @@
         "background_color": "#FFFFFFFF",
         "product_columns": "3",
         "space_top": "50",
-        "space_bottom": "50"
-      },
-      "blocks": {
-        "block_1ku94agatzletgn": {
-          "type": "product",
-          "settings": {
-            "badge_text": ""
-          }
-        },
-        "block_1lp0ub9ifgwdmlh": {
-          "type": "product",
-          "settings": {
-            "badge_text": ""
-          }
-        },
-        "block_1mfebeh6q405bt": {
-          "type": "product",
-          "settings": {
-            "badge_text": ""
-          }
-        }
-      },
-      "order": ["block_1ku94agatzletgn", "block_1lp0ub9ifgwdmlh", "block_1mfebeh6q405bt"]
+        "space_bottom": "50",
+        "max_products": 3
+      }
     },
     "section_1hgf4l3hb1hk92u": {
       "type": "collections",

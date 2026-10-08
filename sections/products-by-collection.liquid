@@ -36,13 +36,11 @@
     {% if section.settings.view_style == 'grid' %}
       <ul class="items-grid">
         {% if collection %}
-          {%- paginate collection.products by number_of_products id category_id: collection.id %}
-            {%- for item in items -%}
-              <li>
-                {%- render 'product-card', product: item -%}
-              </li>
-            {%- endfor -%}
-          {%- endpaginate %}
+          {%- for item in collection.products limit: number_of_products -%}
+            <li>
+              {%- render 'product-card', product: item -%}
+            </li>
+          {%- endfor -%}
         {% else %}
           {%- for _ in (1..number_of_products) -%}
             <li>
@@ -83,13 +81,11 @@
           <div class="slider-box" data-slider-box>
             <div class="slider-inner" data-slider>
               {% if collection %}
-                {%- paginate collection.products by number_of_products id category_id: collection.id %}
-                  {%- for item in items -%}
-                    <yc-slider-item role="group" aria-roledescription="slide">
-                      {%- render 'product-card', product: item -%}
-                    </yc-slider-item>
-                  {%- endfor -%}
-                {%- endpaginate %}
+                {%- for item in collection.products limit: number_of_products -%}
+                  <yc-slider-item role="group" aria-roledescription="slide">
+                    {%- render 'product-card', product: item -%}
+                  </yc-slider-item>
+                {%- endfor -%}
               {% else %}
                 {%- for _ in (1..number_of_products) -%}
                   <yc-slider-item role="group" aria-roledescription="slide">
