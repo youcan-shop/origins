@@ -36,6 +36,9 @@
         alt=""
         loading="lazy"
       >
+    {% elsif collection.id == nil %}
+      {%- assign placeholder_name = forloop.index0 | modulo: 3 | plus: 1 | prepend: 'collection-' | append: '-transparent' -%}
+      {{ placeholder_name | placeholder_svg_tag }}
     {% else %}
       <div class="card-placeholder">
         {% render 'yc-placeholder', name: 'collection' %}
