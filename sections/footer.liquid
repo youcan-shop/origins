@@ -54,7 +54,7 @@
       </div>
       <div class="links-box">
         {%- for linklist in link-lists -%}
-          {%- if linklist.links | count > 0  and linklist != main-link-list -%}
+          {%- if linklist.links.size > 0 and linklist != main-link-list -%}
             <div class="navigation">
               <p>{{ linklist.title }}</p>
               <div class="links">
