@@ -33,6 +33,9 @@
         src="{{ product.preview_image.original }}"
         alt="{{ product.name }}"
       >
+    {% elsif product.id == nil %}
+      {%- assign placeholder_name = forloop.index0 | modulo: 5 | plus: 1 | prepend: 'product-' | append: '-transparent' -%}
+      {{ placeholder_name | placeholder_svg_tag }}
     {% else %}
       <div class="card-placeholder">
         {% render 'yc-placeholder', name: 'product' %}
