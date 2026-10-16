@@ -33,15 +33,20 @@ yc-section .cart .content .item .info{
   gap:var(--gap-xl);
 }
 yc-section .cart .content .item .info .image{
-  height:100px;
   width:100px;
   min-width:100px;
+  height:auto;
+  flex-shrink:0;
+  align-self:flex-start;
+  aspect-ratio:var(--product-thumbnail-aspect-ratio);
   border-radius:var(--cart-border-radius);
   overflow:hidden;
 }
 yc-section .cart .content .item .info .image img{
-  -o-object-fit:cover;
-     object-fit:cover;
+  width:100%;
+  height:100%;
+  -o-object-fit:var(--product-thumbnail-fit);
+     object-fit:var(--product-thumbnail-fit);
 }
 yc-section .cart .content .item .info .image .card-placeholder{
   width:100%;

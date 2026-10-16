@@ -1,5 +1,3 @@
-@use "mixins/breakpoints";
-
 /*
   Usage:
   There are some css variables that should be defined in the collection-card's parent, these variables are:
@@ -10,6 +8,7 @@
   These properties are set by the global collection card settings in head-config.liquid:
   --collection-card-border-radius
   --collection-card-text-alignment
+  --collection-card-aspect-ratio
 */
 
 .collection-card {
@@ -20,16 +19,18 @@
   border: 1px solid color-mix(in srgb, currentColor 8%, transparent);
 
   .cover {
-    height: calc(var(--collection-height) * 1px);
+    aspect-ratio: var(--collection-card-aspect-ratio);
     transition: var(--transition-duration-slow);
 
-    @include breakpoints.breakpoint("xl") {
-      height: calc((var(--collection-height) - 50) * 1px);
-    }
-
     img {
+      display: block;
       object-fit: cover;
       border-radius: var(--collection-card-border-radius);
+    }
+
+    .card-placeholder,
+    .placeholder-svg {
+      aspect-ratio: var(--collection-card-placeholder-aspect-ratio);
     }
 
     .card-placeholder {

@@ -303,6 +303,30 @@
         "label": "t:common.alignment.text_alignment"
       },
       {
+        "type": "select",
+        "id": "collection_card_aspect_ratio",
+        "options": [
+          {
+            "value": "auto",
+            "label": "t:common.aspect_ratio.auto"
+          },
+          {
+            "value": "square",
+            "label": "t:common.aspect_ratio.square"
+          },
+          {
+            "value": "portrait",
+            "label": "t:common.aspect_ratio.portrait"
+          },
+          {
+            "value": "landscape",
+            "label": "t:common.aspect_ratio.landscape"
+          }
+        ],
+        "default": "square",
+        "label": "t:common.aspect_ratio.aspect_ratio"
+      },
+      {
         "type": "header",
         "content": "t:common.border.border"
       },
@@ -514,6 +538,34 @@
         "id": "enable_preselect_first_available_variant",
         "label": "t:settings_schema.product.preselect",
         "default": true
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.product.media"
+      },
+      {
+        "type": "select",
+        "id": "product_image_aspect_ratio",
+        "options": [
+          {
+            "value": "auto",
+            "label": "t:common.aspect_ratio.auto"
+          },
+          {
+            "value": "square",
+            "label": "t:common.aspect_ratio.square"
+          },
+          {
+            "value": "portrait",
+            "label": "t:common.aspect_ratio.portrait"
+          },
+          {
+            "value": "landscape",
+            "label": "t:common.aspect_ratio.landscape"
+          }
+        ],
+        "default": "square",
+        "label": "t:common.aspect_ratio.aspect_ratio"
       }
     ]
   },

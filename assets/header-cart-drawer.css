@@ -75,7 +75,10 @@
 }
 .cart-drawer .item .image{
   width:100px;
-  height:100px;
+  height:auto;
+  flex-shrink:0;
+  align-self:flex-start;
+  aspect-ratio:var(--product-thumbnail-aspect-ratio);
   overflow:hidden;
   border-radius:var(--button-border-radius);
 }
@@ -90,8 +93,8 @@
 .cart-drawer .item .image img{
   width:100%;
   height:100%;
-  -o-object-fit:cover;
-     object-fit:cover;
+  -o-object-fit:var(--product-thumbnail-fit);
+     object-fit:var(--product-thumbnail-fit);
 }
 .cart-drawer .item .info{
   flex:1;
