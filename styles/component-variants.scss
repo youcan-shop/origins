@@ -170,7 +170,9 @@ yc-variant {
 
       img {
         height: 70px;
-        object-fit: cover;
+        width: auto;
+        aspect-ratio: var(--product-thumbnail-aspect-ratio);
+        object-fit: var(--product-thumbnail-fit);
         border-radius: calc(var(--variant-border-radius) * 0.66);
         transition: var(--transition-duration-normal);
       }

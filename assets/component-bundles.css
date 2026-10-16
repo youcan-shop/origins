@@ -88,14 +88,16 @@ yc-bundles [data-bundle=buyxgety] .item .media{
   width:65px;
   height:auto;
   overflow:hidden;
-  aspect-ratio:1/1;
+  aspect-ratio:var(--product-thumbnail-aspect-ratio);
   border-radius:var(--media-gallery-border-radius);
 }
 yc-bundles [data-bundle=single] .item .media > img,
 yc-bundles [data-bundle=multi] .item .media > img,
 yc-bundles [data-bundle=buyxgety] .item .media > img{
-  -o-object-fit:cover;
-     object-fit:cover;
+  width:100%;
+  height:100%;
+  -o-object-fit:var(--product-thumbnail-fit);
+     object-fit:var(--product-thumbnail-fit);
 }
 yc-bundles [data-bundle=single] .item .info,
 yc-bundles [data-bundle=multi] .item .info,

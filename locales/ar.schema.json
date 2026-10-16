@@ -25,6 +25,13 @@
     "style": {
       "style": "النمط"
     },
+    "aspect_ratio": {
+      "aspect_ratio": "نسبة أبعاد الصورة",
+      "auto": "تلقائي (الأصلي)",
+      "square": "مربع (1:1)",
+      "portrait": "عمودي (3:4)",
+      "landscape": "أفقي (4:3)"
+    },
     "border": {
       "border": "الحدود",
       "corner_radius": "حدة الزاوية"
@@ -127,7 +134,8 @@
     "product": {
       "label": "المنتج",
       "variants": "المتغيرات",
-      "preselect": "حدد مسبقا المتغير الأول المتاح"
+      "preselect": "حدد مسبقا المتغير الأول المتاح",
+      "media": "الوسائط"
     },
     "checkout": {
       "label": "الدفع",

@@ -19,6 +19,26 @@
   rel="shortcut icon"
   href="{{ favicon }}"
 >
+{%- case settings.product_image_aspect_ratio -%}
+  {%- when 'auto' -%}
+    {%- assign product_image_aspect_ratio = 'auto' -%}
+  {%- when 'portrait' -%}
+    {%- assign product_image_aspect_ratio = '3 / 4' -%}
+  {%- when 'landscape' -%}
+    {%- assign product_image_aspect_ratio = '4 / 3' -%}
+  {%- else -%}
+    {%- assign product_image_aspect_ratio = '1 / 1' -%}
+{%- endcase -%}
+{%- case settings.collection_card_aspect_ratio -%}
+  {%- when 'auto' -%}
+    {%- assign collection_card_aspect_ratio = 'auto' -%}
+  {%- when 'portrait' -%}
+    {%- assign collection_card_aspect_ratio = '3 / 4' -%}
+  {%- when 'landscape' -%}
+    {%- assign collection_card_aspect_ratio = '4 / 3' -%}
+  {%- else -%}
+    {%- assign collection_card_aspect_ratio = '1 / 1' -%}
+{%- endcase -%}
 {%- style -%}
   :root {
     /* Typography */
@@ -126,9 +146,21 @@
     --product-card-border-radius: {{ settings.product_card_border_radius }}px;
     --product-card-text-alignment: {{ settings.product_card_text_alignment }};
 
+    /* Product Images */
+    --product-image-aspect-ratio: {{ product_image_aspect_ratio }};
+    {%- if product_image_aspect_ratio == 'auto' %}
+    --product-thumbnail-aspect-ratio: 1 / 1;
+    --product-thumbnail-fit: contain;
+    {%- else %}
+    --product-thumbnail-aspect-ratio: {{ product_image_aspect_ratio }};
+    --product-thumbnail-fit: cover;
+    {%- endif %}
+
     /* Collection Cards */
     --collection-card-border-radius: {{ settings.collection_card_border_radius }}px;
     --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
+    --collection-card-aspect-ratio: {{ collection_card_aspect_ratio }};
+    --collection-card-placeholder-aspect-ratio: {% if collection_card_aspect_ratio == 'auto' %}1 / 1{% else %}{{ collection_card_aspect_ratio }}{% endif %};
 
     /* Column Cards */
     --column-card-border-radius: {{ settings.column_card_border_radius }}px;

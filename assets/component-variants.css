@@ -144,8 +144,10 @@ yc-variant[name=image] .image-item{
 }
 yc-variant[name=image] .image-item img{
   height:70px;
-  -o-object-fit:cover;
-     object-fit:cover;
+  width:auto;
+  aspect-ratio:var(--product-thumbnail-aspect-ratio);
+  -o-object-fit:var(--product-thumbnail-fit);
+     object-fit:var(--product-thumbnail-fit);
   border-radius:calc(var(--variant-border-radius) * 0.66);
   transition:var(--transition-duration-normal);
 }

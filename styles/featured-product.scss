@@ -10,8 +10,6 @@
   grid-template-columns: repeat(2, 1fr);
 
   yc-product-media {
-    --media-main-image-height: 550px;
-
     height: fit-content;
     display: grid;
     gap: var(--gap-sm);
@@ -25,7 +23,7 @@
     .main-image {
       position: relative;
       width: 100%;
-      height: var(--media-main-image-height);
+      aspect-ratio: var(--product-image-aspect-ratio);
       border-radius: var(--media-main-image-border-radius);
       border: var(--media-main-image-border);
       overflow: hidden;
@@ -43,12 +41,14 @@
       }
 
       img {
+        display: block;
         object-fit: cover;
       }
 
       .placeholder {
         height: 100%;
         width: 100%;
+        aspect-ratio: var(--product-thumbnail-aspect-ratio);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -66,7 +66,7 @@
 
           .image {
             width: 100%;
-            height: 100px;
+            aspect-ratio: var(--product-thumbnail-aspect-ratio);
             cursor: pointer;
             overflow: hidden;
             position: relative;
@@ -107,7 +107,7 @@
             }
 
             img {
-              object-fit: cover;
+              object-fit: var(--product-thumbnail-fit);
             }
           }
         }
@@ -354,8 +354,6 @@
 @include breakpoints.breakpoint("xl") {
   .single-product {
     yc-product-media {
-      --media-main-image-height: 450px;
-
       flex-direction: column;
     }
   }

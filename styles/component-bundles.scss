@@ -74,11 +74,13 @@ yc-bundles {
         width: 65px;
         height: auto;
         overflow: hidden;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: var(--product-thumbnail-aspect-ratio);
         border-radius: var(--media-gallery-border-radius);
 
         & > img {
-          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          object-fit: var(--product-thumbnail-fit);
         }
       }
 

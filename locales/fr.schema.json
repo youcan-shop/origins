@@ -25,6 +25,13 @@
     "style": {
       "style": "Style"
     },
+    "aspect_ratio": {
+      "aspect_ratio": "Format d'image",
+      "auto": "Auto (original)",
+      "square": "Carré (1:1)",
+      "portrait": "Portrait (3:4)",
+      "landscape": "Paysage (4:3)"
+    },
     "border": {
       "border": "Bordure",
       "corner_radius": "Rayon d'angle"
@@ -127,7 +134,8 @@
     "product": {
       "label": "Produit",
       "variants": "Variantes",
-      "preselect": "Présélectionnez la première variante disponible"
+      "preselect": "Présélectionnez la première variante disponible",
+      "media": "Médias"
     },
     "checkout": {
       "label": "Paiement",

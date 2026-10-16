@@ -25,6 +25,13 @@
     "style": {
       "style": "Style"
     },
+    "aspect_ratio": {
+      "aspect_ratio": "Image aspect ratio",
+      "auto": "Auto (original)",
+      "square": "Square (1:1)",
+      "portrait": "Portrait (3:4)",
+      "landscape": "Landscape (4:3)"
+    },
     "border": {
       "border": "Border",
       "corner_radius": "Corner radius"
@@ -127,7 +134,8 @@
     "product": {
       "label": "Product",
       "variants": "Variants",
-      "preselect": "Preselect first available variant"
+      "preselect": "Preselect first available variant",
+      "media": "Media"
     },
     "checkout": {
       "label": "Checkout",
