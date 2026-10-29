@@ -774,6 +774,15 @@ yc-skeleton {
   }
 }
 
+// Focal point
+[data-focal-point] {
+  object-position: var(--focal-point, 50% 50%);
+
+  @include breakpoints.breakpoint("md") {
+    object-position: var(--focal-point-mobile, 50% 50%);
+  }
+}
+
 // Keyframes
 @keyframes showUp {
   from {

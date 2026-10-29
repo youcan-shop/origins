@@ -21,6 +21,8 @@
       {% endif %}
       <img
         src="{{ slide.desktop_image.src | default: slide.mobile_image.src }}"
+        data-focal-point
+        style="{% render 'focal-point', desktop: slide.desktop_image, mobile: slide.mobile_image %}"
         alt="{{ "slide " | append: forloop.index }}"
         height="100%"
         width="100%"
