@@ -13,6 +13,7 @@
   display:grid;
   grid-gap:var(--gap-sm);
   gap:var(--gap-sm);
+  grid-template-columns:minmax(0, 1fr);
   position:sticky;
   inset-block-start:var(--gap-lg);
 }
